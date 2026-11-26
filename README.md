@@ -1,11 +1,11 @@
 # 2026 APMCM B 题 · 工作区导航
 
-最后整理于 2026-11-26。查研究结论先读[实验进度](project/reports/实验进度.md)和[数学模型与实验证据](project/reports/2026%20APMCM%20B题——第三版数学模型与实验证据.md)。查第二问时滞结果优先看[90 秒窗口最终结果表](专题实验/Q2_Delay_Identification_Experiment/tables/final_delay_evidence_summary.csv)。
+最后整理于 2026-11-26。查研究结论先读[实验进度](project/reports/实验进度.md)和[数学模型与实验证据](project/reports/2026%20APMCM%20B题——第三版数学模型与实验证据.md)。第三问开始建模前，先读[第三问项目指引](project/THIRD_QUESTION_PROJECT_GUIDE.md)。查第二问时滞结果优先看[90 秒窗口最终结果表](专题实验/Q2_Delay_Identification_Experiment/tables/final_delay_evidence_summary.csv)。
 
 | 目录 | 用途与入口 |
 |---|---|
-| [2026 APMCM Problems](2026%20APMCM%20Problems/) | 赛事题面、论文规范与[更正版 Data.zip](2026%20APMCM%20Problems/2026%20APMCM%20Problem%20B/Data/Data.zip)。 |
-| [project](project/) | 工作代码、测试、分版本数据、复核结果与持续更新的 Markdown 报告。[当前数据审计](project/data/corrected_2026_11_26/audit.csv) |
+| [2026 APMCM Problems](2026%20APMCM%20Problems/) | 赛事题面、论文规范与[更正版 Data.zip](2026%20APMCM%20Problem%20B/Data/Data.zip)。 |
+| [project](project/) | 工作代码、测试、分版本数据、复核结果与持续更新的 Markdown 报告。[第三问项目指引](project/THIRD_QUESTION_PROJECT_GUIDE.md) · [当前数据审计](project/data/corrected_2026_11_26/audit.csv) |
 | [APMCM_Full_Experiments](APMCM_Full_Experiments/APMCM_Full_Experiments/) | 全量实验原包，主工程从此读取十炉数据节点。[光谱曲面 PDF](APMCM_Full_Experiments/APMCM_Full_Experiments/figures/all_heats_spectral_surface.pdf) · [过程曲线 PDF](APMCM_Full_Experiments/APMCM_Full_Experiments/figures/all_heats_process_curves.pdf) |
 | [专题实验](专题实验/) | 按研究问题保存输入、脚本和结果。第五炉时基、累计耗氧对照、时滞识别三个实验各自保留完整目录。 |
 | [交付与图表](交付与图表/) | 已成稿的 V3 研究档案及第二问图表合集。 |
