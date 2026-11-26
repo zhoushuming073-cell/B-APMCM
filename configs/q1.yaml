@@ -1,0 +1,3 @@
+published_scenarios: data/processed/scenarios
+rerun_output: results/q1/rerun/reconstruction
+display_stride: 10

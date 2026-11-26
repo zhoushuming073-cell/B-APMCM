@@ -1,38 +1,40 @@
-# 2026 APMCM B 题 · 工作区导航
+# 2026 APMCM B 题
 
-最后整理于 2026-11-26。查研究结论先读[实验进度](project/reports/实验进度.md)和[数学模型与实验证据](project/reports/2026%20APMCM%20B题——第三版数学模型与实验证据.md)。第三问开始建模前，先读[第三问项目指引](project/THIRD_QUESTION_PROJECT_GUIDE.md)。查第二问时滞结果优先看[90 秒窗口最终结果表](专题实验/Q2_Delay_Identification_Experiment/tables/final_delay_evidence_summary.csv)。
+转炉火焰光谱连续重构、供氧与烟气时滞分析。正式数据使用更正版的十个炉次，共 13,589 帧。第三问的方案和先导实验记录在研究文档中，正式的可复现预测实验仍待整理。
 
-| 目录 | 用途与入口 |
-|---|---|
-| [2026 APMCM Problems](2026%20APMCM%20Problems/) | 赛事题面、论文规范与[更正版 Data.zip](2026%20APMCM%20Problems/2026%20APMCM%20Problem%20B/Data/Data.zip)。 |
-| [project](project/) | 工作代码、测试、分版本数据、复核结果与持续更新的 Markdown 报告。[第三问项目指引](project/THIRD_QUESTION_PROJECT_GUIDE.md) · [当前数据审计](project/data/corrected_2026_11_26/audit.csv) |
-| [APMCM_Full_Experiments](APMCM_Full_Experiments/APMCM_Full_Experiments/) | 全量实验原包，主工程从此读取十炉数据节点。[光谱曲面 PDF](APMCM_Full_Experiments/APMCM_Full_Experiments/figures/all_heats_spectral_surface.pdf) · [过程曲线 PDF](APMCM_Full_Experiments/APMCM_Full_Experiments/figures/all_heats_process_curves.pdf) |
-| [专题实验](专题实验/) | 按研究问题保存输入、脚本和结果。第五炉时基、累计耗氧对照、时滞识别三个实验各自保留完整目录。 |
-| [交付与图表](交付与图表/) | 已成稿的 V3 研究档案及第二问图表合集。 |
+| 目录 | 内容 |
+| --- | --- |
+| [configs](configs/) | 官方数据位置、第一问重构及各第二问实验的输入和复算目录 |
+| [docs](docs/) | 赛题、官方规范和方法与验证协议 |
+| [data](data/) | 原始附件、提取数据、处理后数据和审计 |
+| [src/apmcm](src/apmcm/) | 数据读取、谱面重构和烟气实验代码 |
+| [experiments](experiments/) | 各专项的运行入口与输入说明 |
+| [results](results/) | 第一、二问已有图表和逐炉结果 |
+| [reports](reports/) | 研究文档、已成稿报告和提交材料分区 |
+| [archive](archive/) | 迁移前的原始交付包和历史工作目录 |
 
-## 专题与交付入口
+## 数据与复现
 
-| 要查的问题 | 建议打开 |
-|---|---|
-| 第五炉为何保留两种采样间隔？ | [时间尺度审计](专题实验/第五炉时间尺度问题/report/APMCM_Timebase_Audit_Report.md) |
-| 累计耗氧与烟气在 0 s、48 s 对齐下有何差异？ | [对照实验口径](专题实验/Q2_Aligned_Comparison/Q2_Aligned_Comparison/README_CN.txt) · [按炉留出汇总](专题实验/Q2_Aligned_Comparison/Q2_Aligned_Comparison/LOHO_summary.csv) |
-| 供氧流量能否解释每个窗口的有效时差？ | [延迟识别报告](专题实验/Q2_Delay_Identification_Experiment/README_Q2_Delay_Experiment.md) · [逐炉误差](专题实验/Q2_Delay_Identification_Experiment/tables/90s_window_loho_models.csv) |
-| 在哪里找可直接查看的报告和图片？ | [V3 研究档案 PDF](交付与图表/APMCM_B_V3_更新交付/APMCM_B_V3_Aligned_Research_Package/report/APMCM_B_V3_Aligned_Research_Record.pdf) · [可编辑 Word 版](交付与图表/APMCM_B_V3_更新交付/APMCM_B_V3_Aligned_Research_Package/report/APMCM_B_V3_Aligned_Research_Record.docx) · [第二问图表目录](交付与图表/Q2_Figures_Package/README_Q2_Figures.md) |
+先安装 Git LFS。以下命令在仓库根目录运行。依赖锁按 Windows 上的 Python 3.13 解析。
 
-复现主工程时在 [project](project/) 下执行[进度表末尾的命令](project/reports/实验进度.md)。复现时滞专项时使用[包内运行说明](专题实验/Q2_Delay_Identification_Experiment/RUN_INSTRUCTIONS.md)。其中亮度诊断需要将完整实验包中的 [harmonized_spectra.npz](APMCM_Full_Experiments/APMCM_Full_Experiments/harmonized_spectra.npz) 放入该专项的 `inputs/`。
+```powershell
+git lfs pull
+python -m pip install -r requirements.lock.txt
+python -m pip install --no-deps -e .
+python scripts/verify_data.py
+python -m pytest
+```
 
-数据入口已复核。更正版 Data.zip 的 SHA-256 与 V3 记录一致；两个第二问专题及图表包各自附带的十份过程 CSV 与完整实验包逐文件哈希一致。
+```powershell
+python scripts/run_all.py --help
+python scripts/run_all.py q2_optimized
+python scripts/run_all.py
+python scripts/build_figures.py
+```
 
-第三问正式结果待补。时滞专项的留炉误差单位为秒，五秒辅助预测允许使用历史烟气，这两套表均不能用来填报实时光谱预测精度。
+批量复算结果位于各问题的 `rerun/`，图形重绘位于 `results/rebuilt_figures/`。运行入口使用本目录中的配置和正式数据。校验失败时可使用 `git lfs pull` 取得实际二进制文件。原始附件 SHA-256 与解压后的逐炉文件均可核对。
 
-
-## 从 GitHub 下载完整项目
-
-原始附件 `Data.zip`、Excel 工作簿和 NPZ 数据由 Git LFS 管理。安装 Git LFS 后执行：
-
-    git lfs install
-    git clone https://github.com/zhoushuming073-cell/B-APMCM.git
-    cd B-APMCM
-    git lfs pull
-
-更正版 `Data.zip` 的 SHA-256 为 `cb662ce5ea17c247d0733ec8a4245fec37abf82d823a0ddc08597b300d95a727`。
+- 正式数据与审计 [Data.zip](data/raw/official/Data.zip) · [SHA-256](data/metadata/checksums.sha256) · [审计表](data/metadata/audit.csv)
+- 第一问 [光谱曲面汇编](results/q1/figures/all_heats_spectral_surface.pdf) · [窄峰遮挡指标](results/q1/tables/q1_peak_mask_fit_metrics.csv)
+- 第二问 [优化实验报告](reports/final/q2_optimized/Q2_report.pdf) · [90 秒窗口结果](results/q2/delay_identification/tables/final_delay_evidence_summary.csv) · [时基审计](reports/final/timebase_audit/APMCM_Timebase_Audit_Report.pdf)
+- 研究进度 [实验进度](reports/working/实验进度.md) · [数学模型与实验证据](reports/working/2026%20APMCM%20B题——第三版数学模型与实验证据.md) · [第三问项目指南](reports/working/THIRD_QUESTION_PROJECT_GUIDE.md) · [第三问研究记录](reports/working/第三问研究.docx)

@@ -1,0 +1,196 @@
+{
+  "H0": {
+    "CO2": {
+      "median_peak_lag_s": 35.25,
+      "median_peak_abs_r": 0.15630894867015388,
+      "BH_q_le_0_10_count": 8,
+      "median_bootstrap_ci_width_s": 50.906249999999986,
+      "informative_windows": 50,
+      "informative_heats": 10,
+      "informative_lag_median_s": 28.0,
+      "informative_flow_median_m3s": 4.938772727272732
+    },
+    "CO": {
+      "median_peak_lag_s": 24.0,
+      "median_peak_abs_r": 0.11241475890709696,
+      "BH_q_le_0_10_count": 3,
+      "median_bootstrap_ci_width_s": 52.06249999999998,
+      "informative_windows": 43,
+      "informative_heats": 10,
+      "informative_lag_median_s": 27.5,
+      "informative_flow_median_m3s": 5.004337662337655
+    }
+  },
+  "H1": {
+    "CO2": {
+      "median_peak_lag_s": 35.25,
+      "median_peak_abs_r": 0.15630894867015388,
+      "BH_q_le_0_10_count": 9,
+      "median_bootstrap_ci_width_s": 47.906249999999986,
+      "informative_windows": 53,
+      "informative_heats": 10,
+      "informative_lag_median_s": 28.0,
+      "informative_flow_median_m3s": 4.896454545454549
+    },
+    "CO": {
+      "median_peak_lag_s": 13.0,
+      "median_peak_abs_r": 0.11241475890709696,
+      "BH_q_le_0_10_count": 4,
+      "median_bootstrap_ci_width_s": 54.82499999999998,
+      "informative_windows": 48,
+      "informative_heats": 10,
+      "informative_lag_median_s": 27.75,
+      "informative_flow_median_m3s": 4.977577922077923
+    }
+  },
+  "flow_slopes": [
+    {
+      "scenario": "H0",
+      "gas": "CO2",
+      "n_informative_windows": 44,
+      "n_heats": 9,
+      "within_heat_slope_s_per_m3s": -3.7365357498280196,
+      "cluster_boot_ci_low": -7.248966741316408,
+      "cluster_boot_median": -3.619934583011381,
+      "cluster_boot_ci_high": -1.2879313679496858,
+      "bootstrap_share_beta_negative": 0.997,
+      "loo_negative_share": 1.0,
+      "median_per_heat_spearman": -0.36071428571428577,
+      "heats_with_negative_rho": 5,
+      "heats_with_positive_rho": 2
+    },
+    {
+      "scenario": "H0",
+      "gas": "CO",
+      "n_informative_windows": 37,
+      "n_heats": 9,
+      "within_heat_slope_s_per_m3s": -5.575406001378904,
+      "cluster_boot_ci_low": -11.256467541991645,
+      "cluster_boot_median": -5.819987447384141,
+      "cluster_boot_ci_high": -2.546527034683705,
+      "bootstrap_share_beta_negative": 1.0,
+      "loo_negative_share": 1.0,
+      "median_per_heat_spearman": -0.48571428571428577,
+      "heats_with_negative_rho": 7,
+      "heats_with_positive_rho": 0
+    },
+    {
+      "scenario": "H1",
+      "gas": "CO2",
+      "n_informative_windows": 52,
+      "n_heats": 10,
+      "within_heat_slope_s_per_m3s": -3.4108551308069273,
+      "cluster_boot_ci_low": -6.014678521981117,
+      "cluster_boot_median": -3.405676107054422,
+      "cluster_boot_ci_high": -1.5027376526760419,
+      "bootstrap_share_beta_negative": 1.0,
+      "loo_negative_share": 1.0,
+      "median_per_heat_spearman": -0.3214285714285715,
+      "heats_with_negative_rho": 5,
+      "heats_with_positive_rho": 3
+    },
+    {
+      "scenario": "H1",
+      "gas": "CO",
+      "n_informative_windows": 47,
+      "n_heats": 10,
+      "within_heat_slope_s_per_m3s": -4.17996506069429,
+      "cluster_boot_ci_low": -9.03299520581585,
+      "cluster_boot_median": -4.25163002078589,
+      "cluster_boot_ci_high": -1.8783557196986325,
+      "bootstrap_share_beta_negative": 1.0,
+      "loo_negative_share": 1.0,
+      "median_per_heat_spearman": -0.44285714285714284,
+      "heats_with_negative_rho": 8,
+      "heats_with_positive_rho": 0
+    }
+  ],
+  "loho_model_mae": [
+    {
+      "scenario": "H0",
+      "gas": "CO",
+      "model": "fixed_median",
+      "test_MAE_s": 11.582407407407407
+    },
+    {
+      "scenario": "H0",
+      "gas": "CO",
+      "model": "free_linear",
+      "test_MAE_s": 10.8139953518173
+    },
+    {
+      "scenario": "H0",
+      "gas": "CO",
+      "model": "nonincreasing_isotonic",
+      "test_MAE_s": 10.544030991020477
+    },
+    {
+      "scenario": "H0",
+      "gas": "CO2",
+      "model": "fixed_median",
+      "test_MAE_s": 8.24371693121693
+    },
+    {
+      "scenario": "H0",
+      "gas": "CO2",
+      "model": "free_linear",
+      "test_MAE_s": 8.91127223568915
+    },
+    {
+      "scenario": "H0",
+      "gas": "CO2",
+      "model": "nonincreasing_isotonic",
+      "test_MAE_s": 8.236842370679613
+    },
+    {
+      "scenario": "H1",
+      "gas": "CO",
+      "model": "fixed_median",
+      "test_MAE_s": 11.784166666666668
+    },
+    {
+      "scenario": "H1",
+      "gas": "CO",
+      "model": "free_linear",
+      "test_MAE_s": 11.28667434718982
+    },
+    {
+      "scenario": "H1",
+      "gas": "CO",
+      "model": "nonincreasing_isotonic",
+      "test_MAE_s": 11.704608221173865
+    },
+    {
+      "scenario": "H1",
+      "gas": "CO2",
+      "model": "fixed_median",
+      "test_MAE_s": 8.92797619047619
+    },
+    {
+      "scenario": "H1",
+      "gas": "CO2",
+      "model": "free_linear",
+      "test_MAE_s": 9.732778571090133
+    },
+    {
+      "scenario": "H1",
+      "gas": "CO2",
+      "model": "nonincreasing_isotonic",
+      "test_MAE_s": 9.731658005543759
+    }
+  ],
+  "spectral_H0": {
+    "CO2": {
+      "median_peak_abs_r": 0.08687624666306365,
+      "median_lag_s": 22.5,
+      "boundary_peaks": 5,
+      "n": 30
+    },
+    "CO": {
+      "median_peak_abs_r": 0.09438151182956328,
+      "median_lag_s": 34.0,
+      "boundary_peaks": 2,
+      "n": 30
+    }
+  }
+}

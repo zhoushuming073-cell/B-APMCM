@@ -1,0 +1,4 @@
+frozen_source: archive/superseded_runs/专题实验/Q2_Aligned_Comparison/Q2_Aligned_Comparison
+curve_input: data/processed/process_curves
+rerun_output: results/q2/aligned_comparison/rerun
+scripts: [reproduce.py, sensitivity.py]

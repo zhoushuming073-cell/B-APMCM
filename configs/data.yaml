@@ -1,0 +1,9 @@
+archive: data/raw/official/Data.zip
+archive_sha256: cb662ce5ea17c247d0733ec8a4245fec37abf82d823a0ddc08597b300d95a727
+workbooks: data/raw/official/workbooks
+spectral_cache: data/interim/extracted/spectra
+process_input: data/interim/extracted/process.csv
+problem_statement: docs/competition/problem_statement/2026 APMCM Problem B.pdf
+sample_interval_s: 0.5
+expected_heats: 10
+expected_records: 13589

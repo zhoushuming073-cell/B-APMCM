@@ -1,0 +1,5 @@
+scenario,gas,windows,threshold_informative,BH_supported,heats,median_peak_abs_r,median_lag
+H0,CO,71,35,16,10,0.265648613153519,16.0
+H0,CO2,71,34,0,10,0.25899670387907237,17.0
+H1,CO,75,37,0,10,0.265648613153519,16.5
+H1,CO2,75,39,0,10,0.2694330271075108,16.5

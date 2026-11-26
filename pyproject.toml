@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apmcm-b"
+version = "0.1.0"
+description = "Reproducible experiments for APMCM Problem B"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "numpy>=2.2,<3",
+  "pandas>=2.2,<3",
+  "scipy>=1.15,<2",
+  "matplotlib>=3.10,<3.11",
+  "scikit-learn>=1.7,<2",
+  "statsmodels>=0.14.5,<0.15",
+  "python-calamine>=0.4,<1",
+  "PyMuPDF>=1.26,<2",
+  "PyYAML>=6,<7",
+  "threadpoolctl>=3.6,<4",
+  "pyxlsb>=1.0.10,<2",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.4,<9"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

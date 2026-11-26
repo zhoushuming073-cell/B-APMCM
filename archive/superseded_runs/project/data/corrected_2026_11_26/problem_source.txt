@@ -1,0 +1,186 @@
+2026 Asia and Pacific Mathematical Contest in Modeling
+Problem B
+Dual-modal Temporal Information Fusion Modeling for Converter
+Steelmaking Process
+Converter steelmaking is a typical production method in the long‑process steel
+industry. It is one of the main ways to make high‑quality steel around the world. This
+method has high productivity, low energy use and low cost. It greatly helps the steel
+industry save energy, reduce emissions and cut production costs.
+The oxygen lance plays an important role in converter steelmaking. It blows
+high‑pressure and high‑purity oxygen into the liquid steel bath with supersonic gas
+jets. Oxygen reacts with impurities in molten iron, such as carbon, silicon, manganese
+and phosphorus. These chemical reactions remove carbon, phosphorus and sulfur. In
+this way, the equipment adjusts molten‑steel components to get qualified steel
+products. It is one of the most useful pieces of equipment for production control in
+converter smelting. There is a time delay. Flue gas generated inside the converter must
+travel to sampling probes and analytical devices before data can be collected. This
+sampling‑transport delay becomes obvious when gas passes through long pipelines.
+Flue‑gas analysis works for many kinds of converters and costs little for equipment
+maintenance. However, its results are easily affected by calculation mistakes for the
+initial carbon content. Delayed flue‑gas data will make the control accuracy poor.
+The converter mouth is the only place we can observe during steelmaking. Its
+condition directly shows changes of slag inside the converter. It also strongly affects
+production safety and the final quality of molten steel. In actual production, a
+USB4000 spectrometer collects large amounts of flame spectral data at the converter
+mouth. Data are recorded for more than one thousand smelting heats. At the same
+time, a Raman flue‑gas analyzer records CO₂ and CO concentration data at the
+-1-
+
+flue‑gas bend. Both devices share the same sampling frequency, as shown in Fig. 1.
+The spectral sampling time step is 0.5 s. The flame radiation intensity is measured at
+2047 wavelength points from 340.535 nm to 1027.678 nm. For each heat, the
+full‑process flame spectral data form an intensity matrix of about 1400 × 2047. The
+flue‑gas sampling time step is also 0.5 s. For each heat, the full‑process flue‑gas data
+form a 1400 × 2 matrix, storing CO₂ and CO concentrations.
+Figure 1.
+Layout of dual-modal information detection equipment for converter steelmaking.
+Flame visual signals from the converter mouth reflect real‑time chemical and
+physical reactions inside the molten bath. On the other hand, data from the flue‑gas
+analyzer are collected after gas flows from converter mouth to sensors. These flue‑gas
+data show bath reactions with a time delay. The two kinds of data complement each
+other in the time domain: one is real‑time, the other is delayed. To build an intelligent
+end‑point control model using both flame and flue‑gas information, we need to make
+full use of this complementary feature. We should build a dual‑modal dataset with
+time‑alignment functions. Through data fusion modeling, we can predict delayed
+flue‑gas information in real time. This can reduce how often sampling probes work in
+the flue‑gas system and extend the service life of expensive devices. It provides basic
+mathematical support for intelligent steelmaking upgrades.
+In this problem, we provide flame‑spectrum and flue‑gas full‑process data from
+10 heats from a real steel plant. The format of sample data is shown in Table 1.
+Neighboring time points are 0.5 s apart. Complete datasets are given in Attachment 1
+-2-
+
+to Attachment 10.
+Table 1.
+Data format for Attachment 1‑Attachment 10.
+Sequ
+ence
+Light intensity (W/cm²) at wavelength (nm)
+Cumulati
+ve oxygen
+consumpti
+on
+Flue‑gas information
+340.535
+340.912
+…
+1027.678
+1027.963
+CO₂
+concentr
+ation
+CO
+concentr
+ation
+1
+436
+436
+…
+547
+569
+2.17
+0.07
+0
+2
+441
+441
+…
+565
+615
+2.17
+0.07
+0
+¦
+¦
+¦
+…
+¦
+¦
+¦
+¦
+¦
+500
+438
+438
+…
+1869
+1907
+998.97
+18.71
+31.96
+501
+447
+447
+…
+1643
+1799
+1003.76
+18.71
+31.96
+¦
+¦
+¦
+…
+¦
+¦
+¦
+¦
+¦
+1300
+405
+405
+…
+1797
+1928
+2930.27
+12.64
+42.14
+¦
+¦
+¦
+…
+¦
+¦
+¦
+¦
+¦
+The dataset includes full‑process flame‑spectrum data and flue‑gas data for one
+converter heat. Concentration values mean instantaneous volume flow rates of CO₂
+and CO (unit: m³/s). It also records total oxygen volume blown into the converter
+through the oxygen lance (unit: m³).
+Based on the problem background and given data, please build mathematical
+models to solve the following three problems.
+The spectral data in Attachment 1‑10 are discrete values ordered in time and
+wavelength. There are outlier points in these data. Please remove outliers and perform
+continuous reconstruction for discrete data. Draw continuous 3D spectral figures for
+all ten heats.
+Cumulative‑oxygen‑consumption data and flue‑gas data from Attachment 1‑10
+are discrete time‑series data with outliers. Use mathematical methods to remove
+outliers and reconstruct continuous signals. Plot continuous curves for oxygen‑lance
+flow rate, cumulative oxygen consumption, CO₂ concentration, CO concentration,
+-3-
+
+total CO₂ emission and total CO emission against time. Study how cumulative oxygen
+consumption relates to CO₂ concentration, CO concentration, total CO₂ emission and
+total CO emission. Requirements: Flue‑gas signals lag behind changes of cumulative
+oxygen consumption and lance flow rate. Higher lance flow rates correspond to
+smaller time delays for flue‑gas signals. Calculate the time delay of flue‑gas signals
+under different oxygen‑lance flow rates.
+Cumulative
+oxygen‑consumption
+data
+and
+spectral
+data
+show
+real‑time
+information for physical‑chemical reactions inside the converter bath. Flue‑gas data
+give delayed descriptions of these reactions. Using the continuous‑signal models and
+time‑delay results obtained from Question (1) and Question (2), study the
+complementary real‑time / delayed relationship between spectral data and flue‑gas
+data along the time axis. Use converter‑mouth flame spectral data to predict flue‑gas
+information in real time. Test your prediction model using all ten attachment datasets.
+Important note: Models trained from different attachment datasets are different. These
+models should be combined either as a whole or by groups. The combined model
+should have good generalizability and work well on all ten datasets for validation.
+-4-

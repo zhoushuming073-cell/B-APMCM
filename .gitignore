@@ -8,3 +8,8 @@ Thumbs.db
 *.log
 *.toc
 *.synctex.gz
+
+.venv/
+*.egg-info/
+/results/**/rerun/
+/results/rebuilt_figures/

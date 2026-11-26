@@ -1,0 +1,10 @@
+frozen_source: archive/superseded_runs/专题实验/Q2_Delay_Identification_Experiment/code
+curve_input: data/processed/process_curves
+spectra_input: data/processed/spectra/harmonized_spectra.npz
+rerun_output: results/q2/delay_identification/rerun
+scripts:
+  - run_q2_delay_experiment.py
+  - postprocess_q2_delay.py
+  - run_q2_time_adjusted.py
+  - postprocess_q2_time_adjusted.py
+  - run_q2_window_robustness.py
