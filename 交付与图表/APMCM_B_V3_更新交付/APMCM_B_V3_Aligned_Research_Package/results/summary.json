@@ -1,0 +1,23 @@
+{
+  "target": "6C02057",
+  "n_heats": 10,
+  "total_rows": 13589,
+  "all_sequences_contiguous": true,
+  "target_rows": 775,
+  "target_start_m3": 3.03,
+  "target_end_m3": 3539.63,
+  "target_net_m3": 3536.6,
+  "target_duration_H0_s": 387.0,
+  "target_duration_H1_s": 774,
+  "target_mean_flow_H0_m3_s": 9.138501291989664,
+  "target_mean_flow_H1_m3_s": 4.569250645994832,
+  "target_positive_increment_median": 4.7400000000002365,
+  "target_positive_increment_mean": 6.647744360902256,
+  "target_update_gap_median_rows": 1.0,
+  "other_official_mean_flow_range": [
+    4.589079837618403,
+    5.067267175572519
+  ],
+  "absolute_sample_interval_identifiable_from_rows_alone": false,
+  "conclusion": "Retain H0 as official primary specification and H1 as sensitivity scenario; current attachment does not identify the fifth heat absolute clock."
+}

@@ -1,0 +1,3 @@
+gas,best_lag_rows,corr,H0_lag_s,H1_lag_s,interpretation
+CO2,8,-0.22847340389091883,4.0,8,same row-index lag; physical seconds double by relabelling only
+CO,7,-0.22231020128216164,3.5,7,same row-index lag; physical seconds double by relabelling only

@@ -1,0 +1,3 @@
+Data.zip SHA-256: cb662ce5ea17c247d0733ec8a4245fec37abf82d823a0ddc08597b300d95a727
+Raw XLSB count: 10
+All 10 XLSB numeric arrays independently imported and compared elementwise with cached arrays: exact match, max absolute difference 0.

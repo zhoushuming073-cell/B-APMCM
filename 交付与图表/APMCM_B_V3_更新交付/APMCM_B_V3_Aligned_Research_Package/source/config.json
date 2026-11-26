@@ -1,0 +1,38 @@
+{
+  "target_heat": "6C02057",
+  "hypotheses": {
+    "H0_official": {"sample_interval_seconds": 0.5, "status": "official_primary"},
+    "H1_alternative": {"sample_interval_seconds": 1.0, "status": "sensitivity_only"}
+  },
+  "counter_audit": {
+    "update_event_definition": "row i is an update event when cumulative oxygen O[i] - O[i-1] > 0",
+    "update_gap_unit": "rows; not a sample interval",
+    "near_quantum_reference_m3": "median of all positive one-row oxygen increments",
+    "near_quantum_tolerance_m3": 0.1
+  },
+  "oxygen_flow": {
+    "centered_slope_windows_seconds": [5, 10],
+    "integral_spline_degree": 3,
+    "integral_spline_knot_spacing_seconds": [5, 10, 20],
+    "integral_spline_penalties": [0.1, 1, 10, 100],
+    "nonnegative_flow_constraint": true,
+    "robust_reweighting_iterations": 3
+  },
+  "delay_analysis": {
+    "smoothing_window_seconds": 5,
+    "maximum_lag_seconds": 40,
+    "circular_shift_permutations": 99,
+    "positive_lag_means": "gas response follows oxygen-flow change"
+  },
+  "distributed_lag_model": {
+    "outer_validation": "leave-one-heat-out",
+    "inner_validation": "leave-one-heat-out within outer training heats",
+    "alpha_grid": [0.1, 10],
+    "native_row_test_mask": "same raw rows under H0 and H1; discard first 83 rows for lag warm-up",
+    "gas_persistence_lags_seconds": [1, 5, 10],
+    "oxygen_flow_lags_seconds": [0, 1, 2, 5, 10, 20, 30, 40],
+    "flow_history_windows_seconds": [[0, 5], [5, 10], [10, 20], [20, 40]],
+    "heat_weighting": "equal total training weight per heat",
+    "zero_gas_heat_excluded_from_lag_model": "6B03205"
+  }
+}

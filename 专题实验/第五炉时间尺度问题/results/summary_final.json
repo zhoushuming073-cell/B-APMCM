@@ -1,0 +1,178 @@
+{
+  "n_heats": 10,
+  "total_rows": 13589,
+  "all_sequences_contiguous": true,
+  "all_raw_xlsb_numeric_arrays_exactly_match_independent_cache": true,
+  "target_heat": "6C02057",
+  "target_rows": 775,
+  "target_start_m3": 3.03,
+  "target_end_m3": 3539.63,
+  "target_net_m3": 3536.6,
+  "H0_duration_s": 387.0,
+  "H1_duration_s": 774,
+  "H0_mean_flow_m3_s": 9.138501291989664,
+  "H1_mean_flow_m3_s": 4.569250645994832,
+  "positive_increment_median_m3": 4.7400000000002365,
+  "positive_increment_mean_m3": 6.647744360902256,
+  "positive_increment_p90_m3": 9.588999999999942,
+  "update_gap_median_rows": 1.0,
+  "share_update_gap_1_row": 0.6052631578947368,
+  "share_positive_updates_ge_2_reference_quanta": 0.3026315789473684,
+  "other_heats_mean_flow_range_m3_s": [
+    4.589079837618403,
+    5.067267175572519
+  ],
+  "other_heats_positive_increment_median_range_m3": [
+    4.720000000000027,
+    4.75
+  ],
+  "gas_integrals_target": [
+    {
+      "heat": "6C02057",
+      "clock": "H0",
+      "gas": "CO2_plus_CO",
+      "integral_m3": 15872.475,
+      "carbon_o2_equivalent_m3": 10357.7725,
+      "oxygen_to_carbon_o2_equiv_ratio": 0.341444070141529
+    },
+    {
+      "heat": "6C02057",
+      "clock": "H1",
+      "gas": "CO2_plus_CO",
+      "integral_m3": 31744.95,
+      "carbon_o2_equivalent_m3": 20715.545,
+      "oxygen_to_carbon_o2_equiv_ratio": 0.1707220350707645
+    }
+  ],
+  "distributed_lag_macro": [
+    {
+      "scenario": "H0",
+      "gas": "CO",
+      "model": "M0_persistence",
+      "MAE_macro": 0.5232543261802528,
+      "RMSE_macro": 0.9137438197926122,
+      "n_heats": 9
+    },
+    {
+      "scenario": "H0",
+      "gas": "CO",
+      "model": "M1_current_flow",
+      "MAE_macro": 0.5225813436568442,
+      "RMSE_macro": 0.9138972222511792,
+      "n_heats": 9
+    },
+    {
+      "scenario": "H0",
+      "gas": "CO",
+      "model": "M2_distributed_lag",
+      "MAE_macro": 0.5367025673353039,
+      "RMSE_macro": 0.9240954234802828,
+      "n_heats": 9
+    },
+    {
+      "scenario": "H0",
+      "gas": "CO",
+      "model": "M3_history_windows",
+      "MAE_macro": 0.5391141873425705,
+      "RMSE_macro": 0.9255792538809628,
+      "n_heats": 9
+    },
+    {
+      "scenario": "H0",
+      "gas": "CO2",
+      "model": "M0_persistence",
+      "MAE_macro": 0.1516550957551315,
+      "RMSE_macro": 0.3029442536510862,
+      "n_heats": 9
+    },
+    {
+      "scenario": "H0",
+      "gas": "CO2",
+      "model": "M1_current_flow",
+      "MAE_macro": 0.1615166217114931,
+      "RMSE_macro": 0.3147951879330415,
+      "n_heats": 9
+    },
+    {
+      "scenario": "H0",
+      "gas": "CO2",
+      "model": "M2_distributed_lag",
+      "MAE_macro": 0.1754206178994845,
+      "RMSE_macro": 0.3229873918100256,
+      "n_heats": 9
+    },
+    {
+      "scenario": "H0",
+      "gas": "CO2",
+      "model": "M3_history_windows",
+      "MAE_macro": 0.172174049250554,
+      "RMSE_macro": 0.3185211954971549,
+      "n_heats": 9
+    },
+    {
+      "scenario": "H1",
+      "gas": "CO",
+      "model": "M0_persistence",
+      "MAE_macro": 0.4996233481071762,
+      "RMSE_macro": 0.8748541814786498,
+      "n_heats": 9
+    },
+    {
+      "scenario": "H1",
+      "gas": "CO",
+      "model": "M1_current_flow",
+      "MAE_macro": 0.5008381170602214,
+      "RMSE_macro": 0.8783605744939484,
+      "n_heats": 9
+    },
+    {
+      "scenario": "H1",
+      "gas": "CO",
+      "model": "M2_distributed_lag",
+      "MAE_macro": 0.505190220187515,
+      "RMSE_macro": 0.8795012663065113,
+      "n_heats": 9
+    },
+    {
+      "scenario": "H1",
+      "gas": "CO",
+      "model": "M3_history_windows",
+      "MAE_macro": 0.5016310682993121,
+      "RMSE_macro": 0.8767912232238123,
+      "n_heats": 9
+    },
+    {
+      "scenario": "H1",
+      "gas": "CO2",
+      "model": "M0_persistence",
+      "MAE_macro": 0.1477335838485578,
+      "RMSE_macro": 0.2899074340308132,
+      "n_heats": 9
+    },
+    {
+      "scenario": "H1",
+      "gas": "CO2",
+      "model": "M1_current_flow",
+      "MAE_macro": 0.1497039489044727,
+      "RMSE_macro": 0.2933749506913685,
+      "n_heats": 9
+    },
+    {
+      "scenario": "H1",
+      "gas": "CO2",
+      "model": "M2_distributed_lag",
+      "MAE_macro": 0.1554912896660168,
+      "RMSE_macro": 0.2934789660004148,
+      "n_heats": 9
+    },
+    {
+      "scenario": "H1",
+      "gas": "CO2",
+      "model": "M3_history_windows",
+      "MAE_macro": 0.1527173082499231,
+      "RMSE_macro": 0.2916784799811995,
+      "n_heats": 9
+    }
+  ],
+  "decision": "Unidentifiable from current attachments. Keep H0 as official primary specification and H1 as sensitivity scenario; do not silently rescale the fifth heat."
+}
