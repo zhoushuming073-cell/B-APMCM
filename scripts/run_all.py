@@ -6,7 +6,7 @@ import sys
 
 from apmcm.common.paths import ROOT
 
-EXPERIMENTS = ('q1_spectral_reconstruction', 'q2_aligned_comparison', 'q2_delay_identification', 'q2_timebase_audit', 'q2_optimized')
+EXPERIMENTS = ('q1_spectral_reconstruction', 'q2_aligned_comparison', 'q2_delay_identification', 'q2_timebase_audit', 'q2_optimized', 'q3_spectral_gas_prediction')
 
 
 def main():

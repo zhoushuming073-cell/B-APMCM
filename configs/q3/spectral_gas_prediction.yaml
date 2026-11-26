@@ -1,0 +1,3 @@
+# Reproducible Q3 run. Model constants are versioned in src/apmcm/q3/model.py.
+archive: data/raw/official/Data.zip
+rerun_output: results/q3/spectral_gas_prediction/rerun

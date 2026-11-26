@@ -16,7 +16,9 @@
 3. 本项目指引；
 4. 较早的设计报告、对话稿和未复核实验记录。
 
-**当前正式状态：第三问的实时光谱软测量尚未完成。** 仓库中已有的五秒辅助预测使用了发布时已经观测到的历史烟气数据，不使用光谱，不能作为第三问光谱预测成绩。正式第三问必须在更正版十炉数据上重新执行，并按完整炉次进行外层泛化检验。
+**本指引整理时的状态：第三问的实时光谱软测量尚未完成。**
+
+2026-11-27 更新：十炉正式数据的探索性嵌套留炉实验已执行，结果见[第三问模型与实测报告](Q3_SPECTRAL_GAS_MODEL_REPORT.md)。本指引保留为历史研究执行计划；当前证据与结论以该报告为准。 仓库中已有的五秒辅助预测使用了发布时已经观测到的历史烟气数据，不使用光谱，不能作为第三问光谱预测成绩。正式第三问必须在更正版十炉数据上重新执行，并按完整炉次进行外层泛化检验。
 
 ## 1. 研究目标与核心问题
 
@@ -317,19 +319,7 @@ CO₂、CO 分开报告，单位统一为 m³/s。至少包括：
 
 ## 7. 结果交付与复现要求
 
-建议将第三问专项实验放在：
-
-~~~text
-专题实验/Q3_实时光谱烟气预测/
-├── README.md
-├── config/
-├── code/
-├── results/
-│   ├── predictions/
-│   ├── tables/
-│   └── figures/
-└── logs/
-~~~
+按仓库重整后的目录规范，第三问代码位于 `src/apmcm/q3/`，配置位于 `configs/q3/`，运行入口位于 `experiments/q3_spectral_gas_prediction/`，冻结与复算结果位于 `results/q3/spectral_gas_prediction/`，研究报告位于 `reports/working/`。不再新建旧版“专题实验”目录。
 
 每轮实验至少保存：
 
@@ -361,7 +351,7 @@ CO₂、CO 分开报告，单位统一为 m³/s。至少包括：
 
 | 方向 | 对话稿列出的文献线索 | 需要支持的建模环节 |
 |---|---|---|
-| 多专家模型 | Jordan & Jacobs, *Adaptive Mixtures of Local Experts* (1991)；*Hierarchical Mixtures of Experts and the EM Algorithm* (1994) | 专家分工、门控网络和软路由 |
+| 多专家模型 | Jacobs et al., *Adaptive Mixtures of Local Experts* (1991)；*Hierarchical Mixtures of Experts and the EM Algorithm* (1994) | 专家分工、门控网络和软路由 |
 | 多任务/层次模型 | Evgeniou et al., *Learning Multiple Tasks with Kernel Methods* (2005)；Afshartous & de Leeuw, *Prediction in Multilevel Models* (2005) | 总体规律与炉次特异参数之间的部分汇聚 |
 | 光谱校准迁移 | *A Review of Calibration Transfer Practices and Instrument Differences in Spectroscopy* (2018)；*Stacked PLS for Calibration Transfer without Standards* (2011) | 仪器差异、偏差修正和斜率修正 |
 | 域适应化学计量学 | *Domain-Invariant Partial-Least-Squares Regression* (2018)；*Domain Adaptive Partial Least Squares Regression* (2020) | 不同标定域/分布之间的迁移 |
@@ -371,7 +361,7 @@ CO₂、CO 分开报告，单位统一为 m³/s。至少包括：
 
 以上条目是对话稿提供的文献线索。正式引用前，必须再次核对作者、题名、期刊、卷期页码、DOI 和原文结论；不能仅凭题名或摘要推断论文已经证明本项目的具体方法有效。
 
-仓库当前第三版报告中的“文献核查与创新边界”是当前正式文献入口，应与本表交叉核对：  
+既有设计报告中的文献讨论和当前第三版数学模型应与本表交叉核对：  
 [第三版数学模型与实验证据](2026%20APMCM%20B题——第三版数学模型与实验证据.md)
 
 不得把 PLS、Stacking、MoE、层次收缩或按炉留出本身宣称为原创。项目可能形成的有效贡献，需要来自可验证的组合机制：因果可用的实时光谱特征、训练折内确定的光谱—烟气时间对应、跨炉状态条件映射，以及在统一目标下经嵌套留炉验证的泛化收益。
