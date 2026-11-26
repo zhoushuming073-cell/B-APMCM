@@ -4,7 +4,7 @@
 
 | 目录 | 用途与入口 |
 |---|---|
-| [2026 APMCM Problems](2026%20APMCM%20Problems/) | 赛事题面、论文规范与[更正版 Data.zip](2026%20APMCM%20Problem%20B/Data/Data.zip)。 |
+| [2026 APMCM Problems](2026%20APMCM%20Problems/) | 赛事题面、论文规范与[更正版 Data.zip](2026%20APMCM%20Problems/2026%20APMCM%20Problem%20B/Data/Data.zip)。 |
 | [project](project/) | 工作代码、测试、分版本数据、复核结果与持续更新的 Markdown 报告。[第三问项目指引](project/THIRD_QUESTION_PROJECT_GUIDE.md) · [当前数据审计](project/data/corrected_2026_11_26/audit.csv) |
 | [APMCM_Full_Experiments](APMCM_Full_Experiments/APMCM_Full_Experiments/) | 全量实验原包，主工程从此读取十炉数据节点。[光谱曲面 PDF](APMCM_Full_Experiments/APMCM_Full_Experiments/figures/all_heats_spectral_surface.pdf) · [过程曲线 PDF](APMCM_Full_Experiments/APMCM_Full_Experiments/figures/all_heats_process_curves.pdf) |
 | [专题实验](专题实验/) | 按研究问题保存输入、脚本和结果。第五炉时基、累计耗氧对照、时滞识别三个实验各自保留完整目录。 |
