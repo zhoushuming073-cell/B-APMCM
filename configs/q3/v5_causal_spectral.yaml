@@ -1,0 +1,7 @@
+scenario: H0
+sample_interval_s: 0.5
+detector_start_s: 120
+outer_folds: 10
+inner_folds: 9
+lag_schemes: [spectral_lag, q2_fixed]
+feedback_interval_s: 60
