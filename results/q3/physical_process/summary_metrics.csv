@@ -1,0 +1,26 @@
+group,metric,value,notes
+gas_onset,CO2_before_CO_heats,10/10,CO2 threshold crossing precedes CO in every heat
+gas_onset,median_lead_seconds,77.5,range 24.0 to 172.5 s
+gas_onset,exact_sign_test_p,0.0020,two-sided
+gas_onset,median_lead_5pct_threshold,58.0,all heats retain CO2-first ordering
+gas_onset,median_lead_20pct_threshold,128.75,all heats retain CO2-first ordering
+gas_onset,median_lead_30pct_threshold,134.5,all heats retain CO2-first ordering
+phase_consistency,stage2_CO2_greater_than_stage1,10/10,directional consistency
+phase_consistency,stage3_CO2_less_than_stage2,10/10,directional consistency
+phase_consistency,stage3_CO_greater_than_stage2,9/10,one exception is Heat 6C02059
+stage_classifier,32_band_spectrum_only_balanced_accuracy,0.513718,leave-one-heat-out
+stage_classifier,full_2047_spectrum_only_balanced_accuracy,0.525969,diagnostic with per-heat unsupervised normalization and every-fifth-row sampling
+stage_classifier,time_progress_only_balanced_accuracy,0.812991,leave-one-heat-out baseline
+stage_classifier,spectrum_plus_time_balanced_accuracy,0.742882,leave-one-heat-out
+CO_CO2,raw_log_zero_lag_corr_median,0.666,across heats
+CO_CO2,detrended_zero_lag_corr_median,-0.194,negative in all ten heats
+CO_CO2,stage3_detrended_corr_median,-0.579,across heats
+CO_CO2,cross_correlation_peak_lag_median_seconds,0.0,range -19.0 to +25.5 s
+conditional_response,CO_cumulative_oxygen_early_late_abs_corr_difference,-0.028,95% bootstrap CI -0.043 to -0.015; Holm p=0.047
+conditional_response,CO_PC1_alternative_Holm_p,0.172,not significant under alternative spectral feature
+heat5_timebase,H0_duration_seconds,387,official 0.5 s per row
+heat5_timebase,H1_duration_seconds,774,sensitivity scenario only
+heat5_timebase,H0_mean_estimated_flow_m3s,9.14,estimated from cumulative oxygen differences
+heat5_timebase,H1_mean_estimated_flow_m3s,4.57,sensitivity scenario only
+terminal_sensitivity,heat5_diff_corr_before_after_trim,0.958 to 0.295,last 30 s flagged only for sensitivity
+terminal_sensitivity,heat7_diff_corr_before_after_trim,0.976 to 0.155,last 60 s flagged only for sensitivity
