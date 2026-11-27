@@ -48,3 +48,5 @@ python scripts/build_figures.py
 - 第二问 2.2 第五炉计量口径与累计排放关系（H0/H1 敏感性实验）：[研究报告](reports/working/Q2_2_EMISSION_TIMEBASE_REPORT.md) · [复算入口](experiments/q2_emission_timebase/) · [冻结结果](results/q2/emission_timebase/)
 
 - 第二问 2.2 瞬时流量 V1–V3： [异质性研究报告](reports/working/Q2_2_INSTANTANEOUS_FLOW_REPORT.md) · [复算入口](experiments/q2_instantaneous_flow/) · [冻结成绩](results/q2/instantaneous_flow/)。保留此前累计排放时基敏感性研究。
+
+- 第二问 2.3 预白化与多指标时滞识别（探索性）：[研究报告](reports/working/Q2_3_PREWHITENED_DELAY_REPORT.md) · [Python复算入口](experiments/q2_prewhitened_delay/run.py) · [实际实验冻结汇总](results/q2/prewhitened_delay/tables/frozen_summary.csv)。Python移植尚未独立复跑，不作为新增已验证结论。
