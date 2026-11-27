@@ -44,3 +44,5 @@ python scripts/build_figures.py
 - 第三问 B 炉专项 V1–V3（探索性）：[模型报告](reports/working/Q3_B_HOLDOUT_MODEL_REPORT.md) · [实验入口](experiments/q3_b_holdout/) · [冻结评分](results/q3/b_holdout/)
 
 - 第三问 V5 实时光谱与低频烟气反馈（探索性）：[复现入口](experiments/q3_v5_causal_spectral/) · [冻结评分](results/q3/v5_causal_spectral/) · [研究报告](reports/working/Q3_V5_CAUSAL_SPECTRAL_REPORT.md)
+
+- 第二问 2.2 第五炉计量口径与累计排放关系（H0/H1 敏感性实验）：[研究报告](reports/working/Q2_2_EMISSION_TIMEBASE_REPORT.md) · [复算入口](experiments/q2_emission_timebase/) · [冻结结果](results/q2/emission_timebase/)
