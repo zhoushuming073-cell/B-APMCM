@@ -5,6 +5,8 @@ from scipy.ndimage import uniform_filter1d as uf, maximum_filter, median_filter
 
 from apmcm.common.paths import DT, PROC, SOURCE_SHA256
 
+SATURATION_CEILING = 65535.0
+
 def fit_scales(train):
  sc={}
  for dt in [1,3,5]:
@@ -61,7 +63,7 @@ def repair_sat(a,sat):
 
 def validate_scenario_variants(raw, anomaly_only, template_scenario, hard_clip_lower_bound,
                                screen, approved, saturated, saturation_repaired,
-                               ceiling=65535.0):
+                               ceiling=SATURATION_CEILING):
     """Check that every changed value is supported by its provenance mask."""
     if (approved & ~screen).any() or (screen & saturated).any():
         raise ValueError("Invalid screening/approval mask relationship")
@@ -91,7 +93,7 @@ def reconstruct(out, heats=()):
         with np.load(files[heat]) as source:
             x = source["x"].astype(np.float32)
             wl, seq = source["wl"], source["sequence"]
-        saturated = x >= 65535
+        saturated = x >= SATURATION_CEILING
         train = x[:int(.55 * len(x))]
         scales = fit_scales(train)
         calibration = score(train, scales)
@@ -112,8 +114,8 @@ def reconstruct(out, heats=()):
         saturation_template_values = np.full(x.shape, np.nan, dtype=np.float32)
         saturation_template_values[upper_estimates] = scenario[upper_estimates]
         hard_clip_lower_bound = scenario.copy()
-        hard_clip_lower_bound[saturated] = np.maximum(65535.0, hard_clip_lower_bound[saturated])
-        saturation_below = saturated & upper_estimates & (saturation_template_values < 65535.0)
+        hard_clip_lower_bound[saturated] = np.maximum(SATURATION_CEILING, hard_clip_lower_bound[saturated])
+        saturation_below = saturated & upper_estimates & (saturation_template_values < SATURATION_CEILING)
         saturation_above = saturated & upper_estimates & ~saturation_below
         saturation_unresolved = saturated & ~upper_estimates
         validate_scenario_variants(x, anomaly_only, scenario, hard_clip_lower_bound,
@@ -131,7 +133,7 @@ def reconstruct(out, heats=()):
             saturation_template_below_ceiling=saturation_below,
             saturation_template_above_ceiling=saturation_above,
             saturation_unresolved=saturation_unresolved,
-            saturation_ceiling=np.float32(65535.0),
+            saturation_ceiling=np.float32(SATURATION_CEILING),
             source_sha256=np.asarray(SOURCE_SHA256),
             detector_threshold=np.float64(threshold),
         )
