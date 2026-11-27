@@ -1,0 +1,29 @@
+{
+  "target": "6C02057",
+  "target_rows": 775,
+  "target_oxygen_net_m3": 3536.6,
+  "control_mean_flows_m3_s": {
+    "6C02058": 4.9763636363636365,
+    "6C02059": 4.6349935649935645,
+    "6C02060": 4.820160349854228,
+    "6C02107": 4.670781893004115,
+    "6C02108": 4.77795890410959
+  },
+  "reference_flow_median_m3_s": 4.77795890410959,
+  "estimated_full_duration_s_if_target_flow_equals_reference_median": 740.1905439073828,
+  "estimated_full_rows_at_0p5s_if_target_flow_equals_reference_median": 1481.3810878147656,
+  "implied_retention_rate": 0.5231604523473621,
+  "counter_increment_reference_quantum_proxy_m3": 4.730000000000018,
+  "controls": [
+    "6C02058",
+    "6C02059",
+    "6C02060",
+    "6C02107",
+    "6C02108"
+  ],
+  "n_rep": 100,
+  "cross_rep": 100,
+  "shape_rep": 20,
+  "seed": 20261128,
+  "interpretation": "Exploratory mechanism comparison only; not proof of a particular acquisition failure mode."
+}

@@ -24,24 +24,28 @@ H2 is a hypothesis to test, not a preset conclusion.
 
 From the repository root:
 
-\`\`\`bash
+```bash
 python experiments/q2_missingness_mechanism/run.py \\
   --data-dir data/raw/official/workbooks \\
   --out results/q2/missingness_mechanism \\
-  --n-rep 250 --cross-rep 200 --shape-rep 30 --seed 20261128
-\`\`\`
+  --n-rep 100 --cross-rep 100 --shape-rep 20 --seed 20261128
+```
 
-For faster reruns when the six per-heat NPZ caches already exist, add \`--cache-dir PATH\`; the official XLSB files can still be supplied with \`--data-dir\` so their hashes are recorded. Requires Python 3.12+, NumPy 2.x, pandas 2.x, and pyxlsb 1.x. Raw XLSB inputs are read-only; all outputs go to a separate directory.
+Run the additional spectral–gas alignment diagnostic:
 
-## Outputs
+```bash
+python experiments/q2_missingness_mechanism/spectral_gas_alignment.py \\
+  --spectra-dir data/interim/extracted/spectra \\
+  --process-csv data/interim/extracted/process.csv \\
+  --out results/q2/missingness_mechanism/spectral_gas_alignment \\
+  --rep 25 --max-lag 60 --seed 20261128
+```
 
-- \`data_audit.csv\`: row counts, sequence continuity, missing cells, and source hashes.
-- \`target_metrics.csv\`: observed fifth-heat metrics.
-- \`simulation_metrics.csv\`: Monte Carlo metrics under each thinning mechanism.
-- \`scenario_match_by_control.csv\`, \`scenario_match_by_feature.csv\`, \`scenario_match_summary.csv\`: feature-level distances and sensor-family summaries.
-- \`spectral_shape_simulations.csv\`, \`spectral_shape_match.csv\`: full-spectrum frame-similarity results.
-- \`cross_sensor_simulations.csv\`, \`cross_sensor_summary.csv\`: global-row-loss versus sensor-specific-loss alignment checks.
-- \`summary.json\`: assumptions, estimated retention rate, and run parameters.
+For faster reruns of the main experiment when combined per-heat NPZ caches already exist, add `--cache-dir PATH`; the official XLSB files can still be supplied with `--data-dir` so their hashes are recorded. Requires Python 3.12+, NumPy 2.x, pandas 2.x, pyxlsb 1.x, and SciPy 1.12+ for the spectral–gas diagnostic. Raw inputs are read-only; all outputs go to separate directories.
+
+## Published results
+
+The compact, inspectable result set is in `results/q2/missingness_mechanism/`, including `REPORT.md`, the data audit, sensor-family match summary, full-spectrum shape comparison, and cross-sensor alignment summaries. The full Monte Carlo draws can be regenerated with the commands above and are not required to reproduce the summary tables.
 
 ## Interpretation limits
 
