@@ -4,7 +4,10 @@ from scipy.ndimage import label
 from scipy.signal import find_peaks
 from scipy.optimize import minimize
 from scipy.special import log_ndtr
-from apmcm.common.paths import PROC, RESULTS\nfrom apmcm.q1.reconstruct import SATURATION_CEILING\nR=RESULTS/'q1/rerun/saturation_study/tables'; R.mkdir(parents=True,exist_ok=True)\nfiles=sorted(str(p) for p in PROC.glob('raw_*.npz'))
+from apmcm.common.paths import PROC, RESULTS
+from apmcm.q1.reconstruct import SATURATION_CEILING
+R=RESULTS/'q1/rerun/saturation_study/tables'; R.mkdir(parents=True,exist_ok=True)
+files=sorted(str(p) for p in PROC.glob('raw_*.npz'))
 def run():
     summary=[];regions=[];simrows=[]
     for f in files:
