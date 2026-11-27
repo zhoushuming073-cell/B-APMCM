@@ -1,19 +1,31 @@
 # Q2 prewhitened delay sensitivity experiment
 
-This experiment checks whether local oxygen-flow-to-off-gas delay estimates survive detrending, AR(1) prewhitening, alternative dependence metrics, timebase sensitivity, and leave-one-heat-out evaluation.
+This exploratory experiment checks whether local oxygen-flow-to-off-gas delay estimates survive detrending, AR(1) prewhitening, alternative dependence metrics, timebase sensitivity, and leave-one-heat-out evaluation.
 
 ## Run
 
-From the repository root:
+Run from the repository root:
 
-    python experiments/q2_prewhitened_delay/run.py
+```powershell
+python experiments/q2_prewhitened_delay/run.py
+```
 
-The script reads the ten tracked files under data/processed/process_curves/ and writes four tables to results/q2/prewhitened_delay/tables/:
+The script reads the ten tracked files under `data/processed/process_curves/`. By default, it writes four tables to `results/q2/prewhitened_delay/rerun/`:
 
-- window_lags.csv: one row per heat, gas, window, timebase, and dependence metric
-- summary.csv: multiplicity-adjusted support, flow-lag slopes, heat-cluster bootstrap intervals, and LOHO scores
-- loho_scores.csv: per-held-out-heat fixed-mean versus flow-linear MAE
-- flow_bins.csv: descriptive low/middle/high flow-bin lag summaries
+- `window_lags.csv`: one row per heat, gas, window, timebase, and dependence metric
+- `summary.csv`: multiplicity-adjusted support, flow-lag slopes, heat-cluster bootstrap intervals, and LOHO scores
+- `loho_scores.csv`: per-held-out-heat fixed-mean versus flow-linear MAE
+- `flow_bins.csv`: descriptive low/middle/high flow-bin lag summaries
+
+To choose another output directory:
+
+```powershell
+python experiments/q2_prewhitened_delay/run.py --output results/q2/prewhitened_delay/rerun
+```
+
+The committed files under `results/q2/prewhitened_delay/tables/` are archived experiment artifacts. A fresh run writes to `rerun/` and does not overwrite them. The Python port has not yet been independently validated end to end, so a successful execution should not be described as an independent reproduction until its outputs have been compared with the archived tables.
+
+This experiment is intentionally not included in the default `scripts/run_all.py` batch. Add it to the batch only after independent reproduction and review.
 
 ## Protocol
 
