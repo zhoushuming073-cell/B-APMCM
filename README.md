@@ -54,6 +54,9 @@ python experiments/q2_prewhitened_delay/run.py
 | 第三问：B 炉专项 V1–V3（探索性） | [模型报告](reports/working/Q3_B_HOLDOUT_MODEL_REPORT.md) · [实验入口](experiments/q3_b_holdout/) | [冻结评分](results/q3/b_holdout/) |
 | 第三问：V5 光谱与低频烟气反馈（探索性） | [研究报告](reports/working/Q3_V5_CAUSAL_SPECTRAL_REPORT.md) · [实验入口](experiments/q3_v5_causal_spectral/) | [冻结评分](results/q3/v5_causal_spectral/) |
 
+| 第三问：曲线迁移、残差树与神经网络 | [方差报告](reports/working/第三问异质性曲线机器学习与方差.md) · [运行说明](experiments/q3_curve_transfer/README.md) | [逐炉指标](results/q3/curve_transfer/folds.csv) · [方差汇总](results/q3/curve_transfer/variance.csv) |
+| 第三问：梯度提升追加实验 | [20 个 R² 报告](reports/working/第三问梯度提升追加实验20个R2.md) · [运行说明](experiments/q3_boosted_curve/README.md) | [20 个 R²](results/q3/boosted_curve/twenty_r2.csv) · [20 张图](results/q3/boosted_curve/figures/README.md) |
+
 研究过程文档：[实验进度](reports/working/实验进度.md) · [数学模型与实验证据](reports/working/2026%20APMCM%20B题——第三版数学模型与实验证据.md) · [第三问项目指南](reports/working/THIRD_QUESTION_PROJECT_GUIDE.md) · [第三问研究记录](reports/working/第三问研究.docx)。
 
 ## 目录结构
