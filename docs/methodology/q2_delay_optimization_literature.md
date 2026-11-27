@@ -1,0 +1,21 @@
+# Q2 delay optimization: literature map
+
+This note separates three different mechanisms that are often conflated in BOF delay analysis: reaction dynamics in the bath, gas transport from the bath to the outlet, and measurement/sampling-system response.
+
+| Reference | Main contribution | Relevance and limitation for this project |
+|---|---|---|
+| Kattenbelt, C. & Roffel, B. (2008), *Metallurgical and Materials Transactions B*, 39, 764–769. [DOI](https://doi.org/10.1007/s11663-008-9184-0) | Industrial step responses from 1006 BOF batches. Oxygen-rate changes alter decarburization through FeO balance and iron-droplet generation; the response is dynamic rather than a pure transport shift. | Strong BOF process-mechanism support. The paper's ~60 s ore-dissolution delay is specifically for ore addition, not oxygen-rate transport delay. |
+| An, J. et al. (2026), *Applied Sciences*, 16(6), 3059. [DOI](https://doi.org/10.3390/app16063059) | Full-spectrum averaged cross-correlation for flame-spectrum-to-flue-gas CO alignment; 13 heats across two converters, 0.5 s sampling, 2048 spectral channels; example lag 24 s and training median 23.5 s. | Very close BOF sensing context. It studies spectrum → CO, not oxygen flow → CO/CO₂, and does not establish a flow-dependent lag law. Exact raw-data overlap with this project is unverified. |
+| Yu, X., Evans, T. & Shen, Y. (2026), *Metallurgical and Materials Transactions B*. [DOI](https://doi.org/10.1007/s11663-026-04365-w) | Non-reacting hydrodynamic BOF simulation gives approximately 2.0–2.5 s between in-furnace flow response and BOF-opening gas signal. | Physical transport-scale reference only. Model geometry, boundary conditions and non-reacting assumptions prevent direct use as an industrial total-delay calibration. |
+| Cattaldo, M., Ferrer, A. & Måge, I. (2024), *Chemometrics and Intelligent Laboratory Systems*, 246, 105082. [DOI](https://doi.org/10.1016/j.chemolab.2024.105082) | Compares 14 variable-delay methods; dynamic delays use moving windows; distance correlation, MIC and information-theoretic measures are useful for complex relationships. | Motivates Pearson/Spearman/distance-correlation sensitivity checks and explicit window-size analysis. |
+| Li, L.-J. et al. (2017), *Control Engineering Practice*, 62, 92–101. [DOI](https://doi.org/10.1016/j.conengprac.2017.03.007) | Delay identification in dynamic processes with disturbances; estimates disturbance response and uses incremental input/output sequences. | Motivates detrending and prewhitening before interpreting local cross-correlation. The present script is an adaptation, not a replication of their full algorithm. |
+| Offermans, T. et al. (2020), *Computers & Chemical Engineering*, 140, 106938. [DOI](https://doi.org/10.1016/j.compchemeng.2020.106938) | Shows that synchronization method and moving-window choice can materially affect industrial soft-sensor quality. | Supports treating window length as a model parameter and distinguishing physical transport from process-state memory. |
+| Ritschel, T. K. S. & Wyller, J. (2025), *Automatica*, 178, 112382. [DOI](https://doi.org/10.1016/j.automatica.2025.112382) | Identifies distributed delay kernels in delay-differential-equation models using mixed Erlang approximations and the linear-chain trick. | A candidate conceptual route for a low-dimensional response kernel; the original method is for DDE system identification and is not directly transferable without a new observation model. |
+
+## Model implications
+
+1. A single cross-correlation peak is an **effective alignment lag**, not automatically the pure gas-transport time.
+2. Oxygen-flow changes affect both oxygen supply and the internal reaction state; the resulting gas response can be distributed over time.
+3. A short hydrodynamic transport estimate and a longer measured signal lag are not contradictory: they refer to different links in the measurement chain.
+4. The BOF flame/off-gas literature often assumes equipment-specific delays are stable within a converter. This is a useful baseline, but it does not prove that oxygen-flow-conditioned delay is absent or present.
+5. The current ten-heat data do not independently identify bath reaction, duct transport, sampling-line and analyzer kernels. Any decomposition would require extra measurements or a tightly constrained grey-box model.
