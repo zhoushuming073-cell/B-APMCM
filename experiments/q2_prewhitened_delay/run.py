@@ -38,7 +38,7 @@ def spearman(x: np.ndarray, y: np.ndarray) -> float:
 
 
 def distance_correlation(x: np.ndarray, y: np.ndarray) -> float:
-    """Biased, double-centred distance correlation used in Cattaldo et al. (2024)."""
+    """Biased squared distance correlation from double-centred distances."""
     x = np.asarray(x, dtype=float)
     y = np.asarray(y, dtype=float)
     a = np.abs(x[:, None] - x[None, :])
@@ -137,13 +137,12 @@ def heat_weighted_fit(frame: pd.DataFrame) -> dict[str, float]:
 
 
 class LCG:
-    """Small deterministic bootstrap RNG, matching the archived JS experiment."""
+    """Use a seeded generator for independent heat-bootstrap draws."""
     def __init__(self, seed: int = 20261127):
-        self.state = seed
+        self.rng = np.random.default_rng(seed)
 
     def index(self, n: int) -> int:
-        self.state = (1664525 * self.state + 1013904223) & 0xFFFFFFFF
-        return self.state % n
+        return int(self.rng.integers(n))
 
 
 def bootstrap_slope(frame: pd.DataFrame, rng: LCG, n_boot: int = 5000) -> tuple[float, float]:
@@ -336,7 +335,7 @@ def run(output: Path) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--output", default=str(ROOT / "results" / "q2" / "prewhitened_delay" / "tables")
+        "--output", default=str(ROOT / "results" / "q2" / "prewhitened_delay" / "rerun")
     )
     args = parser.parse_args()
     run(Path(args.output).resolve())
