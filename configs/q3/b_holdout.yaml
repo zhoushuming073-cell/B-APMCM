@@ -1,0 +1,8 @@
+# B-only pilot; never use this configuration as ten-fold final evidence.
+archive: data/raw/official/Data.zip
+holdout: 6B03206
+scenario: H0
+sample_interval_s: 0.5
+warmup_s: 120
+versions: [1, 2, 3]
+rerun_output: results/q3/b_holdout/rerun

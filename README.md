@@ -40,3 +40,5 @@ python scripts/build_figures.py
 - 第二问 [优化实验报告](reports/final/q2_optimized/Q2_report.pdf) · [90 秒窗口结果](results/q2/delay_identification/tables/final_delay_evidence_summary.csv) · [时基审计](reports/final/timebase_audit/APMCM_Timebase_Audit_Report.pdf)
 - 第三问 [模型及实测报告](reports/working/Q3_SPECTRAL_GAS_MODEL_REPORT.md) · [实验入口](experiments/q3_spectral_gas_prediction/) · [冻结结果](results/q3/spectral_gas_prediction/)
 - 研究进度 [实验进度](reports/working/实验进度.md) · [数学模型与实验证据](reports/working/2026%20APMCM%20B题——第三版数学模型与实验证据.md) · [第三问项目指南](reports/working/THIRD_QUESTION_PROJECT_GUIDE.md) · [第三问研究记录](reports/working/第三问研究.docx)
+
+- 第三问 B 炉专项 V1–V3（探索性）：[模型报告](reports/working/Q3_B_HOLDOUT_MODEL_REPORT.md) · [实验入口](experiments/q3_b_holdout/) · [冻结评分](results/q3/b_holdout/)
