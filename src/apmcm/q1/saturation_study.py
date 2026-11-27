@@ -62,7 +62,7 @@ def run():
         e=np.mean(abs(pred[mask]-a[mask]));ph=pred.max()-bl[12];pa=np.trapezoid(np.maximum(pred-bl,0),xx)
         simrows.append({'heat':h,'sequence':i+1,'wavelength_nm':wl[j],'cap_fraction':frac,'method':name,'censored_points':int(mask.sum()),'MAE_censored':float(e),'peak_height_rel_error':float(abs(ph-true_height)/max(abs(true_height),1)),'peak_area_rel_error':float(abs(pa-true_area)/max(abs(true_area),1)),'optimizer_success':bool(best.success) if name=='censored_gaussian' else None})
      print('saturation analyzed',h,'actual_sat',int(sat.sum()),'sim_peaks',len(cand),flush=True)
-    pd.DataFrame(summary).to_csv(R+'/q1_saturation_structure.csv',index=False);pd.DataFrame(regions).to_csv(R+'/q1_saturation_components.csv',index=False);pd.DataFrame(simrows).to_csv(R+'/q1_saturation_simulation_allheats.csv',index=False)
+    pd.DataFrame(summary).to_csv(R/'q1_saturation_structure.csv',index=False);pd.DataFrame(regions).to_csv(R/'q1_saturation_components.csv',index=False);pd.DataFrame(simrows).to_csv(R/'q1_saturation_simulation_allheats.csv',index=False)
     print('\nSTRUCTURE\n',pd.DataFrame(summary).to_string(index=False))
     print('\nSIMULATION\n',pd.DataFrame(simrows).groupby(['cap_fraction','method'])[['MAE_censored','peak_height_rel_error','peak_area_rel_error']].median().round(3).to_string())
     
