@@ -13,7 +13,7 @@ def main():
     if args.question in ("q1", "all"):
         from apmcm.q1.figures import draw
         settings = config("q1.yaml")
-        draw(ROOT / settings["published_scenarios"], args.output / "q1", settings["display_stride"])
+        draw(ROOT / settings["published_scenarios"], args.output / "q1",\n             time_stride=settings["display_time_stride"],\n             wavelength_stride=settings["display_wavelength_stride"])
     if args.question in ("q2", "all"):
         from apmcm.q2 import figures
         figures.TAB = ROOT / config("q2/optimized.yaml")["published_tables"]
