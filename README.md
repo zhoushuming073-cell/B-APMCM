@@ -44,7 +44,7 @@ python experiments/q2_prewhitened_delay/run.py
 | 研究线 | 报告 / 入口 | 冻结结果 |
 | --- | --- | --- |
 | 数据与审计 | [正式数据](data/raw/official/Data.zip) · [审计表](data/metadata/audit.csv) · [SHA-256](data/metadata/checksums.sha256) | [数据审计说明](archive/original_full_experiment_package/APMCM_Full_Experiments/README.md) |
-| 第一问：光谱重构 | [光谱曲面汇编](results/q1/figures/all_heats_spectral_surface.pdf) | [窄峰遮挡指标](results/q1/tables/q1_peak_mask_fit_metrics.csv) |
+| 第一问：光谱重构 | [封存记录](reports/final/q1/第一问封存记录.md) · [复算入口](experiments/q1_spectral_reconstruction/README.md) | [十炉复算总账](results/q1/finalization/q1_full_reconstruction_summary.csv) · [窄峰遮挡指标](results/q1/tables/q1_peak_mask_fit_metrics.csv) |
 | 第二问：优化实验 | [优化实验报告](reports/final/q2_optimized/Q2_report.pdf) | [90 秒窗口证据](results/q2/delay_identification/tables/final_delay_evidence_summary.csv) |
 | 第二问：时基审计 | [时基审计报告](reports/final/timebase_audit/APMCM_Timebase_Audit_Report.pdf) | [时基审计结果](results/q2/timebase_audit/) |
 | 第二问 2.2：累计排放时基 | [研究报告](reports/working/Q2_2_EMISSION_TIMEBASE_REPORT.md) · [实验入口](experiments/q2_emission_timebase/) | [冻结结果](results/q2/emission_timebase/) |
