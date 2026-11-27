@@ -1,0 +1,19 @@
+Original ZIP SHA-256:
+4281ac1b63cfde0ad0236686f2efdd98aeae21e2b3793576da589be6a5e8a747  Q2_2_Instantaneous_Flow_V1.zip
+351b5e862e92bec0776e3d05d165ceb1e0219eb9d533bf942b2c5cabd8b29a49  Q2_2_Instantaneous_Flow_V2.zip
+948ca9299133d4506eee70b60b65652a75603761095af1320910a7d1dd1a8d0b  Q2_2_Instantaneous_Flow_V3.zip
+
+Original Git blob hashes of files not included verbatim:
+94bc24258ad638bc5ac9c8d6bc544524757a4ec4  all versions/process.csv
+bc1a4b83f73985d214751f3bc6f75bca40862092  v1/predictions.csv.gz
+4554909555724915d659023c2ba05fdc80443fde  v1/CO2_LOHO_Diagnostic.png
+2d04c27f25b49557886c1edd19ca27387ba23f5a  v1/CO_LOHO_Diagnostic.png
+2af8f18cb0e3abc89b351ca2a27b626de98ea685  v1/run.log
+2a7a28232d7e6da5451102fb97f2c31377270ad1  v2/predictions.csv.gz
+f08cfd36f8e572f30f1c0b068874bd27885a7647  v2/CO2_LOHO.png
+01a06987e44ad4ccf3e63f1c3152e18b4769b4ff  v2/CO_LOHO.png
+b4b7f2ea755649f0588ad80c3590d4271c1b45ab  v2/run.log
+3aa4f0bc52154d39b56a655da90aadf962922b68  v3/metrics.csv
+10e4e61789fd7d1812cd100a9ffa889690f40ea9  v3/inner.csv
+dd80722d43c52fe57c5e8b671e8451d0e5666552  v3/predictions.csv.gz
+6d86d323c339d60935389ac5c63bfd97551fc3d3  v3/run.log
