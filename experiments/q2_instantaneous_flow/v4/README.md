@@ -1,4 +1,4 @@
-# Q2.2 V4 — Analytic oxygen-flow reconstruction
+# Q2.1 V4 — Analytic oxygen-flow reconstruction
 
 ## Purpose
 

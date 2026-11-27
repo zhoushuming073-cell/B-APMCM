@@ -112,6 +112,7 @@ def run(input_path: Path, output_dir: Path):
 
     grid = [(s, lam) for s in (5.0, 10.0, 20.0) for lam in (0.1, 1.0, 10.0, 100.0)]
     profile_rows, summary_rows, sensitivity_rows, cv_rows = [], [], [], []
+    validation_rows = []
 
     for scenario in ("H0", "H1"):
         for heat in heats:
@@ -209,6 +210,23 @@ def run(input_path: Path, output_dir: Path):
                 "mean_one_SE_sensitivity_band_width_m3_s": float(np.mean(q_p90 - q_p10)),
                 "fit_success": success,
             })
+            mass_balance_error = abs(
+                integral_q - float(O_best[-1] - O_best[0])
+            )
+            monotonic_violations = int(np.sum(np.diff(O_best) < -1e-10))
+            negative_flow_points = int(np.sum(q_best < -1e-10))
+            validation_rows.append({
+                "scenario": scenario,
+                "heat": heat,
+                "min_analytic_flow": float(np.min(q_best)),
+                "negative_flow_points": negative_flow_points,
+                "cumulative_monotonic_violations": monotonic_violations,
+                "abs_numeric_mass_balance_error_m3": mass_balance_error,
+                "fit_success": bool(success),
+                "pass_nonnegative": bool(np.min(q_best) >= -1e-10),
+                "pass_monotonic": bool(monotonic_violations == 0),
+                "pass_mass_balance_0_1m3": bool(mass_balance_error <= 0.1),
+            })
             for _, r in full_cv.iterrows():
                 cv_rows.append({
                     "scenario": scenario,
@@ -223,6 +241,7 @@ def run(input_path: Path, output_dir: Path):
     pd.DataFrame(summary_rows).to_csv(output_dir / "flow_summary.csv", index=False)
     pd.DataFrame(sensitivity_rows).to_csv(output_dir / "flow_one_se_sensitivity_set.csv", index=False)
     pd.DataFrame(cv_rows).to_csv(output_dir / "flow_cv_grid.csv", index=False)
+    pd.DataFrame(validation_rows).to_csv(output_dir / "flow_validation_checks.csv", index=False)
     print("\nInstantaneous flow summary:")
     print(pd.DataFrame(summary_rows)[[
         "scenario", "heat", "flow_median_m3_s", "flow_mean_m3_s",

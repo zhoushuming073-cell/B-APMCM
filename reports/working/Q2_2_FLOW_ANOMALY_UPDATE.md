@@ -1,3 +1,5 @@
+> **Superseded for final submission by [`reports/final/Q2_1_FINAL_FREEZE.md`](../final/Q2_1_FINAL_FREEZE.md).** This working note records the V4 flow model and V1 anomaly detector. The final freeze report is authoritative for model choice, raw-value preservation, QA results, and remaining interpretation limits.
+
 # Q2.2 update — instantaneous oxygen flow and process-gas anomaly review
 
 Date: 2026-11-28

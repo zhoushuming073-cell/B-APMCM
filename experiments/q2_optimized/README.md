@@ -1,7 +1,17 @@
-# 第二问优化实验
+# Q2 legacy optimized experiment
 
-从三个原始过程通道复算曲线、五种对齐模型和留炉误差，并运行守恒和配对验证。
+This entry point is retained for historical reproduction of the earlier optimized run. It is **not** the canonical final Q2.1 six-curve pipeline.
 
-在根目录安装依赖后，运行 `python experiments/q2_optimized/run.py`。可传 `--output` 指定复算路径。
+For the frozen Q2.1 deliverable, run:
 
-[已发表的实验结果](../../results/q2/optimized/)
+```bash
+python experiments/q2_finalization/run.py
+```
+
+The final pipeline uses the nonnegative integral B-spline oxygen-flow estimate, the k2 CO2/CO reconstruction, cumulative integration, H0/H1 fifth-heat sensitivity, and the final anomaly review queue. See [`reports/final/Q2_1_FINAL_FREEZE.md`](../../reports/final/Q2_1_FINAL_FREEZE.md) and [`results/q2/final_freeze_2026-11-28/`](../../results/q2/final_freeze_2026-11-28/).
+
+The historical command below remains available to reproduce the older experiment only:
+
+```bash
+python experiments/q2_optimized/run.py
+```

@@ -224,7 +224,7 @@ def build_actual_outputs(frame, output_dir):
                     "score_ratio": np.nan,
                     "review_priority": "medium",
                     "review_status": "pending",
-                    "automatic_action": "legacy isolated-spike filter may exclude from cleaned reconstruction; raw value retained",
+                    "automatic_action": "flag only; no automatic correction or deletion; raw value retained",
                     "review_note": "Check neighbouring readings and process log before treating as sensor error.",
                 })
 

@@ -21,7 +21,7 @@ Across the 20 heat–gas series:
 - 38 sustained-level-shift boundaries (23 CO, 15 CO₂)
 - 51 event candidates in total; 70 row-level flags
 
-Every event is `pending` manual review. The new burst and level-shift detectors are flag-only. Raw observations are preserved and no new candidate is automatically corrected. The existing cleaned reconstruction path may still exclude legacy isolated-spike flags, but the original raw values remain available.
+Every event is `pending` manual review. The new burst and level-shift detectors are flag-only. Raw observations are preserved and no new candidate is automatically corrected. For the final Q2.1 pipeline, no candidate is automatically removed or corrected. The three legacy isolated-spike flags are retained as a sensitivity screen only; the primary k2 full-series reconstruction uses all raw gas observations. The raw source values remain unchanged.
 
 Two especially large late-series CO collapses are flagged:
 - `6C02059`, row 1436: post-window median about 0.49 versus pre-window median about 34.24.
@@ -54,6 +54,10 @@ Mean new flags outside the injected-event buffers were at most 0.4 per heat–ga
 - `injection_test_summary.csv`: event-recall summary by disturbance type.
 - `injection_test_by_heat.csv`: per heat–gas injection results.
 An example review figure was generated locally; raw values and event locations are fully represented in the CSV review queue.
+
+## Final freeze decision
+
+All 51 candidates remain pending manual review. Without operating logs or labelled anomaly truth, the detector cannot distinguish every sensor fault from a genuine process-stage transition. Preserve the raw values and do not automatically delete, replace, or smooth candidate events solely because they were flagged.
 
 ## Timebase
 
