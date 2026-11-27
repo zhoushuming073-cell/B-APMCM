@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from scipy.ndimage import uniform_filter1d as uf, maximum_filter, median_filter
 
-from apmcm.common.paths import DT, PROC
+from apmcm.common.paths import DT, PROC, SOURCE_SHA256
 
 def fit_scales(train):
  sc={}
@@ -58,6 +58,25 @@ def repair_sat(a,sat):
  return out,done
 
 
+
+def validate_scenario_variants(raw, anomaly_only, template_scenario, hard_clip_lower_bound,
+                               screen, approved, saturated, saturation_repaired,
+                               ceiling=65535.0):
+    """Check that every changed value is supported by its provenance mask."""
+    if (approved & ~screen).any() or (screen & saturated).any():
+        raise ValueError("Invalid screening/approval mask relationship")
+    if (saturation_repaired & ~saturated).any():
+        raise ValueError("Saturation estimate outside saturation mask")
+    if not np.array_equal(anomaly_only[~approved], raw[~approved]):
+        raise ValueError("Anomaly-only scenario changed an unapproved observation")
+    changed = approved | saturation_repaired
+    if not np.array_equal(template_scenario[~changed], raw[~changed]):
+        raise ValueError("Template scenario changed a point outside its provenance masks")
+    if (hard_clip_lower_bound[saturated] < ceiling).any():
+        raise ValueError("Hard-clipping lower-bound scenario falls below the ceiling")
+    if not np.array_equal(hard_clip_lower_bound[~saturated], template_scenario[~saturated]):
+        raise ValueError("Hard-clipping constraint changed an unsaturated observation")
+
 def reconstruct(out, heats=()):
     scenarios = out / "scenarios"
     tables = out / "tables"
@@ -87,25 +106,57 @@ def reconstruct(out, heats=()):
         screen = (full > threshold) & valid & ~saturated
         value, difference, agree, gap = options(x, screen)
         approved = screen & agree & (difference > .12) & (difference > 2 * gap) & np.isfinite(value)
-        scenario = x.copy()
-        scenario[approved] = np.expm1(value[approved])
-        scenario, upper_estimates = repair_sat(scenario, saturated)
-        np.savez_compressed(scenarios / f"{heat}_scenario.npz", raw=x, scenario=scenario,
-                            wl=wl, seq=seq, score=full, screen=screen, approved=approved,
-                            saturated=saturated, saturation_repaired=upper_estimates)
+        anomaly_only = x.copy()
+        anomaly_only[approved] = np.expm1(value[approved])
+        scenario, upper_estimates = repair_sat(anomaly_only, saturated)
+        saturation_template_values = np.full(x.shape, np.nan, dtype=np.float32)
+        saturation_template_values[upper_estimates] = scenario[upper_estimates]
+        hard_clip_lower_bound = scenario.copy()
+        hard_clip_lower_bound[saturated] = np.maximum(65535.0, hard_clip_lower_bound[saturated])
+        saturation_below = saturated & upper_estimates & (saturation_template_values < 65535.0)
+        saturation_above = saturated & upper_estimates & ~saturation_below
+        saturation_unresolved = saturated & ~upper_estimates
+        validate_scenario_variants(x, anomaly_only, scenario, hard_clip_lower_bound,
+                                   screen, approved, saturated, upper_estimates)
+        np.savez_compressed(
+            scenarios / f"{heat}_scenario.npz",
+            raw=x,
+            scenario=scenario,
+            scenario_anomaly_only=anomaly_only,
+            scenario_template=scenario,
+            scenario_hard_clip_lower_bound=hard_clip_lower_bound,
+            wl=wl, seq=seq, score=full, screen=screen, approved=approved,
+            saturated=saturated, saturation_repaired=upper_estimates,
+            saturation_template_values=saturation_template_values,
+            saturation_template_below_ceiling=saturation_below,
+            saturation_template_above_ceiling=saturation_above,
+            saturation_unresolved=saturation_unresolved,
+            saturation_ceiling=np.float32(65535.0),
+            source_sha256=np.asarray(SOURCE_SHA256),
+            detector_threshold=np.float64(threshold),
+        )
         n_screen, n_approved = int(screen.sum()), int(approved.sum())
         n_upper, n_est = int(saturated.sum()), int(upper_estimates.sum())
-        rows.append(dict(heat=heat, n_time=len(x), screen_candidates=n_screen,
-                         screen_rate=n_screen / x.size, approved_anomaly_repairs=n_approved,
-                         approved_rate=n_approved / x.size, saturation_points=n_upper,
-                         saturation_repaired=n_est, saturation_unresolved=n_upper - n_est,
-                         total_changed=n_approved + n_est, threshold=threshold))
+        rows.append(dict(heat=heat, n_time=len(x), n_wavelength=len(wl),
+                         screen_candidates=n_screen, screen_rate=n_screen / x.size,
+                         approved_anomaly_repairs=n_approved, approved_rate=n_approved / x.size,
+                         saturation_points=n_upper, saturation_repaired=n_est,
+                         saturation_template_below_ceiling=int(saturation_below.sum()),
+                         saturation_template_above_ceiling=int(saturation_above.sum()),
+                         saturation_unresolved=int(saturation_unresolved.sum()),
+                         total_changed=n_approved + n_est, threshold=threshold,
+                         source_sha256=SOURCE_SHA256))
         i, j = np.where(screen)
         ix = np.argsort(full[i, j])[::-1][:500]
         i, j = i[ix], j[ix]
         pd.DataFrame(dict(sequence=seq[i], time_s=(seq[i] - seq[0]) * DT, wavelength_nm=wl[j],
                           raw=x[i, j], score=full[i, j], approved_repair=approved[i, j],
-                          scenario=scenario[i, j], saturated=saturated[i, j])).to_csv(
+                          scenario_template=scenario[i, j],
+                          scenario_hard_clip_lower_bound=hard_clip_lower_bound[i, j],
+                          saturated=saturated[i, j])).to_csv(
             tables / f"{heat}_candidate_top500.csv", index=False)
         print(f"{heat}: {n_screen} candidates, {n_approved} approved", flush=True)
-    pd.DataFrame(rows).to_csv(tables / "q1_full_reconstruction_summary.csv", index=False)
+    full_run = set(selected) == set(files)
+    summary_name = ("q1_full_reconstruction_summary.csv" if full_run
+                    else "q1_reconstruction_summary_selected.csv")
+    pd.DataFrame(rows).to_csv(tables / summary_name, index=False)
