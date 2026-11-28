@@ -8,7 +8,7 @@
 
 - **第一问：已封存。** 十炉全量复算，保守异常修复、饱和情景和双线性连续重构已冻结；模板值不是真实峰顶。
 - **第二问 2.1：已封存。** 非负积分 B 样条估计有效供氧流量，k2/PCHIP 重构烟气并解析积分；51 个异常候选仅标记，原始数据不修改。
-- **第二问关系研究：正式封存（2026-11-28）。** 完成累计耗氧—烟气流量/累计排放关系、阶段边际排放和有效时滞研究；不做预测。补充检验未能稳健验证“高流量—短时滞”假说，详见[最终报告](reports/final/Q2_2_FINAL_RELATIONSHIP_STUDY.md)及[补充稳健性检验](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md)。
+- **第二问关系研究：正式封存（2026-11-28）。** 完成累计耗氧—烟气流量/累计排放关系、阶段边际排放和有效时滞研究；不做预测。前两轮补充检验未能稳健验证“高流量—短时滞”假说；封存后另完成第三轮同炉同耗氧进度匹配诊断，仍未获得稳健负向证据，且共同支持不足。第三轮作为独立 addendum 归档，不重开或覆盖原冻结结论，详见[最终报告](reports/final/Q2_2_FINAL_RELATIONSHIP_STUDY.md)、[第二轮补充稳健性检验](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md)及[第三轮匹配诊断](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND3_ADDENDUM.md)。
 - **第二问时滞：随 Q2.2 一并封存。** 180 秒 CO₂ 的负向信号对窗口起点和流量估计口径敏感；不强制拟合单调递减时滞函数。
 - **第三问：探索性。** 已完成光谱融合、曲线迁移、残差树、神经网络、梯度提升和物理过程实验；CO 梯度提升与 CO₂ 残差树为当前候选，非最终模型。光谱增量须按相同信息集及评分域审查。
 - **第五炉：未决。** H0 仍为主情景，H1 为敏感性；H2 不规则缺行获得描述性支持，真实秒级时间轴及跨传感器缺帧同步性未识别。
@@ -33,6 +33,7 @@ python scripts/verify_q1_outputs.py
 python experiments/q2_finalization/run.py
 python experiments/q2_relationship_study/run.py
 python experiments/q2_lag_robustness/run.py
+python experiments/q2_stage_matched_lag/v1/run.py
 ```
 
 查看既有批量实验入口（仅覆盖脚本注册的专项，不含全部新增实验）：
@@ -62,6 +63,7 @@ python experiments/q2_prewhitened_delay/run.py
 | 第二问 2.1：正式封存 | [封存报告](reports/final/Q2_1_FINAL_FREEZE.md) · [复算入口](experiments/q2_finalization/) | [冻结 QA](results/q2/final_freeze_2026-11-28/) · [重构验证](results/q2/validation_2026-11-28/) |
 | 第二问关系与时滞研究：正式封存 | [最终研究报告](reports/final/Q2_2_FINAL_RELATIONSHIP_STUDY.md) · [补充稳健性检验](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md) · [复算入口](experiments/q2_relationship_study/) | [关系结果](results/q2/relationship_study_final/) |
 | 第二问高流量—短时滞假说检验 | [实验入口](experiments/q2_lag_robustness/) · [检验报告](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md) | [紧凑结果](results/q2/lag_hypothesis_robustness/) |
+| 第二问第三轮：同炉同耗氧进度匹配（封存后补充） | [实验入口](experiments/q2_stage_matched_lag/v1/) · [第三轮报告](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND3_ADDENDUM.md) | [紧凑结果与 QA](results/q2/stage_matched_lag_2026-11-28/) |
 | 第二问 2.1：解析供氧 V4、异常筛查 | [流量 V4](experiments/q2_instantaneous_flow/v4/) · [异常检测 V1](experiments/q2_anomaly_review/v1/) · [更新报告](reports/working/Q2_2_FLOW_ANOMALY_UPDATE.md) | [V4 结果](results/q2/instantaneous_flow/v4/) · [异常候选](results/q2/anomaly_review/v1/) |
 | 第二问：第五炉缺失机制 | [实验说明](experiments/q2_missingness_mechanism/) · [研究报告](results/q2/missingness_mechanism/REPORT.md) | [模拟结果](results/q2/missingness_mechanism/) |
 | 第二问：对齐比较 | [实验入口](experiments/q2_aligned_comparison/) | [结果](results/q2/aligned_comparison/) |

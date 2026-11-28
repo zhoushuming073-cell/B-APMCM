@@ -1,0 +1,14 @@
+{
+  "raw_data_zip_sha256": "cb662ce5ea17c247d0733ec8a4245fec37abf82d823a0ddc08597b300d95a727",
+  "raw_rows": 13589,
+  "heat_count": 10,
+  "final_curve_rows": 27178,
+  "final_curve_missing_cells": 0,
+  "minimum_analytic_oxygen_flow": 0.6672096905029955,
+  "oxygen_cumulative_monotone": true,
+  "rebuilt_final_curves_sha256": "c89a8e34dc5f83385d6c06d356d2821f53e67b63197aa00b6dca9cf0f837f306",
+  "repository_recorded_final_curves_sha256": "9bdc1fe5d962e5ed3b2c7ae513aade8094ea2b3e95a7f405a12c485d6099fd49",
+  "byte_hash_match": false,
+  "headline_lag_medians_reproduced": true,
+  "note": "Numerical headline summaries reproduced; local CSV byte hash differs from repository reference, likely due serialization/runtime differences, so byte-identical reproduction is not claimed."
+}
