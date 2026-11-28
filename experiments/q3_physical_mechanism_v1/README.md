@@ -43,4 +43,7 @@ Frozen compact outputs:
 - Ten heats have been repeatedly explored; leave-one-heat-out is not independent confirmation.
 - No direct bath carbon/silicon/manganese, slag FeO, mouth O2, lance height, temperature, pipe flow or analyzer step-response data are available.
 - Stage labels are gas-defined retrospective diagnostics, not deployable state labels.
-- The first notebook implementation has not yet been converted into a clean command-line reproduction script. Do not treat this README as a claim that the full run is reproducible from a single command. The next revision must archive and execute that script before model promotion.
+- Core physical diagnostics are implemented in src/apmcm/q3/physical_mechanism.py. From the repository root, run:
+  PYTHONPATH=src python -m apmcm.q3.physical_mechanism --data-zip Data.zip --output-dir results/q3/physical_mechanism_v1
+- The script reproduces tail, stage, stage-lag and spectral-event diagnostics; it does not reproduce the pilot Ridge ablation, whose runner remains pending.
+- The full XLSB-loading CLI was not completed within this session's runtime limit. The diagnostic functions were exercised against the ten already-loaded in-memory workbooks; run the CLI locally before treating the package-level run as fully verified.
