@@ -1,0 +1,3 @@
+gas,heat_level_median_of_medians_s,heat_cluster_bootstrap_95_low_s,heat_cluster_bootstrap_95_high_s,min_heat_median_s,max_heat_median_s,n_heats
+CO,13,9,16.5,8,17,10
+CO2,13.5,10,18,8,19,10

@@ -1,0 +1,11 @@
+check,status,value
+uploaded_Data_zip_SHA256_matches_repo_source_archive,PASS,cb662ce5ea17c247d0733ec8a4245fec37abf82d823a0ddc08597b300d95a727
+extracted_process_csv_Git_blob_matches_repo,PASS,25a8f164274ff96e868ff447d28a4d1c80353b50
+process_rows_and_heat_count,PASS,13589 rows / 10 heats
+Q2.1_flow_QA,PASS,20/20; max mass-balance error=0.0772893727 m3
+Q2.1_curve_rows,PASS,27178 rows; no missing=True
+anomaly_review_queue,PASS,51 event candidates; 70 row flags; no auto correction
+Q2.3_committed_Pearson_summary_reproduction,PASS,max absolute table difference=9.57746382202e-11
+Q2.3_synthetic_lag_recovery,PASS,0/6/12/20/30 seconds recovered exactly
+Q2.1_manifest_process_csv_SHA256,MISMATCH,repo manifest=f82e726b03f8eceb148a25440f34fe8385af28e95a7f551149b513ecf560c789; current process.csv=f55bbefba1092fceb0af672fd32730e3e97ca250122e28fbb8202d0efcb7fcb6
+Q2.2_manifest_Q2.1_curves_SHA256,MISMATCH,repo manifest=9bdc1fe5d962e5ed3b2c7ae513aade8094ea2b3e95a7f405a12c485d6099fd49; current rebuilt curves=8d8927499c3dbb34996c4a75a5a2a4556bcc7943276e2c964eca1041d99cc152

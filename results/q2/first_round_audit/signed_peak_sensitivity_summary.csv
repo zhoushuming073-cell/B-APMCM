@@ -1,0 +1,9 @@
+scenario,window_s,gas,n_windows,abs_peak_lag_median_s,positive_only_lag_median_s,negative_only_lag_median_s,selected_abs_peak_positive,selected_abs_peak_negative,positive_peak_wins
+H0,90,CO,71,14,14,16,46,25,46
+H0,90,CO2,71,14,14,14,29,42,29
+H0,180,CO,33,32,40,26,19,14,19
+H0,180,CO2,33,36,34,24,21,12,21
+H1,90,CO,75,14,12,18,46,29,46
+H1,90,CO2,75,14,14,16,33,42,33
+H1,180,CO,35,32,40,26,21,14,21
+H1,180,CO2,35,36,32,28,22,13,22

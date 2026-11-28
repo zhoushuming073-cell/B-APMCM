@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-28",
+  "scope": "Q2.3 reproduction and diagnostics; upstream Q2.1 curve rebuild",
+  "source_archive_sha256": "cb662ce5ea17c247d0733ec8a4245fec37abf82d823a0ddc08597b300d95a727",
+  "process_csv_sha256": "f55bbefba1092fceb0af672fd32730e3e97ca250122e28fbb8202d0efcb7fcb6",
+  "process_csv_git_blob_sha": "25a8f164274ff96e868ff447d28a4d1c80353b50",
+  "final_curves_sha256": "8d8927499c3dbb34996c4a75a5a2a4556bcc7943276e2c964eca1041d99cc152",
+  "lag_windows_sha256": "8b9d0f8b7dbe7d022d5e8ae71cd8b6922418f6de1b44899d22e3bec6c7a0315f",
+  "process_rows": 13589,
+  "heats": 10,
+  "final_curve_rows": 27178,
+  "flow_fits": 20,
+  "flow_qa_passes": 20,
+  "anomaly_events": 51,
+  "anomaly_row_flags": 70,
+  "q23_lag_windows": 856,
+  "committed_pearson_summary_max_abs_difference": 9.577463822019183e-11,
+  "raw_source_modified": false,
+  "status": "reproduced_with_methodological_caveats"
+}
