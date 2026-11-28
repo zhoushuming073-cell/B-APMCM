@@ -1,0 +1,13 @@
+stage_model,gas,test,mde_s_per_within_heat_sd,power_at_minus_16s
+linear,CO,continuous_sign_test_power,-6.0,1.0
+linear,CO,continuous_t_test_power,-4.0,1.0
+linear,CO,matched_sign_test_power,-10.0,1.0
+linear,CO2,continuous_sign_test_power,-6.0,1.0
+linear,CO2,continuous_t_test_power,-4.0,1.0
+linear,CO2,matched_sign_test_power,-8.0,1.0
+quadratic,CO,continuous_sign_test_power,-4.0,1.0
+quadratic,CO,continuous_t_test_power,-4.0,1.0
+quadratic,CO,matched_sign_test_power,-10.0,0.9858333333333333
+quadratic,CO2,continuous_sign_test_power,-4.0,1.0
+quadratic,CO2,continuous_t_test_power,-4.0,1.0
+quadratic,CO2,matched_sign_test_power,-12.0,0.9066666666666666
