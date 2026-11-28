@@ -1,5 +1,7 @@
 # Q3 Low-Frequency Flue-Gas Feedback Audit
 
+> **Superseding audit warning (2026-11-28):** The 60 s and 90 s score-start results below are not valid strict real-time results: V5 uses full first-60-second spectral prefix statistics, whereas publication time is detector time minus lead (up to 60 s). The feedback observation indices themselves are causal, but the spectral prefix may look ahead at early publication times. Do not use the 60/90 s numerical claims as validated results. The original 120 s score-start configuration is unaffected by this specific defect. A corrected exploratory run with a first-frame-only prefix and 60 s detector start has been executed separately. Retain these tables for provenance, not as final evidence.
+
 **Date:** 2026-11-28  
 **Branch:** research/q3-feedback-audit-20261128  
 **Scope:** Reproduce the frozen V5 q2_fixed causal spectral model; audit delayed-observation feedback; evaluate analyzer sampling intervals and score-start sensitivity.
