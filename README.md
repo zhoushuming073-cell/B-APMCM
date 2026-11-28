@@ -67,8 +67,8 @@ python experiments/q2_prewhitened_delay/run.py
 | 第二问：时基审计 | [时基审计报告](reports/final/timebase_audit/APMCM_Timebase_Audit_Report.pdf) | [时基审计结果](results/q2/timebase_audit/) |
 | 第二问 2.2：累计排放时基（历史敏感性） | [历史报告](reports/working/Q2_2_EMISSION_TIMEBASE_REPORT.md) · [实验入口](experiments/q2_emission_timebase/) | [历史结果](results/q2/emission_timebase/) |
 | 第二问 2.2：瞬时流量 V1–V3（历史模型探索） | [历史报告](reports/working/Q2_2_INSTANTANEOUS_FLOW_REPORT.md) · [实验入口](experiments/q2_instantaneous_flow/) | [历史结果](results/q2/instantaneous_flow/) |
-| 第二问 2.3：原时滞识别 | [实验入口](experiments/q2_delay_identification/) | [结果](results/q2/delay_identification/) |
-| 第二问 2.3：预白化时滞（探索性） | [研究报告](reports/working/Q2_3_PREWHITENED_DELAY_REPORT.md) · [实验说明](experiments/q2_prewhitened_delay/README.md) | [结果表](results/q2/prewhitened_delay/tables/) |
+| 第二问 2.3：原时滞识别（历史对照） | [实验入口](experiments/q2_delay_identification/) | [历史结果](results/q2/delay_identification/) |
+| 第二问 2.3：预白化时滞（历史敏感性） | [历史报告](reports/working/Q2_3_PREWHITENED_DELAY_REPORT.md) · [实验说明](experiments/q2_prewhitened_delay/README.md) | [历史结果](results/q2/prewhitened_delay/tables/) |
 | 第三问：光谱—烟气预测 | [模型报告](reports/working/Q3_SPECTRAL_GAS_MODEL_REPORT.md) · [实验入口](experiments/q3_spectral_gas_prediction/) | [冻结结果](results/q3/spectral_gas_prediction/) |
 | 第三问：B 炉专项 V1–V3（探索性） | [模型报告](reports/working/Q3_B_HOLDOUT_MODEL_REPORT.md) · [实验入口](experiments/q3_b_holdout/) | [冻结评分](results/q3/b_holdout/) |
 | 第三问：V5 光谱与低频烟气反馈（探索性） | [研究报告](reports/working/Q3_V5_CAUSAL_SPECTRAL_REPORT.md) · [实验入口](experiments/q3_v5_causal_spectral/) | [冻结评分](results/q3/v5_causal_spectral/) |
