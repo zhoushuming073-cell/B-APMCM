@@ -10,7 +10,7 @@
 - **第二问 2.1：已封存。** 非负积分 B 样条估计有效供氧流量，k2/PCHIP 重构烟气并解析积分；51 个异常候选仅标记，原始数据不修改。
 - **第二问关系研究：正式封存（2026-11-28）。** 完成累计耗氧—烟气流量/累计排放关系、阶段边际排放和有效时滞研究；不做预测。前两轮补充检验未能稳健验证“高流量—短时滞”假说；封存后另完成第三轮同炉同耗氧进度匹配诊断，仍未获得稳健负向证据，且共同支持不足。第三轮作为独立 addendum 归档，不重开或覆盖原冻结结论，详见[最终报告](reports/final/Q2_2_FINAL_RELATIONSHIP_STUDY.md)、[第二轮补充稳健性检验](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md)及[第三轮匹配诊断](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND3_ADDENDUM.md)。
 - **第二问时滞：随 Q2.2 一并封存。** 180 秒 CO₂ 的负向信号对窗口起点和流量估计口径敏感；不强制拟合单调递减时滞函数。
-- **第三问：探索性。** 已完成光谱融合、曲线迁移、残差树、神经网络、梯度提升和物理过程实验；CO 梯度提升与 CO₂ 残差树为当前候选，非最终模型。新增物理化学机制 V1：十炉尾段 CO₂上升、CO下降、总含碳气体流量下降在 9/10 炉一致；主升段有效偏移约 30–32.5 s，但尾段互相关弱；动态交互特征提高简化 Ridge 的整体宏平均 R²，却仍错过 CO₂尾部反转。该实验属探索性，未独立复现 V5。
+- **第三问：探索性。** 已完成光谱融合、曲线迁移、残差树、神经网络、梯度提升和物理过程实验；CO 梯度提升与 CO₂ 残差树仍是主候选。新增物理化学机制 V1：十炉尾段 CO₂上升、CO下降、总含碳气体流量下降在 9/10 炉一致。新增阶段条件时滞与阶段专家 V1：共同支持域下 CO₂ 宏平均 R²由 0.134 提升至 0.569，CO 由 0.709 至 0.712；但阶段路由主要依赖时间/耗氧阈值，光谱未证明额外状态识别能力，CO₂尾部反转仍未解决。以上均为探索性证据，不是最终模型。
 - **第五炉：未决。** H0 仍为主情景，H1 为敏感性；H2 不规则缺行获得描述性支持，真实秒级时间轴及跨传感器缺帧同步性未识别。
 
 ## 快速开始
@@ -80,6 +80,7 @@ python experiments/q2_prewhitened_delay/run.py
 | 第三问：梯度提升追加实验 | [20 个 R² 报告](reports/working/第三问梯度提升追加实验20个R2.md) · [运行说明](experiments/q3_boosted_curve/README.md) | [20 个 R²](results/q3/boosted_curve/twenty_r2.csv) · [20 张图](results/q3/boosted_curve/figures/README.md) |
 | 第三问：十炉物理过程 | [研究报告](reports/working/q3_physical_process/REPORT.md) · [实验说明](experiments/q3_physical_process/) | [结果](results/q3/physical_process/) |
 | 第三问：物理化学机制 V1 | [研究报告](reports/working/Q3_PHYSICAL_MECHANISM_V1.md) · [实验说明](experiments/q3_physical_mechanism_v1/) | [尾段、阶段、谱线与消融结果](results/q3/physical_mechanism_v1/) |
+| 第三问：阶段条件时滞与阶段专家 V1 | [研究报告](reports/working/Q3_STAGE_AWARE_PREDICTION_V1.md) · [实验说明](experiments/q3_stage_aware_v1/) | [阶段、时滞、消融与尾段诊断](results/q3/stage_aware_v1/) |
 
 最终交付：[论文](reports/submission/paper/) · [摘要页](reports/submission/summary_sheet/) · [控制页](reports/submission/control_sheet/)。目前为待整合交付区域，已有正式封存材料在 [reports/final](reports/final/)。
 
