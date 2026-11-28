@@ -52,9 +52,9 @@ See the full research report at reports/working/Q3_STAGE_AWARE_PREDICTION_V1.md.
 - stage_lag_profile_summary.csv
 - stage_lag_summary.csv
 - stage_lag_selections.csv
-- stage_lag_fold_metrics.csv
 - stagewise_mae_summary.csv
 - tail_slope_diagnostics.csv
+- stage_lag_selections.csv
 - boundary_shift_summary.csv
 - run_manifest.json
 
