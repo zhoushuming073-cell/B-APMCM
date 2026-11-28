@@ -1,0 +1,15 @@
+gas_idx,model,obs_slope_per_min,pred_slope_per_min,gas
+0,fusion,2.196257,-0.774086,CO2
+0,fusion_interaction,2.196257,-1.147576,CO2
+0,fusion_momentum,2.196257,-1.237470,CO2
+0,fusion_peak,2.196257,-0.859352,CO2
+0,fusion_peak_momentum,2.196257,-1.097691,CO2
+0,fusion_physical,2.196257,-1.185345,CO2
+0,process_nonlinear,2.196257,-1.010974,CO2
+1,fusion,-16.845718,-5.199696,CO
+1,fusion_interaction,-16.845718,-4.156236,CO
+1,fusion_momentum,-16.845718,-3.541450,CO
+1,fusion_peak,-16.845718,-4.676774,CO
+1,fusion_peak_momentum,-16.845718,-4.554862,CO
+1,fusion_physical,-16.845718,-4.362416,CO
+1,process_nonlinear,-16.845718,-4.845032,CO
