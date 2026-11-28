@@ -72,7 +72,7 @@ A descriptive onset diagnostic was calculated as the first time the gas signal r
 
 Using a 0.5 m³/s threshold gave latest onsets of approximately 49 s for CO2 and 109.5 s for CO. This supports 60 s as a conservative common CO2 response window and 120 s as a conservative CO response window. The threshold is an empirical diagnostic, not a threshold specified by the contest problem.
 
-A gas-specific evaluation window (CO2 from 60 s; CO from 120 s) is defensible if explicitly justified, while a common 60 s window is useful as a full-system sensitivity result. Both should be disclosed rather than silently choosing the more favorable one.
+A gas-specific evaluation window (CO2 from 60 s; CO from 120 s) is defensible if explicitly justified, while a common 60 s window is useful as a full-system sensitivity result. Both should be disclosed rather than silently choosing the more favorable one. Under that gas-specific onset window with 15 s feedback, the macro R² is 0.7645 for CO2 and 0.7785 for CO; the corresponding pooled R² values are 0.8124 and 0.8844. These two gas scores use different time supports and must not be presented as a common-window comparison.
 
 ## 5. Other exploratory checks
 
