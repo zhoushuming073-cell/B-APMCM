@@ -1,0 +1,13 @@
+gas,shift_s,model,macro_mae,macro_r2,mean_n
+CO, -10,global,6.460,0.699,1280.9
+CO, -10,stage_expert,5.944,0.720,1280.9
+CO, 0,global,6.460,0.699,1280.9
+CO, 0,stage_expert,5.973,0.712,1280.9
+CO, 10,global,6.460,0.699,1280.9
+CO, 10,stage_expert,5.980,0.710,1280.9
+CO2,-10,global,2.998,0.334,1294.9
+CO2,-10,stage_expert,2.198,0.545,1294.9
+CO2,0,global,3.002,0.335,1294.9
+CO2,0,stage_expert,2.123,0.569,1294.9
+CO2,10,global,3.002,0.335,1294.9
+CO2,10,stage_expert,2.060,0.580,1294.9
