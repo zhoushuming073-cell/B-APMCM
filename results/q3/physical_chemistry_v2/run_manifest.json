@@ -1,0 +1,41 @@
+{
+  "heats": 10,
+  "rows": 13589,
+  "dt_s": 0.5,
+  "data_zip_sha256": "cb662ce5ea17c247d0733ec8a4245fec37abf82d823a0ddc08597b300d95a727",
+  "gas_headers": "CO2 concentration / CO concentration (Chinese or English raw header variants)",
+  "oxygen_header_variants": ["累积耗氧量", "YQXH", "Cumulative oxygen consumption"],
+  "gas_unit_status": "ambiguous in problem statement; channel names say concentration; vol% is plausible but requires plant metadata confirmation",
+  "flow_assumption_stoichiometric_check": {
+    "ratio_min": 2.92848074421761,
+    "ratio_median": 5.766844309491935,
+    "ratio_max": 6.528434556137652
+  },
+  "tail_start_oxygen_progress": {
+    "median": 0.8901144967,
+    "min": 0.7860628853,
+    "max": 0.9114828078
+  },
+  "tail_endpoint_signs": {
+    "CO2_channel_up": 10,
+    "CO_channel_down": 10,
+    "COx_sum_channel_down": 10,
+    "apparent_CO2_share_up": 10
+  },
+  "tail_median_endpoint_changes": {
+    "CO2_channel": 2.295,
+    "CO_channel": -11.715,
+    "COx_sum_channel": -9.045,
+    "apparent_CO2_share": 0.0941635
+  },
+  "oxygen_rate_endpoint_change_pct": {
+    "median_all_heats": -0.455068,
+    "n_abs_change_le_5pct": 9,
+    "heat_6C02057_change_pct": 82.389937
+  },
+  "interpretation": [
+    "The m3/s interpretation fails a conditional oxygen-stoichiometry feasibility check if gas channels share the O2 volume reference basis.",
+    "CO2/(CO+CO2) is an apparent CO2 share, not a complete post-combustion ratio when H2 and H2O are unavailable.",
+    "CO+CO2 channel sum is not total carbon emission unless total off-gas flow is known."
+  ]
+}
