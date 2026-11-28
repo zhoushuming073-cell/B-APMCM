@@ -1,0 +1,74 @@
+name: Q2.3 round-2 unified lag experiment
+
+on:
+  push:
+    branches:
+      - q23-round2-unified-lag-20261128
+    paths:
+      - "experiments/q2_lag_round2/**"
+      - ".github/workflows/q2-lag-round2.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-q2-lag-round2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out experiment branch
+        uses: actions/checkout@v4
+        with:
+          ref: q23-round2-unified-lag-20261128
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install numerical dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "numpy>=2.2,<3" "pandas>=2.2,<3" "scipy>=1.15,<2"
+
+      - name: Compile round-2 script
+        run: python -m py_compile experiments/q2_lag_round2/run.py
+
+      - name: Rebuild frozen Q2.1 process curves
+        run: |
+          python experiments/q2_finalization/run.py \
+            --input data/interim/extracted/process.csv \
+            --out results/q2/final_freeze_2026-11-28
+
+      - name: Run Q2.3 round-2 sensitivity experiment
+        run: |
+          python experiments/q2_lag_round2/run.py \
+            --input results/q2/final_freeze_2026-11-28/final_curves.csv \
+            --output results/q2/lag_round2_2026-11-28
+
+      - name: Upload full experiment outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: q2-lag-round2-results
+          path: results/q2/lag_round2_2026-11-28/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Commit compact reproducible results to this branch
+        if: success()
+        env:
+          BRANCH: q23-round2-unified-lag-20261128
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f results/q2/lag_round2_2026-11-28/
+          if git diff --cached --quiet; then
+            echo "No result changes to commit."
+          else
+            git commit -m "Add Q2.3 round-2 unified lag sensitivity results"
+            git push origin "$BRANCH"
+          fi
