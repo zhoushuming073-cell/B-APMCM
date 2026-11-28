@@ -122,3 +122,8 @@ No fifth model-search round is planned. Only paper wording, figure/table integra
 ## Q2.3 正式封存（2026-11-28）
 
 团队已宣布 Q2.3 研究正式封存（带明确证据限制）。[最终文献与机制解释](reports/final/Q2_3_MECHANISM_LITERATURE_AND_CLOSURE.md)补齐六篇期刊文献、条件效应与边际关系的区分及论文讨论段落；[BibTeX](docs/methodology/q2_3_mechanism_references.bib)可直接用于论文。题设的方向性预期未被十炉观测稳健识别，不能据此否定其物理机制。14 s 仅为表观互相关峰位。既有 CO₂ 匹配差 +8/+10 s 记录冲突已在封存文档标记，论文暂不引用该争议值。仅保留论文整合与工程复现维护，不再开新实验或模型搜索。
+
+
+## Q2.3 源码补归档（2026-11-28）
+
+[完整复现源码与冻结输入](experiments/q2_final_validation/) 已纳入仓库，包含原八个 Python 文件、依赖、配置及可校验恢复的 26 文件源包。不再依赖外部附件才能复跑。归档不重启模型研究，未重新执行 100 次模拟。

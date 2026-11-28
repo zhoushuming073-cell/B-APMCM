@@ -1,0 +1,58 @@
+{
+  "main_scenario": "H0",
+  "main_window_s": 90,
+  "sensitivity_window_s": 180,
+  "window_step_s": "equal to window length (non-overlapping)",
+  "oxygen_input_segment": "first one-third of window duration (60 s for 90 s; 120 s for 180 s), sampled every 2 s",
+  "gas_observation_segment": "full window",
+  "sampling_grid_s": 2,
+  "lag_grid_s": 2,
+  "max_lag_s": {
+    "90s": 30,
+    "180s": 60
+  },
+  "lag_sign": "positive lag means oxygen input precedes gas observation",
+  "detrending": "OLS linear trend removed separately from oxygen and gas vectors",
+  "prewhitening": "AR(1) phi estimated from detrended oxygen input and applied to both oxygen and gas; phi clipped to [-0.98,0.98]",
+  "peak_rule": "maximum absolute Pearson correlation over nonnegative lags; first/smallest lag wins exact ties",
+  "null_test": "circularly shifted gas whitened vector; allowed shifts exclude <= maxlag and >= len(y)-maxlag; p=(1+exceedances)/(1+n_null); BH within metric/scenario/window/gas",
+  "flow": "Q2.1 nonnegative integral cubic B-spline analytic derivative; mean over same first-2/3 input interval",
+  "gas": "Q2.1 k2 local 2-s window means at 2-s knots, PCHIP reconstruction; raw units m3/s per official problem statement",
+  "progress_old": "cumulative oxygen at full-window midpoint, normalized by heat total",
+  "progress_new": "mean normalized cumulative oxygen over exactly the first-2/3 oxygen-input grid points",
+  "simulation": "raw gas observation layer; y_syn(t)=T_gas(t)+beta*sign*Q_fluct(t-tau)+epsilon_block(t), beta=sign*SNR*sd(epsilon)/sd(Q_fluct over valid t>=tau); then same k2/PCHIP and lag estimator",
+  "trend_smoother": "centered 60-s moving average (121 rows at H0 0.5-s sampling); same smoother applied to oxygen flow and gas signal",
+  "noise_blocks": "other-heats same-gas detrended raw residuals; moving blocks; block length = median first 1/e ACF crossing across heats, rounded up; each donor block centered and final sequence rescaled to target-heat residual SD",
+  "snr_levels": [
+    1.0,
+    0.5
+  ],
+  "injected_lags_s": [
+    0,
+    10,
+    20,
+    30
+  ],
+  "directions": [
+    "positive",
+    "negative"
+  ],
+  "replicates_per_random_condition": 100,
+  "random_seed": 20261128,
+  "zero_response_control": "stage trend + empirical residual noise, response coefficient exactly zero; 100 replicates; BH false-positive fraction reported",
+  "upper_bound_sensitivity": "same injected delays rerun with 180-s window and 60-s max lag; both window length and max search bound change",
+  "simulation_replicates": 100,
+  "noise_acf_definition": "Pearson correlation corr(e_t,e_{t-k}); block length is ceil(median across ten heats of first lag at which ACF <= exp(-1))",
+  "noise_block_samples": {
+    "CO": 23,
+    "CO2": 25
+  },
+  "noise_block_seconds": {
+    "CO": 11.5,
+    "CO2": 12.25
+  },
+  "response_amplitude": "beta = sign * target_SNR * sd(noise) / sd(shifted_oxygen_fluctuation over t>=tau); realized raw-layer SNR equals target by construction",
+  "official_actual_curve_sha256": "9bdc1fe5d962e5ed3b2c7ae513aade8094ea2b3e95a7f405a12c485d6099fd49",
+  "simulation_source_curve_sha256": "c89a8e34dc5f83385d6c06d356d2821f53e67b63197aa00b6dca9cf0f837f306",
+  "simulation_source_curve_note": "Round3 input curves; official 9bdc rebuild differs by max 4.55e-13; fixed-seed one-replicate control is identical at window-result level."
+}
