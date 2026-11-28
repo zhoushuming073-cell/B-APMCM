@@ -114,3 +114,4 @@ Using the first 60 s of each heat for causal feature centering/scaling did not p
 - experiments/q3_feedback_audit/prepare_cache.py: rebuild compact features from official Data.zip.
 - experiments/q3_feedback_audit/run_feedback_sweep.py: nested LOHO feedback and score-start sweep.
 - results/q3/feedback_audit/summary.csv: macro, pooled, paired-difference and sampling-reduction summary.
+- results/q3/feedback_audit/fold_metrics_60s_15s.csv: per-heat baseline and 15 s feedback scores for the common 60 s window.
