@@ -11,7 +11,7 @@
 | 英文论文（含 Summary Sheet） | B{TeamNumber}.pdf | PDF | 50 MB | 必交，待完成 |
 | 承诺书（打印后全员手写签名） | B{TeamNumber}cns.pdf | PDF（亦支持图片） | 20 MB | 必交，待完成 |
 | AI 使用说明 | B{TeamNumber}ai.pdf | PDF | 20 MB | 待完成 |
-| 支撑材料 | B{TeamNumber}fj.zip | ZIP（亦支持 RAR/7z/PDF） | 200 MB | 选交，待完成 |
+| 支撑材料 | B{TeamNumber}fj.zip | ZIP（亦支持 RAR/7z/PDF） | 200 MB | 选交，Q1/Q2 已归档，Q3 待封存 |
 
 TeamNumber 为完整参赛队号（含 apmcm 前缀）。真实队号、签名及个人身份信息不应写入公开仓库。
 
@@ -39,4 +39,4 @@ Supporting_Materials/
 
 ## 状态
 
-本目录目前仅建立交付规范及占位说明，不代表任何正式文件已完成。既有研究资料见 [reports](../reports/) 与 [RESEARCH_STATUS.md](../RESEARCH_STATUS.md)。
+[Supporting_Materials](Supporting_Materials/) 已归档 Q1、Q2 冻结模型、源码、紧凑结果、最终验证及复现包（已排除直接原始数据副本）。Q3 待正式封存。最终图表、完整复现验收、论文、承诺书、AI 说明和最终 ZIP 仍需完成。既有研究资料见 [reports](../reports/) 与 [RESEARCH_STATUS.md](../RESEARCH_STATUS.md)。
