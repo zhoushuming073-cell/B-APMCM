@@ -13,8 +13,8 @@
 | --- | --- | --- | --- |
 | Q1 光谱连续重构 | F | 主算法、参数、情景及绘图口径已封存 | [封存记录](reports/final/q1/第一问封存记录.md) |
 | Q2.1 六类过程曲线 | F | 非负积分 B 样条 + k2/PCHIP；原始烟气仅标记异常，不自动修改 | [封存报告](reports/final/Q2_1_FINAL_FREEZE.md) |
-| Q2.2 耗氧—烟气关系与时滞研究 | F/H | 2026-11-28 正式封存；补充窗口起点、五种流量口径及固定时滞注入检验；高流量短时滞仍未获稳健验证 | [最终研究报告](reports/final/Q2_2_FINAL_RELATIONSHIP_STUDY.md) · [补充稳健性检验](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md) |
-| Q2.3 有效响应时滞（并入第二问最终研究） | F/H | 已并入 Q2.2 并随之封存；180 s CO₂ 负向信号受窗口起点与流量估计口径影响，不能解释为纯运输时延 | [补充稳健性检验](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md) |
+| Q2.2 耗氧—烟气关系与时滞研究 | F/H | 2026-11-28 正式封存；第二轮稳健性检验未验证高流量短时滞；封存后第三轮匹配诊断仍未发现稳健负向证据，且共同支持不足，不重开冻结研究 | [最终研究报告](reports/final/Q2_2_FINAL_RELATIONSHIP_STUDY.md) · [第二轮稳健性检验](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md) · [第三轮 addendum](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND3_ADDENDUM.md) |
+| Q2.3 有效响应时滞（并入第二问最终研究） | F/H + E（封存后补充） | 原时滞研究随 Q2.2 封存；第三轮同炉同耗氧进度匹配仅 5/10 炉形成主分析匹配，CO/CO₂ 炉次中位时滞差为 +4/+8 s，区间跨零；共同支持不足，不能作因果解释 | [第二轮稳健性检验](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md) · [第三轮 addendum](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND3_ADDENDUM.md) |
 | Q3 实时烟气预测 | E | 优先比较 CO 梯度提升、CO₂ 融合残差树，保留共享曲线及纯过程对照；未封存 | [梯度提升报告](reports/working/第三问梯度提升追加实验20个R2.md) · [曲线迁移报告](reports/working/第三问异质性曲线机器学习与方差.md) |
 | 第五炉时基与缺失 | E/H | H0 主情景、H1 敏感性；H2 不规则缺失为优先研究假设，真实时间轴未识别 | [缺失机制报告](results/q2/missingness_mechanism/REPORT.md) |
 | 竞赛论文与提交包 | P | 优先将已封存结果和未决边界整合成论文 | [论文目录](reports/submission/paper/) · [摘要页](reports/submission/summary_sheet/) · [控制页](reports/submission/control_sheet/) |
@@ -68,6 +68,15 @@
 
 [最终研究报告](reports/final/Q2_2_FINAL_RELATIONSHIP_STUDY.md) · [补充稳健性检验](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md) · [复算入口](experiments/q2_lag_robustness/) · [紧凑结果](results/q2/lag_hypothesis_robustness/)。
 
+### Q2.3 第三轮：同炉同耗氧进度匹配（封存后探索性补充）
+
+- 在同一炉次内，以累计耗氧进度为匹配变量，对低流量与高流量窗口进行无放回一对一匹配；90 s 为主窗口，180 s 为敏感性窗口，同时检查 Pearson/Spearman、不同流量分位及进度 caliper。
+- H0、90 s、Pearson、25/75 分位、0.15 caliper 下，CO 与 CO₂ 各形成 7 对、覆盖 5/10 炉；炉次中位时滞差（高流量减低流量）分别为 +4 s、+8 s，95% 炉次 Bootstrap 区间分别为 [−4, +6] s、[−26, +20] s；两种气体均仅 1/5 炉呈负差。
+- 0.05 和 0.10 进度 caliper 均无匹配；0.15 下配对进度差中位数为 0.134，说明主分析只是放宽容差后的阶段近似匹配，共同支持仍然不足。
+- 因此第三轮仍未获得“高流量对应更短时滞”的稳健证据，也不能反向断言高流量会延长时滞。它是封存后的探索性 addendum，不改变原有冻结决定，不作因果解释。
+
+[第三轮报告](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND3_ADDENDUM.md) · [复算入口](experiments/q2_stage_matched_lag/v1/) · [紧凑结果与 QA](results/q2/stage_matched_lag_2026-11-28/)。
+
 ## 5. Q3：模型候选与淘汰依据（尚未封存）
 
 下表按 CO₂ / CO 列示。Q3 主候选实验均为同一批十炉上的探索，跨轮数值须核查评分域和提前量；以下不构成独立确认。
@@ -101,6 +110,7 @@
 | Q2 缺失机制 | [入口](experiments/q2_missingness_mechanism/) | [结果](results/q2/missingness_mechanism/) |
 | Q2 优化实验 | [入口](experiments/q2_optimized/) | [结果](results/q2/optimized/) |
 | Q2 预白化时滞 | [入口](experiments/q2_prewhitened_delay/) | [结果](results/q2/prewhitened_delay/) |
+| Q2.3 第三轮阶段匹配时滞 | [入口](experiments/q2_stage_matched_lag/v1/) | [结果](results/q2/stage_matched_lag_2026-11-28/) |
 | Q2 时基审计 | [入口](experiments/q2_timebase_audit/) | [结果](results/q2/timebase_audit/) |
 | Q3 B 炉 | [入口](experiments/q3_b_holdout/) | [结果](results/q3/b_holdout/) |
 | Q3 梯度提升 | [入口](experiments/q3_boosted_curve/) | [结果](results/q3/boosted_curve/) |
