@@ -1,0 +1,7 @@
+gas,model,macro_mae,macro_rmse,macro_r2
+CO2,fusion,2.442245,2.943639,0.149081
+CO2,fusion_interaction,2.385570,3.032622,0.138772
+CO2,fusion_momentum,2.442182,3.015809,0.139500
+CO,fusion,9.106804,11.543597,-0.124586
+CO,fusion_interaction,9.300459,11.914191,-0.162446
+CO,fusion_momentum,9.014779,11.549009,-0.090349
