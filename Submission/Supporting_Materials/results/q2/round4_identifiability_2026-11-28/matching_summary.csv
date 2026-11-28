@@ -1,0 +1,5 @@
+scenario,gas,n_pairs,n_heats,median_heat_effect_s,exact_sign_p_high_flow_shorter
+H0,CO2,7,5,8,0.96875
+H0,CO,7,5,4,0.96875
+H1,CO2,8,6,10,0.984375
+H1,CO,8,6,4,0.890625

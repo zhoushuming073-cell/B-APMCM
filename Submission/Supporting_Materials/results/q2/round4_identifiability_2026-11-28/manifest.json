@@ -1,0 +1,57 @@
+{
+  "experiment": "Q2.3 Round 4 \u2014 design-conditional power and identifiability audit",
+  "input_curves_sha256": "f7280a7ee7276c6281b2c5f85b9fb003e73ea51ad8473656873a95f07fd016b4",
+  "input_rows": 27178,
+  "window_rows": 856,
+  "heats": [
+    "6B03205",
+    "6B03206",
+    "6B03270",
+    "6B03271",
+    "6C02057",
+    "6C02058",
+    "6C02059",
+    "6C02060",
+    "6C02107",
+    "6C02108"
+  ],
+  "scenarios": [
+    "H0",
+    "H1"
+  ],
+  "windows_s": [
+    90,
+    180
+  ],
+  "metrics": [
+    "pearson",
+    "spearman"
+  ],
+  "primary_estimand": "H0 / 90 s / Pearson",
+  "flow_adjustment": "within-heat residual flow after linear or quadratic adjustment for cumulative oxygen progress; standardized within heat",
+  "lag_grid_s": 2,
+  "lag_search_range_s": "0 to window/6 (30 s for 90 s windows)",
+  "power_effects_s_per_within_heat_sd": [
+    0,
+    -2,
+    -4,
+    -6,
+    -8,
+    -10,
+    -12,
+    -16
+  ],
+  "simulations_per_cell": 1200,
+  "random_seed": 20261128,
+  "residual_resampling": "within-heat circular moving-block bootstrap, block length 2 windows",
+  "inference": "heat-level exact sign test and one-sample t-test; matched contrasts use round-three pairs and heat-level exact sign test",
+  "matched_design": "within-heat 25/75 flow tails, one-to-one Hungarian match on oxygen progress, 0.15 progress caliper",
+  "source_data_zip_sha256": "cb662ce5ea17c247d0733ec8a4245fec37abf82d823a0ddc08597b300d95a727",
+  "limitations": [
+    "Power simulation injects effects into estimated window-level lag outcomes, not raw physical signals.",
+    "It is conditional on the empirical window design and residual distribution; it is not independent validation.",
+    "The quadratic continuous analysis excludes heats with four or fewer windows from its per-heat slope test.",
+    "Lag estimates at the search boundary are censored at the maximum searched lag.",
+    "No causal effect is identified by this study."
+  ]
+}

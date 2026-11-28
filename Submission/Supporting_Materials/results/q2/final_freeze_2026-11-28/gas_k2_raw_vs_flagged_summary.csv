@@ -1,0 +1,5 @@
+scenario,gas,flagged_heat_points,max_abs_curve_difference_m3_s,max_abs_cumulative_difference_m3
+H0,CO2,0,0,0
+H0,CO,3,0.0847586818,0.2686262360
+H1,CO2,0,0,0
+H1,CO,3,0.0847586818,0.2686262360

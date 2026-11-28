@@ -1,0 +1,12 @@
+data/raw/
+data/interim/extracted/
+*.npz
+*.xlsb
+Data.zip
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+results/**/rerun/
+results/rebuilt_figures/

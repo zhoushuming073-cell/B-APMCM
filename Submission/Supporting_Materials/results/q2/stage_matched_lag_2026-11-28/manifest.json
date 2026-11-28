@@ -1,0 +1,35 @@
+{
+  "experiment": "Q2.3 third-round within-heat oxygen-progress matching",
+  "input_curves_sha256": "c89a8e34dc5f83385d6c06d356d2821f53e67b63197aa00b6dca9cf0f837f306",
+  "input_rows": 27178,
+  "heats": [
+    "6B03205",
+    "6B03206",
+    "6B03270",
+    "6B03271",
+    "6C02057",
+    "6C02058",
+    "6C02059",
+    "6C02060",
+    "6C02107",
+    "6C02108"
+  ],
+  "scenarios": ["H0", "H1"],
+  "windows_s": [90, 180],
+  "metrics": ["pearson", "spearman"],
+  "grid_s": 2,
+  "lag_estimator": "same as frozen Q2 relationship study: first 2/3 window oxygen flow, full-window gas flow, linear detrend, AR(1) prewhitening using oxygen-derived phi, max absolute association over nonnegative lags",
+  "matching": "within heat and gas; bottom/top flow quantile tails; strict inequalities exclude tied cutpoints; one-to-one Hungarian minimum-distance matching on cumulative-oxygen progress; no replacement",
+  "quantile_pairs": [[0.25, 0.75], [0.3, 0.7], [0.4, 0.6]],
+  "calipers_progress": [0.05, 0.1, 0.15, 0.2],
+  "effect_definition": "high-flow matched-window lag minus low-flow matched-window lag; negative supports shorter lag at high flow",
+  "inference": "heat-level median matched difference; percentile cluster bootstrap over heats; exact one-sided sign test for negative differences",
+  "source_data_zip_sha256": "cb662ce5ea17c247d0733ec8a4245fec37abf82d823a0ddc08597b300d95a727",
+  "frozen_curve_reference_sha256": "9bdc1fe5d962e5ed3b2c7ae513aade8094ea2b3e95a7f405a12c485d6099fd49",
+  "notes": [
+    "Exploratory post-freeze supplement; does not modify frozen Q2.2/Q2.3 outputs.",
+    "Caliper 0.15 is a relaxed diagnostic tolerance, not exact stage matching.",
+    "Windows are not independent; inference resamples heat clusters.",
+    "No matches means lack of common support, not evidence of zero effect."
+  ]
+}

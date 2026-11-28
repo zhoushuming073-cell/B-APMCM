@@ -1,0 +1,11 @@
+scenario,method,true_lag_s,window_s,median_estimated_lag_s,high_minus_low_lag_s,n_heats_contrast,n_heats_high_flow_shorter
+H0,analytic,20,90,20,0,10,0
+H0,raw_cum_30s,20,90,18,-2,10,6
+H0,raw_cum_60s,20,90,10,-5.5,10,7
+H0,fit_cum_30s,20,90,18,0,10,4
+H0,fit_cum_60s,20,90,10,-9,10,7
+H1,analytic,20,90,20,0,10,0
+H1,raw_cum_30s,20,90,18,-5.5,10,7
+H1,raw_cum_60s,20,90,10,-3,10,6
+H1,fit_cum_30s,20,90,20,-2,10,5
+H1,fit_cum_60s,20,90,10,-4.5,10,6

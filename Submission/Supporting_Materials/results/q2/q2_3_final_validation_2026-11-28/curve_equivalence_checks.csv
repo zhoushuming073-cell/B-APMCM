@@ -1,0 +1,4 @@
+comparison,rows_compared,all_equal,max_abs_difference
+Actual ten-heat window outputs: Round3 input vs official relationship-study rebuild,570,true,0
+Fixed-seed one-replicate synthetic windows: Round3 input vs official relationship-study rebuild,2536,true,0
+Full 27178-row curves: Round3 input vs official relationship-study rebuild,27178,false,4.547473508864641e-13

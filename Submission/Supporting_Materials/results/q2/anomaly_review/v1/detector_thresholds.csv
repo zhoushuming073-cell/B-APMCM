@@ -1,0 +1,21 @@
+heat,gas,sigma_log,burst_threshold_log,shift_threshold_log,slope_gap_threshold_log,isolated_spike_points,burst_points,shift_boundaries,timebase_note
+6B03205,CO2,0.003,0.018,0.04,0.04,0,0,3,row-space detector; H0/H1 changes displayed time only
+6B03205,CO,0.003,0.018,0.04,0.04,0,0,1,row-space detector; H0/H1 changes displayed time only
+6B03206,CO2,0.003,0.018,0.04,0.04,0,0,1,row-space detector; H0/H1 changes displayed time only
+6B03206,CO,0.003,0.018,0.04,0.04,1,0,4,row-space detector; H0/H1 changes displayed time only
+6B03270,CO2,0.003,0.018,0.04,0.04,0,0,1,row-space detector; H0/H1 changes displayed time only
+6B03270,CO,0.003,0.018,0.04,0.04,1,0,3,row-space detector; H0/H1 changes displayed time only
+6B03271,CO2,0.003,0.018,0.04,0.04,0,4,0,row-space detector; H0/H1 changes displayed time only
+6B03271,CO,0.003,0.018,0.04,0.04,1,9,4,row-space detector; H0/H1 changes displayed time only
+6C02057,CO2,0.003664835428666247,0.018,0.04,0.04,0,0,3,row-space detector; H0/H1 changes displayed time only
+6C02057,CO,0.003432695317148195,0.018,0.04,0.04,0,4,4,row-space detector; H0/H1 changes displayed time only
+6C02058,CO2,0.003,0.018,0.04,0.04,0,0,2,row-space detector; H0/H1 changes displayed time only
+6C02058,CO,0.003,0.018,0.04,0.04,0,0,0,row-space detector; H0/H1 changes displayed time only
+6C02059,CO2,0.003,0.018,0.04,0.04,0,0,0,row-space detector; H0/H1 changes displayed time only
+6C02059,CO,0.003,0.018,0.04,0.04,0,4,2,row-space detector; H0/H1 changes displayed time only
+6C02060,CO2,0.003,0.018,0.04,0.04,0,0,2,row-space detector; H0/H1 changes displayed time only
+6C02060,CO,0.003,0.018,0.04,0.04,0,0,2,row-space detector; H0/H1 changes displayed time only
+6C02107,CO2,0.003,0.018,0.04,0.04,0,0,0,row-space detector; H0/H1 changes displayed time only
+6C02107,CO,0.003,0.018,0.04,0.04,0,0,2,row-space detector; H0/H1 changes displayed time only
+6C02108,CO2,0.003,0.018,0.04,0.04,0,0,3,row-space detector; H0/H1 changes displayed time only
+6C02108,CO,0.003,0.018,0.04,0.04,0,8,1,row-space detector; H0/H1 changes displayed time only

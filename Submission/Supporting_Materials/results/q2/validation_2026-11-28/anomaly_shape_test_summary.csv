@@ -1,0 +1,11 @@
+gas,pattern,n_trials,detected,recall
+CO,3point,400,0,0
+CO,5point,400,0,0
+CO,ramp,400,1,0.0025
+CO,single,400,358,0.895
+CO,step,400,0,0
+CO2,3point,400,0,0
+CO2,5point,400,0,0
+CO2,ramp,400,0,0
+CO2,single,400,390,0.975
+CO2,step,400,0,0

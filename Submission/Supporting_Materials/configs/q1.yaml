@@ -1,0 +1,6 @@
+published_scenarios: data/processed/scenarios
+rerun_output: results/q1/rerun/finalization
+display_stride: 10
+display_time_stride: 10
+display_wavelength_stride: 1
+include_template_sensitivity: false

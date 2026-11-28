@@ -1,0 +1,9 @@
+progress_definition,gas,caliper,n_pairs,n_heats,median_progress_gap,max_progress_gap,median_flow_diff_m3_s,median_heat_lag_diff_s,bootstrap_ci_low_s,bootstrap_ci_high_s,heats_high_flow_shorter,heats_high_flow_longer,one_sided_sign_p
+old,CO,0.10,0,0,,,,,,,,,
+old,CO,0.15,7,5,0.134363,0.144209,3.210755,4,-4,6,1,4,0.96875
+old,CO2,0.10,0,0,,,,,,,,,
+old,CO2,0.15,7,5,0.134363,0.144209,3.210755,10,-26,20,1,4,0.96875
+new,CO,0.10,0,0,,,,,,,,,
+new,CO,0.15,7,5,0.119100,0.144448,3.210755,4,-4,6,1,4,0.96875
+new,CO2,0.10,0,0,,,,,,,,,
+new,CO2,0.15,7,5,0.119100,0.144448,3.210755,10,-26,20,1,4,0.96875

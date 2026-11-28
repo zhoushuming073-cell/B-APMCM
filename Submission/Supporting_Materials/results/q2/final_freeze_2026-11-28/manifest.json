@@ -1,0 +1,11 @@
+{
+  "source_archive_sha256": "cb662ce5ea17c247d0733ec8a4245fec37abf82d823a0ddc08597b300d95a727",
+  "process_csv_sha256": "f82e726b03f8eceb148a25440f34fe8385af28e95a7f551149b513ecf560c789",
+  "heats": 10,
+  "input_rows": 13589,
+  "timebase_scenarios": ["H0", "H1"],
+  "final_curve_rows": 27178,
+  "anomaly_candidate_events": 51,
+  "raw_values_modified": false,
+  "automatic_anomaly_corrections": 0
+}

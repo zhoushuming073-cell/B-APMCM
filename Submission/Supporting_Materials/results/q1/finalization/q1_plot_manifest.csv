@@ -1,0 +1,11 @@
+heat,variant,time_rows_total,time_rows_displayed,time_stride,wavelength_channels_total,wavelength_channels_displayed,wavelength_stride,saturation_points_marked,time_display_interval_s
+6B03205,hard_clip_lower_bound,1479,149,10,2047,2047,1,0,5.0
+6B03206,hard_clip_lower_bound,1311,132,10,2047,2047,1,13,5.0
+6B03270,hard_clip_lower_bound,1413,143,10,2047,2047,1,0,5.0
+6B03271,hard_clip_lower_bound,1420,143,10,2047,2047,1,10,5.0
+6C02057,hard_clip_lower_bound,775,79,10,2047,2047,1,4168,5.0
+6C02058,hard_clip_lower_bound,1343,136,10,2047,2047,1,5805,5.0
+6C02059,hard_clip_lower_bound,1555,157,10,2047,2047,1,100,5.0
+6C02060,hard_clip_lower_bound,1373,139,10,2047,2047,1,326,5.0
+6C02107,hard_clip_lower_bound,1459,147,10,2047,2047,1,2110,5.0
+6C02108,hard_clip_lower_bound,1461,147,10,2047,2047,1,2273,5.0

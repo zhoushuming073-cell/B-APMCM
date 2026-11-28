@@ -1,0 +1,5 @@
+gas,amplitude_m3s,n_injected,detected,recall
+CO,1,500,230,0.46
+CO,4,500,441,0.882
+CO2,1,500,391,0.782
+CO2,4,500,486,0.972

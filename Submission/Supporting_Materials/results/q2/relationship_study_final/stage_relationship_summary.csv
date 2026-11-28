@@ -1,0 +1,9 @@
+scenario,gas,metric,stage1,stage2,stage3,stage4
+H0,CO,mean_gas_flow_m3_s,3.457,31.584,43.178,42.904
+H0,CO2,mean_gas_flow_m3_s,11.170,18.340,14.173,12.657
+H0,CO,marginal_emission_per_oxygen,0.835,5.956,8.362,8.734
+H0,CO2,marginal_emission_per_oxygen,2.594,3.713,2.769,2.437
+H1,CO,mean_gas_flow_m3_s,3.457,31.584,43.178,42.904
+H1,CO2,mean_gas_flow_m3_s,11.170,18.340,14.173,12.657
+H1,CO,marginal_emission_per_oxygen,0.858,6.185,8.362,8.892
+H1,CO2,marginal_emission_per_oxygen,2.751,3.713,2.769,2.526

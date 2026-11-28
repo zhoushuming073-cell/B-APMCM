@@ -1,0 +1,5 @@
+anomaly_type,event_count,decision
+isolated_spike,3,pending_manual_review; preserve_raw; no_automatic_correction
+multi_point_burst,10,pending_manual_review; preserve_raw; no_automatic_correction
+sustained_level_shift,38,pending_manual_review; preserve_raw; no_automatic_correction
+TOTAL,51,all_candidates_pending; raw_data_unchanged

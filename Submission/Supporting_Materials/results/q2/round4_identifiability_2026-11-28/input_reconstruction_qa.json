@@ -1,0 +1,26 @@
+{
+  "source_data_zip_sha256": "cb662ce5ea17c247d0733ec8a4245fec37abf82d823a0ddc08597b300d95a727",
+  "expected_source_data_zip_sha256": "cb662ce5ea17c247d0733ec8a4245fec37abf82d823a0ddc08597b300d95a727",
+  "source_data_zip_hash_match": true,
+  "input_curves_sha256": "f7280a7ee7276c6281b2c5f85b9fb003e73ea51ad8473656873a95f07fd016b4",
+  "repository_frozen_curves_reference_sha256": "9bdc1fe5d962e5ed3b2c7ae513aade8094ea2b3e95a7f405a12c485d6099fd49",
+  "byte_hash_match_to_repository_reference": false,
+  "input_rows": 27178,
+  "input_heats": 10,
+  "input_scenarios": [
+    "H0",
+    "H1"
+  ],
+  "missing_cells_in_required_columns": 0,
+  "minimum_analytic_oxygen_flow_m3_s": 0.667209690503,
+  "oxygen_cumulative_monotone_all_heat_scenarios": true,
+  "h0_90s_pearson_median_lag_s": {
+    "CO2": 14.0,
+    "CO": 14.0
+  },
+  "h0_round3_reproduced_match_median_effect_s": {
+    "CO2": 8.0,
+    "CO": 4.0
+  },
+  "note": "Input curve byte hash differs from the repository-recorded frozen-curve hash; headline lag and round-three matched summaries are reproduced numerically, not byte-identically."
+}
