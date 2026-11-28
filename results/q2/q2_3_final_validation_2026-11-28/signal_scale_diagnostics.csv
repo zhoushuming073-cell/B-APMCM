@@ -1,0 +1,3 @@
+gas,actual_raw_sd,synthetic_raw_sd,actual_trend_sd,synthetic_trend_sd,actual_residual_sd,synthetic_residual_sd,actual_residual_acf1,synthetic_residual_acf1,injected_noise_acf1,realized_snr,actual_missing_fraction,synthetic_missing_fraction
+CO,18.600300,18.508538,18.226825,18.082624,1.667616,2.332658,0.984292,0.963250,0.932299,1.0,0,0
+CO2,5.548083,5.453641,5.215019,5.072918,0.775434,1.075370,0.983735,0.966712,0.940121,1.0,0,0
