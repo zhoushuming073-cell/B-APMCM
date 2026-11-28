@@ -1,0 +1,3 @@
+progress_definition,heats_with_minmax_progress_overlap,heats_total,low_windows_inside_overlap,high_windows_inside_overlap,median_overlap_width
+old,5,10,0,20,0.014
+new,5,10,0,20,0.012
