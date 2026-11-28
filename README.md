@@ -117,3 +117,8 @@ Q2.3 has completed four research rounds plus a final validation and is now **带
 - Reproducibility code/package and full replicate-level CSVs are delivered as the accompanying Q2_3_Final_Validation_and_Freeze.zip artifact; the one-command entry point is documented there.
 
 No fifth model-search round is planned. Only paper wording, figure/table integration, and reproducibility maintenance remain.
+
+
+## Q2.3 正式封存（2026-11-28）
+
+团队已宣布 Q2.3 研究正式封存（带明确证据限制）。[最终文献与机制解释](reports/final/Q2_3_MECHANISM_LITERATURE_AND_CLOSURE.md)补齐六篇期刊文献、条件效应与边际关系的区分及论文讨论段落；[BibTeX](docs/methodology/q2_3_mechanism_references.bib)可直接用于论文。题设的方向性预期未被十炉观测稳健识别，不能据此否定其物理机制。14 s 仅为表观互相关峰位。既有 CO₂ 匹配差 +8/+10 s 记录冲突已在封存文档标记，论文暂不引用该争议值。仅保留论文整合与工程复现维护，不再开新实验或模型搜索。

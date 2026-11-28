@@ -154,3 +154,8 @@
 - Flow effect: no matches at progress caliper 0.10; at 0.15, 7 pairs from 5 heats per gas. Matched high-minus-low lag differences are +4 s (CO) and +8 s (CO₂), with heat-bootstrap intervals crossing zero. Stage-adjusted coefficients change sign between linear and quadratic specifications.
 - Engineering: second-round AR(1) slice syntax fixed; 40-test primary family rerun, 0 Holm-significant. Archived compact records match on every field that was actually archived (24/24 records). Official frozen flow summaries match 20/20 heat/scenario rows.
 - The 14 s value is reported only as an apparent response time shift, not a physical gas-transport delay. Full report and compact tables are in the final validation report/results directory.
+
+
+## Q2.3 团队正式封存决定 — 2026-11-28
+
+**状态：正式封存（带明确证据限制）。** 团队明确结束 Q2.3 研究，保留四轮研究与最终验证。六篇期刊文献、工艺耦合解释、数学条件效应框架及论文可用讨论见[封存文档](reports/final/Q2_3_MECHANISM_LITERATURE_AND_CLOSURE.md)，[BibTeX](docs/methodology/q2_3_mechanism_references.bib)。不把观测非单调解释为违反物理规律，也不声称已证实负向效应被混杂掩盖。本次未修改模型或结果，未复跑实验。最终验证报告与匹配 CSV 的 CO₂ 中位差 +8/+10 s 不一致，暂不引用该争议点估计；仅允许既有数字核对，不重启研究。Q3 不受本次文档封存变更影响。
