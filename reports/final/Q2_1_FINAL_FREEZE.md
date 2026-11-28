@@ -1,6 +1,6 @@
 # Q2.1 Final Freeze — 2026-11-28
 
-## Scope and source
+> **单位语义补充审计（2026-11-28）：** 本报告冻结的平滑、拟合与数值重构仍可视为对所给 CO₂/CO 数值通道的曲线重构；但将其命名为 m³/s 流量并积分为绝对排放量，依赖题面单位解释正确。后续十炉条件氧平衡审计发现，若 CO/CO₂与氧枪累计供氧采用同一体积基准，COx 氧当量积分为氧枪供氧的 2.93–6.53 倍（中位数 5.77）。因此，绝对流量/排放解释暂列待核实，不覆盖原冻结数值结果。见 [Q3 测量语义与物理化学审计 V2](../working/Q3_PHYSICAL_CHEMISTRY_AUDIT_V2.md)。\n\n## Scope and source
 
 Q2.1 delivers six time-dependent curves for each of ten heats: cumulative oxygen, effective instantaneous oxygen flow, CO2 flow, CO flow, cumulative CO2 emission, and cumulative CO emission.
 
