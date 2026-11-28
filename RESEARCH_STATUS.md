@@ -17,6 +17,7 @@
 | Q2.3 有效响应时滞（含第三/四轮补充审计） | F/H + E（封存后补充） | 第三轮 CO/CO₂ 炉次中位时滞差 +4/+8 s；第四轮连续调整点估计接近零且对阶段函数形式敏感；条件功效 MDE 约 4–6 s/炉内残差流量 SD，匹配法约 8–12 s；不作因果解释 | [第二轮稳健性检验](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md) · [第三轮 addendum](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND3_ADDENDUM.md) · [第四轮审计](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND4_POWER_AUDIT.md) |
 | Q3 实时烟气预测 | E | 优先比较 CO 梯度提升、CO₂ 融合残差树，保留共享曲线及纯过程对照；未封存 | [梯度提升报告](reports/working/第三问梯度提升追加实验20个R2.md) · [曲线迁移报告](reports/working/第三问异质性曲线机器学习与方差.md) |
 | 第五炉时基与缺失 | E/H | H0 主情景、H1 敏感性；H2 不规则缺失为优先研究假设，真实时间轴未识别 | [缺失机制报告](results/q2/missingness_mechanism/REPORT.md) |
+| Q2 A 阶段：完整炉次人工缺帧恢复 | P | 已登记方案；五个完整 6C 对照炉留一验证，比较 Q2、Q3 与联合恢复；尚未运行，不进入第五炉 | [阶段记录](reports/working/Q2_A_PHASE_A_PROGRESS.md) |
 | 竞赛论文与提交包 | P | 优先将已封存结果和未决边界整合成论文 | [论文目录](reports/submission/paper/) · [摘要页](reports/submission/summary_sheet/) · [控制页](reports/submission/control_sheet/) |
 
 ## 2. 数据与共同约束
@@ -118,6 +119,7 @@
 | Q2.1 正式封存 | [入口](experiments/q2_finalization/) | [结果](results/q2/final_freeze_2026-11-28/) |
 | Q2 瞬时流量/异质性 | [V1–V3](experiments/q2_instantaneous_flow/) · [V4（Q2.1）](experiments/q2_instantaneous_flow/v4/) | [结果](results/q2/instantaneous_flow/) |
 | Q2 缺失机制 | [入口](experiments/q2_missingness_mechanism/) | [结果](results/q2/missingness_mechanism/) |
+| Q2 A 阶段：完整炉次人工缺帧恢复 | [阶段记录](reports/working/Q2_A_PHASE_A_PROGRESS.md) | 尚未运行；暂无本阶段结果 |
 | Q2 优化实验 | [入口](experiments/q2_optimized/) | [结果](results/q2/optimized/) |
 | Q2 预白化时滞 | [入口](experiments/q2_prewhitened_delay/) | [结果](results/q2/prewhitened_delay/) |
 | Q2.3 第三轮阶段匹配时滞 | [入口](experiments/q2_stage_matched_lag/v1/) | [结果](results/q2/stage_matched_lag_2026-11-28/) |

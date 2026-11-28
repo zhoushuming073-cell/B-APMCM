@@ -12,6 +12,7 @@
 - **第二问时滞：随 Q2.2 一并封存。** 180 秒 CO₂ 的负向信号对窗口起点和流量估计口径敏感；不强制拟合单调递减时滞函数。
 - **第三问：探索性。** 已完成光谱融合、曲线迁移、残差树、神经网络、梯度提升和物理过程实验；CO 梯度提升与 CO₂ 残差树为当前候选，非最终模型。光谱增量须按相同信息集及评分域审查。
 - **第五炉：未决。** H0 仍为主情景，H1 为敏感性；H2 不规则缺行获得描述性支持，真实秒级时间轴及跨传感器缺帧同步性未识别。
+- **第二问 A 阶段：完整炉次人工缺帧恢复。** 已登记五个完整 6C 对照炉的留一炉验证方案，拟比较 Q2-only、Q3-only 与 Q2+Q3；目前只有方案，没有本阶段运行结果。第五炉 6C02057 暂不参与训练和调参。
 
 ## 快速开始
 
@@ -68,6 +69,7 @@ python experiments/q2_prewhitened_delay/run.py
 | 第二问第四轮：流量—时滞可识别性与功效审计 | [实验入口](experiments/q2_stage_matched_lag/v2/) · [第四轮报告](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND4_POWER_AUDIT.md) | [匹配、回归、功效与 QA](results/q2/round4_identifiability_2026-11-28/) |
 | 第二问 2.1：解析供氧 V4、异常筛查 | [流量 V4](experiments/q2_instantaneous_flow/v4/) · [异常检测 V1](experiments/q2_anomaly_review/v1/) · [更新报告](reports/working/Q2_2_FLOW_ANOMALY_UPDATE.md) | [V4 结果](results/q2/instantaneous_flow/v4/) · [异常候选](results/q2/anomaly_review/v1/) |
 | 第二问：第五炉缺失机制 | [实验说明](experiments/q2_missingness_mechanism/) · [研究报告](results/q2/missingness_mechanism/REPORT.md) | [模拟结果](results/q2/missingness_mechanism/) |
+| 第二问 A 阶段：完整炉次人工缺帧恢复 | [阶段记录](reports/working/Q2_A_PHASE_A_PROGRESS.md) | 尚未运行；暂无本阶段结果 |
 | 第二问：对齐比较 | [实验入口](experiments/q2_aligned_comparison/) | [结果](results/q2/aligned_comparison/) |
 | 第二问：优化实验 | [优化实验报告](reports/final/q2_optimized/Q2_report.pdf) | [90 秒窗口证据](results/q2/delay_identification/tables/final_delay_evidence_summary.csv) |
 | 第二问：时基审计 | [时基审计报告](reports/final/timebase_audit/APMCM_Timebase_Audit_Report.pdf) | [时基审计结果](results/q2/timebase_audit/) |
