@@ -235,6 +235,7 @@ Dering、Swartz 与 Dogan 的 BOF 动态模型明确包含：
 
 本版本结果表位于 results/q3/physical_mechanism_v1/：
 - tail_dynamics.csv
+- tail_window_sensitivity.csv
 - stage_summary.csv
 - stage_lag_summary.csv
 - spectral_event_features.csv
