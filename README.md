@@ -7,10 +7,10 @@
 最新研究状态、推荐模型、证据等级、待决问题及全部专项索引见 **[RESEARCH_STATUS.md](RESEARCH_STATUS.md)**（2026-11-28 更新）。
 
 - **第一问：已封存。** 十炉全量复算，保守异常修复、饱和情景和双线性连续重构已冻结；模板值不是真实峰顶。
-- **第二问 2.1：已封存。** 非负积分 B 样条估计有效供氧流量，k2/PCHIP 重构烟气并解析积分；51 个异常候选仅标记，原始数据不修改。
-- **第二问关系研究：正式封存（2026-11-28）。** 完成累计耗氧—烟气流量/累计排放关系、阶段边际排放和有效时滞研究；不做预测。前两轮补充检验未能稳健验证“高流量—短时滞”假说；封存后另完成第三轮同炉同耗氧进度匹配诊断，仍未获得稳健负向证据，且共同支持不足。第三轮作为独立 addendum 归档，不重开或覆盖原冻结结论，详见[最终报告](reports/final/Q2_2_FINAL_RELATIONSHIP_STUDY.md)、[第二轮补充稳健性检验](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md)及[第三轮匹配诊断](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND3_ADDENDUM.md)。
+- **第二问 2.1：数值曲线已封存，绝对流量/排放解释待核实。** 非负积分 B 样条估计供氧通道，k2/PCHIP 重构烟气通道；51 个异常候选仅标记，原始数据不修改。Q3 V2 的条件氧平衡审计发现，若 CO/CO₂按同基准 m³/s 解释，COx 氧当量为累计氧枪供氧的 2.93–6.53 倍；单位冲突未解决前，累计 CO/CO₂只能称为通道积分，不能宣称绝对排放量。
+- **第二问关系研究：数值关系研究已封存，物理流量解释有条件。** 原研究的相关性与时滞数值保留；若 CO/CO₂列最终被确认是浓度而非流量，则其结果应解释为通道关联，不是流量—排放关系。前两轮补充检验未稳健验证“高流量—短时滞”，第三轮匹配诊断仍未获得稳健负向证据，详见[最终报告](reports/final/Q2_2_FINAL_RELATIONSHIP_STUDY.md)及[单位审计](reports/working/Q3_PHYSICAL_CHEMISTRY_AUDIT_V2.md)。
 - **第二问时滞：随 Q2.2 一并封存。** 180 秒 CO₂ 的负向信号对窗口起点和流量估计口径敏感；不强制拟合单调递减时滞函数。
-- **第三问：探索性。** 已完成光谱融合、曲线迁移、残差树、神经网络、梯度提升和物理过程实验；CO 梯度提升与 CO₂ 残差树仍是主候选。新增物理化学机制 V1：十炉尾段 CO₂上升、CO下降、总含碳气体流量下降在 9/10 炉一致。新增阶段条件时滞与阶段专家 V1：共同支持域下 CO₂ 宏平均 R²由 0.134 提升至 0.569，CO 由 0.709 至 0.712；但阶段路由主要依赖时间/耗氧阈值，光谱未证明额外状态识别能力，CO₂尾部反转仍未解决。以上均为探索性证据，不是最终模型。
+- **第三问：探索性。** 阶段专家 V1 在共同支持域下将 CO₂宏平均 R²由 0.134 提升至 0.569，CO 提升有限；但光谱尚未证明额外阶段识别能力，CO₂尾部反转仍未解决。新增物理化学审计 V2：同基准 m³/s 解释不通过条件氧平衡，十炉 COx 氧当量/氧枪累计供氧为 2.93–6.53 倍；尾段 CO₂通道上升、CO下降、COx通道和下降、表观 CO₂份额上升均为 10/10。由于通道单位未确认，撤回“总碳气体流量下降”的解释，不把通道和当作排放量。
 - **第五炉：未决。** H0 仍为主情景，H1 为敏感性；H2 不规则缺行获得描述性支持，真实秒级时间轴及跨传感器缺帧同步性未识别。
 
 ## 快速开始
@@ -81,6 +81,7 @@ python experiments/q2_prewhitened_delay/run.py
 | 第三问：十炉物理过程 | [研究报告](reports/working/q3_physical_process/REPORT.md) · [实验说明](experiments/q3_physical_process/) | [结果](results/q3/physical_process/) |
 | 第三问：物理化学机制 V1 | [研究报告](reports/working/Q3_PHYSICAL_MECHANISM_V1.md) · [实验说明](experiments/q3_physical_mechanism_v1/) | [尾段、阶段、谱线与消融结果](results/q3/physical_mechanism_v1/) |
 | 第三问：阶段条件时滞与阶段专家 V1 | [研究报告](reports/working/Q3_STAGE_AWARE_PREDICTION_V1.md) · [实验说明](experiments/q3_stage_aware_v1/) | [阶段、时滞、消融与尾段诊断](results/q3/stage_aware_v1/) |
+| 第三问：测量语义与物理化学审计 V2 | [研究报告](reports/working/Q3_PHYSICAL_CHEMISTRY_AUDIT_V2.md) · [实验说明](experiments/q3_physical_chemistry_v2/) | [条件氧平衡与尾段组成审计](results/q3/physical_chemistry_v2/) |
 
 最终交付：[论文](reports/submission/paper/) · [摘要页](reports/submission/summary_sheet/) · [控制页](reports/submission/control_sheet/)。目前为待整合交付区域，已有正式封存材料在 [reports/final](reports/final/)。
 
