@@ -1,0 +1,27 @@
+{
+  "n_heats": 10,
+  "common_wavelength_grid_n": 2021,
+  "common_wavelength_min_nm": 340.535,
+  "common_wavelength_max_nm": 1023.295,
+  "transition_median_s": 234.75,
+  "transition_range_s": [112.5, 297.5],
+  "key_raw_result": {
+    "feature": "K_doublet_wide",
+    "positive_heats": 9,
+    "n_heats": 10,
+    "mean_post_minus_pre_log_contrast": 0.0153438073,
+    "paired_t_p_unadjusted": 0.0017124
+  },
+  "loho_candidate_line_pipeline": {
+    "feature_set": "K_doublet_wide_only",
+    "mean_balanced_accuracy": 0.6192307692,
+    "mean_auc": 0.7414201183
+  },
+  "loho_full_window_pipeline": {
+    "K_doublet_mean_balanced_accuracy": 0.6113333333,
+    "K_doublet_mean_auc": 0.701,
+    "full_line_mean_balanced_accuracy": 0.6474166667,
+    "full_line_mean_auc": 0.7163333333
+  },
+  "interpretation": "Contemporaneous stage discrimination only; no future prediction claim."
+}
