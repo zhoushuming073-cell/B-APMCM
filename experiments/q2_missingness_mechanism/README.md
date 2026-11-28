@@ -79,3 +79,10 @@ The cache stores float32 spectra and exact source-file hashes in adjacent JSON m
 - Heat-to-heat process heterogeneity can mimic sampling differences.
 - Without independent device timestamps, row indices cannot recover actual acquisition times. Cross-sensor dependence can support or weaken a row-alignment hypothesis, but cannot prove physical synchronization.
 - This experiment does not automatically replace the official H0 timeline with H2. H0 and H1 remain sensitivity scenarios until independent timestamps or stronger physical constraints become available.
+
+The two .py files are small launchers; the full source is stored beside each launcher as a .py.gz file. To inspect the source without changing the launcher:
+
+```bash
+gzip -dc experiments/q2_missingness_mechanism/run_highdim_alignment.py.gz > /tmp/run_highdim_alignment_source.py
+gzip -dc experiments/q2_missingness_mechanism/extract_xlsb_cache.py.gz > /tmp/extract_xlsb_cache_source.py
+```
