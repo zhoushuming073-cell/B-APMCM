@@ -1,0 +1,5 @@
+scenario,gas,median_spearman_dO_vs_mean_gas_flow,min,max,positive_heats,n_heats
+H0,CO,0.367872,-0.195652,0.753247,6,10
+H0,CO2,0.242784,-0.202797,0.660000,8,10
+H1,CO,0.266438,-0.195652,0.753247,6,10
+H1,CO2,0.242784,-0.385385,0.660000,8,10

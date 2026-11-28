@@ -1,0 +1,13 @@
+scenario,gas,adjustment,slope_s_per_m3s,cluster_bootstrap_95_low,cluster_bootstrap_95_high,n_windows,n_heats
+H0,CO,within_heat,2.561179,2.152535,3.202742,71,10
+H0,CO,stage_linear_adjusted,0.452766,-2.171267,2.293573,71,10
+H0,CO,stage_quadratic_adjusted,-0.651323,-3.983362,2.415214,71,10
+H0,CO2,within_heat,2.545395,2.231079,2.974767,71,10
+H0,CO2,stage_linear_adjusted,0.819608,-2.371373,3.561766,71,10
+H0,CO2,stage_quadratic_adjusted,-0.821783,-5.044034,3.441149,71,10
+H1,CO,within_heat,2.977641,2.505780,3.470856,75,10
+H1,CO,stage_linear_adjusted,-0.214868,-2.619698,1.893283,75,10
+H1,CO,stage_quadratic_adjusted,-0.120380,-2.761580,2.516622,75,10
+H1,CO2,within_heat,2.922531,2.591825,3.286491,75,10
+H1,CO2,stage_linear_adjusted,0.312582,-2.836614,3.589829,75,10
+H1,CO2,stage_quadratic_adjusted,-0.598622,-4.380908,3.330010,75,10
