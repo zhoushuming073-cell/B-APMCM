@@ -1,0 +1,13 @@
+mechanism,metric,shared,independent,circular_shift
+random,rho_pc_dist_CO2,0.97,1.00,0.99
+random,rho_pc_dist_CO,0.94,1.00,1.00
+random,mean_abs_pc_rho_CO2,0.25,0.26,0.28
+random,mean_abs_pc_rho_CO,0.85,0.89,0.92
+random,rho_log_brightness_CO2,0.26,0.95,0.96
+random,rho_log_brightness_CO,0.12,0.89,1.00
+bursty8,rho_pc_dist_CO2,0.99,1.00,0.98
+bursty8,rho_pc_dist_CO,0.95,1.00,1.00
+bursty8,mean_abs_pc_rho_CO2,0.17,0.24,0.20
+bursty8,mean_abs_pc_rho_CO,0.83,0.83,0.87
+bursty8,rho_log_brightness_CO2,0.29,0.94,0.92
+bursty8,rho_log_brightness_CO,0.17,0.91,1.00

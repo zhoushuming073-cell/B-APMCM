@@ -1,0 +1,5 @@
+mechanism,median_abs_row_offset,p90_abs_row_offset
+random,12,27.5
+regular,1,1
+bursty8,22,49
+bursty32,41,103

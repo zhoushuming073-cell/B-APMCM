@@ -1,0 +1,84 @@
+{
+  "target": "6C02057",
+  "target_rows": 775,
+  "spectral_channels": 2047,
+  "controls": [
+    "6C02058",
+    "6C02059",
+    "6C02060",
+    "6C02107",
+    "6C02108"
+  ],
+  "pca_components_per_view": 12,
+  "pca_intensity_variance_range": [
+    0.9097206097,
+    0.9292246513
+  ],
+  "pca_shape_variance_range": [
+    0.9933262893,
+    0.99377518
+  ],
+  "mask_mechanisms": [
+    "random",
+    "regular",
+    "bursty8",
+    "bursty32"
+  ],
+  "alignments": [
+    "shared",
+    "independent",
+    "circular_shift"
+  ],
+  "replicates_per_control_heat_mechanism_alignment": 100,
+  "total_simulated_sequences": 6000,
+  "seed": 20261128,
+  "target_metrics": {
+    "rho_pc_dist_CO2": 0.0957476238,
+    "rho_pc_dist_CO": 0.1470120335,
+    "mean_abs_pc_rho_CO2": 0.0210626023,
+    "mean_abs_pc_rho_CO": 0.0311665212,
+    "rho_log_brightness_CO2": 0.0644257927,
+    "rho_log_brightness_CO": 0.098008864,
+    "skill_gain_mean_alpha10": -0.0482972335,
+    "skill_gain_CO2_alpha10": -0.0940429851,
+    "skill_gain_CO_alpha10": -0.002551482
+  },
+  "target_alpha_sensitivity": {
+    "alpha1": -0.0783587426,
+    "alpha10": -0.0482972335,
+    "alpha100": -0.0190088817
+  },
+  "control_auc_medians": {
+    "random": {
+      "pc_distance_CO2": 0.8542,
+      "pc_distance_CO": 0.8792,
+      "brightness_CO2": 0.9334,
+      "brightness_CO": 0.9536
+    },
+    "bursty8": {
+      "pc_distance_CO2": 0.8502,
+      "pc_distance_CO": 0.9013,
+      "brightness_CO2": 0.9255,
+      "brightness_CO": 0.9482
+    },
+    "bursty32": {
+      "pc_distance_CO2": 0.8026,
+      "pc_distance_CO": 0.8175,
+      "brightness_CO2": 0.8497,
+      "brightness_CO": 0.9127
+    },
+    "regular": {
+      "pc_distance_CO2": 0.7255,
+      "pc_distance_CO": 0.6868,
+      "brightness_CO2": 0.6504,
+      "brightness_CO": 0.6246
+    }
+  },
+  "independent_mask_median_abs_row_offset": {
+    "random": 12,
+    "regular": 1,
+    "bursty8": 22,
+    "bursty32": 41
+  },
+  "conclusion": "High-dimensional statistics separate simulated mechanisms on controls, but the target is extreme under shared, independent, and circular-shift distributions. Spectral-gas mask identity is not identified; sensor-specific loss is not proven."
+}

@@ -47,6 +47,32 @@ For faster reruns of the main experiment when combined per-heat NPZ caches alrea
 
 The compact, inspectable result set is in `results/q2/missingness_mechanism/`, including `REPORT.md`, the data audit, sensor-family match summary, full-spectrum shape comparison, and cross-sensor alignment summaries. The full Monte Carlo draws can be regenerated with the commands above and are not required to reproduce the summary tables.
 
+## Final high-dimensional alignment experiment
+
+The final experiment uses all 2,047 wavelength channels and builds two unsupervised PCA views: log-intensity and row-normalized spectral shape, with 12 PCs per view. It compares shared masks, independent masks, and a circular-shift negative control under random, regular, bursty-8-row, and bursty-32-row thinning. Each control heat × mask mechanism × pairing method uses 100 Monte Carlo replicates (6,000 simulated sequences total).
+
+The detailed result is in results/q2/missingness_mechanism/highdim/REPORT.md. Some high-dimensional statistics separate known shared/independent simulations on the five controls, but the target lies in the extreme region of both distributions and also matches the circular-shift negative control. A scalar brightness proxy suggests weaker exact row pairing, but cannot distinguish independent deletion from other forms of misalignment.
+
+To run the final experiment, first extract one cache per workbook:
+
+```bash
+python experiments/q2_missingness_mechanism/extract_xlsb_cache.py \
+  --data-dir data/raw/official/workbooks \
+  --out-dir /tmp/q2_6c_cache
+```
+
+Then run:
+
+```bash
+python experiments/q2_missingness_mechanism/run_highdim_alignment.py \
+  --cache-dir /tmp/q2_6c_cache \
+  --data-dir data/raw/official/workbooks \
+  --out results/q2/missingness_mechanism/highdim \
+  --rep 100 --seed 20261128
+```
+
+The cache stores float32 spectra and exact source-file hashes in adjacent JSON metadata. Do not commit caches or raw XLSB files. Requires NumPy 2.x, pandas 2.x, pyxlsb 1.x, SciPy 1.12+, scikit-learn 1.5+, and threadpoolctl 3.5+.
+
 ## Interpretation limits
 
 - Five control heats are a small reference sample. Monte Carlo repetitions describe outcomes conditional on those five sequences; they do not create a larger real-world sample.

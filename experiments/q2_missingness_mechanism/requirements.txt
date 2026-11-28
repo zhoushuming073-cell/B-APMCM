@@ -2,3 +2,5 @@ numpy>=2.2,<3
 pandas>=2.2,<3
 pyxlsb>=1.0.10,<2
 scipy>=1.12,<2
+scikit-learn>=1.5,<2
+threadpoolctl>=3.5,<4

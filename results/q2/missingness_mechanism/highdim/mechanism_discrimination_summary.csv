@@ -1,0 +1,5 @@
+mechanism,pc_distance_CO2_auc,pc_distance_CO_auc,brightness_CO2_auc,brightness_CO_auc
+random,0.8542,0.8792,0.9334,0.9536
+regular,0.7255,0.6868,0.6504,0.6246
+bursty8,0.8502,0.9013,0.9255,0.9482
+bursty32,0.8026,0.8175,0.8497,0.9127
