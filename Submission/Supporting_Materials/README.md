@@ -46,6 +46,16 @@ python q23_reproduction/run_q23_final_validation.py --data-zip /path/to/official
 
 Keep restored work directories and generated raw inputs outside the final ZIP. The filtered archive was structurally rebuilt from the verified upstream ZIP without modifying retained member payloads. The restore script verifies the new archive and original retained member SHA-256 values. A fresh Python restoration and full 100-replicate execution have not been performed in this staging session.
 
+## Packaging integrity check
+
+Before preparing any local raw inputs or creating the final ZIP, run from this directory:
+
+```bash
+python scripts/verify_submission.py
+```
+
+This standard-library-only check verifies all source-copy Git blob hashes against SOURCE_MANIFEST.tsv, the reconstructed Q2.3 archive and all retained member hashes, and the absence of direct official inputs/raw caches/LFS pointers. It does not rerun the research. For the current staging snapshot, the remote Git tree and all 162 source manifest rows were cross-checked; local archive decompression and full model execution remain untested by this audit. Run the check again on the clean final staging copy before submission; update the source manifest when Q3 is added.
+
 ## Outstanding before final ZIP
 
 - Add the actual final Q1 hard-clip 10-heat figures, generated NPZ/processed outputs if needed and within the size budget (do not include raw-equivalent caches or original observations solely as copies), and final Q2 figures/curves consistent with the frozen models. The newer Q1 figures are git-ignored rerun products, not the older tracked figures. Filter regenerated material to comply with original-data exclusion.
