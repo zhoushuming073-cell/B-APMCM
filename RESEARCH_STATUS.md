@@ -12,10 +12,10 @@
 | 研究线 | 等级 | 当前决策 | 首要证据 |
 | --- | --- | --- | --- |
 | Q1 光谱连续重构 | F | 主算法、参数、情景及绘图口径已封存 | [封存记录](reports/final/q1/第一问封存记录.md) |
-| Q2.1 六类过程曲线 | F | 非负积分 B 样条 + k2/PCHIP；原始烟气仅标记异常，不自动修改 | [封存报告](reports/final/Q2_1_FINAL_FREEZE.md) |
-| Q2.2 耗氧—烟气关系与时滞研究 | F/H | 2026-11-28 正式封存；第二轮稳健性检验未验证高流量短时滞；封存后第三轮匹配诊断仍未发现稳健负向证据，且共同支持不足，不重开冻结研究 | [最终研究报告](reports/final/Q2_2_FINAL_RELATIONSHIP_STUDY.md) · [第二轮稳健性检验](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md) · [第三轮 addendum](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND3_ADDENDUM.md) |
+| Q2.1 六类过程曲线 | F/H | 数值曲线拟合与异常标记已冻结；但 CO/CO₂是否为 m³/s 尚有题面/表头冲突，累计排放的绝对物理解释待数据字典确认 | [封存报告](reports/final/Q2_1_FINAL_FREEZE.md) · [单位审计](reports/working/Q3_PHYSICAL_CHEMISTRY_AUDIT_V2.md) |
+| Q2.2 耗氧—烟气关系与时滞研究 | F/H | 数值通道关系与时滞研究已封存；高流量短时滞未获稳健支持。绝对流量/排放解释取决于 CO/CO₂单位核实，暂不宣称为实际烟气流量或排放 | [最终研究报告](reports/final/Q2_2_FINAL_RELATIONSHIP_STUDY.md) · [第二轮稳健性检验](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md) · [第三轮 addendum](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND3_ADDENDUM.md) |
 | Q2.3 有效响应时滞（并入第二问最终研究） | F/H + E（封存后补充） | 原时滞研究随 Q2.2 封存；第三轮同炉同耗氧进度匹配仅 5/10 炉形成主分析匹配，CO/CO₂ 炉次中位时滞差为 +4/+8 s，区间跨零；共同支持不足，不能作因果解释 | [第二轮稳健性检验](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md) · [第三轮 addendum](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND3_ADDENDUM.md) |
-| Q3 实时烟气预测 | E | 优先比较 CO 梯度提升、CO₂ 融合残差树，保留共享曲线及纯过程对照；未封存 | [梯度提升报告](reports/working/第三问梯度提升追加实验20个R2.md) · [曲线迁移报告](reports/working/第三问异质性曲线机器学习与方差.md) |
+| Q3 实时烟气预测 | E/H | 保留梯度提升、残差树、阶段专家作数值通道预测候选；单位未确认前，目标称烟气观测通道，不称绝对流量/排放 | [梯度提升报告](reports/working/第三问梯度提升追加实验20个R2.md) · [曲线迁移报告](reports/working/第三问异质性曲线机器学习与方差.md) |
 | 第五炉时基与缺失 | E/H | H0 主情景、H1 敏感性；H2 不规则缺失为优先研究假设，真实时间轴未识别 | [缺失机制报告](results/q2/missingness_mechanism/REPORT.md) |
 | 竞赛论文与提交包 | P | 优先将已封存结果和未决边界整合成论文 | [论文目录](reports/submission/paper/) · [摘要页](reports/submission/summary_sheet/) · [控制页](reports/submission/control_sheet/) |
 
@@ -90,16 +90,17 @@
 | 梯度提升 | H0 融合 0.4519/0.7308；纯过程同结构 0.3841/0.6991；CO 候选优先，CO₂ 保留残差树；第五炉 CO₂ 为负 | [报告](reports/working/第三问梯度提升追加实验20个R2.md) |
 | 十炉物理探索 | E | CO₂ 起升先于 CO：10/10 炉，阈值定义下中位领先 77.5 s；光谱单独识别阶段未稳定超过时间基准；非因果结论 | [报告](reports/working/q3_physical_process/REPORT.md) |
 | 物理化学机制 V1 | E/H | 尾段 CO₂上升、CO下降、Q_sum下降在 9/10 炉一致；主升段局部光谱—烟气偏移较稳定，尾段相关弱；动量交互提升整体宏平均 R²但仍错过 CO₂尾部反转 | [研究报告](reports/working/Q3_PHYSICAL_MECHANISM_V1.md) · [实验说明](experiments/q3_physical_mechanism_v1/README.md) |
-| 阶段条件时滞与阶段专家 V1 | E/H | 嵌套 LOHO 共同支持域：CO₂ 宏平均 R² 0.134→0.569、MAE 2.934→2.123；CO R² 0.709→0.712。阶段路由依赖训练炉时间/耗氧阈值，光谱未证明额外阶段识别能力；CO₂ 尾部反转仍失败 | [研究报告](reports/working/Q3_STAGE_AWARE_PREDICTION_V1.md) · [实验说明](experiments/q3_stage_aware_v1/README.md) |
+| 阶段条件时滞与阶段专家 V1 | E/H | 嵌套 LOHO 共同支持域：CO₂ 宏平均 R² 0.134→0.569、CO R² 0.709→0.712；路由依赖时间/耗氧阈值。MAE 单位改为原始通道单位，CO₂尾部反转仍失败 | [研究报告](reports/working/Q3_STAGE_AWARE_PREDICTION_V1.md) · [实验说明](experiments/q3_stage_aware_v1/README.md) |
+| Q3 测量语义与物理化学审计 V2 | E/H | 同基准 m³/s 解释下，十炉 COx 氧当量/氧枪累计供氧为 2.93–6.53 倍，中位 5.77；尾段 CO₂上升、CO下降、COx通道和下降、表观 CO₂份额上升均为 10/10。单位待数据字典确认 | [研究报告](reports/working/Q3_PHYSICAL_CHEMISTRY_AUDIT_V2.md) · [结果表](results/q3/physical_chemistry_v2/) |
 
-建议暂时保留共享耗氧进度曲线 + 因果光谱残差校正作为主候选，同时将阶段条件时滞 + 阶段专家列为 CO₂ 的强备选。阶段专家的提升目前主要来自时间/累计耗氧阈值路由，不是光谱状态识别；CO 增益有限，尾部 CO₂ 反转仍失败。必须在同一信息集、提前量、评分域和外层炉次下与 V5/梯度提升公平比较。无独立新炉时明确限制，不宣称已证明光谱普遍增益。物理探索阶段标签、居中平滑及整炉统计不得泄漏进实时模型。
+P0：先向数据提供方核实 CO/CO₂单位、氧气列 YQXH、总烟气流量及干湿基准。未核实前，Q2累计排放解释和 Q3物质守恒结论均保持条件性。数值预测方面暂保留 V5、梯度提升、阶段专家，但所有 MAE 标注原始通道单位；下一轮在相同信息集、提前量、评分域和外层炉次下公平比较，并单独评价尾段转折。物理建模优先采用 COx 通道和与表观 CO₂份额两个组成坐标；没有总烟气流量、H₂/H₂O、浴内 C/FeO/温度数据，不拟合绝对反应速率。无独立新炉时明确限制。
 
 [曲线迁移结果](results/q3/curve_transfer/) · [梯度提升 20 个 R²](results/q3/boosted_curve/twenty_r2.csv) · [20 张图](results/q3/boosted_curve/figures/README.md) · [物理过程结果](results/q3/physical_process/)。
 
 ### Q3 物理化学机制 V1（2026-11-28，探索性）
 
-- 尾段 60 s：CO₂斜率 9/10 炉为正、CO 9/10 为负、CO+CO₂ 9/10 为负、CO₂表观份额 9/10 上升；30/45/60/90 s 敏感性方向总体保持。
-- 首尾 10 s 中位数变化：CO₂ +2.295 m³/s、CO −11.715 m³/s、两者之和 −9.045 m³/s、CO₂表观份额 +9.4 个百分点。支持总含碳气体产出减速与气体组成重新分配并存，不能简化为等量 CO 后燃。
+- 尾段 60 s 的通道斜率：CO₂、CO、COx 通道和、表观 CO₂份额的方向一致性均为 9/10。**注意：V2 已撤回将 CO+CO₂解释为总碳气体流量的说法；它只是两个浓度型通道的数值和。**
+- 首尾 10 s 通道中位数变化：CO₂ +2.295、CO −11.715、COx 通道和 −9.045 个通道单位、表观 CO₂份额 +9.4 个百分点。该结果支持组成重新分配，但不能证明总碳产气减速或排放量下降。
 - 气体定义阶段内，主升过渡段局部互相关中位偏移为 CO₂ 32.5 s、CO 30 s；尾段约 42.5 s，但尾段中位绝对相关仅 0.109/0.089。所有阶段标签均为回顾性诊断，不是在线输入。
 - K I 双线在 CO 占比转变前 30 s 的局部对比度 10/10 炉上升；控制时间、累计耗氧与宽带亮度后为 7/10，Holm 校正后未达到 5% 显著性，暂列候选状态特征。
 - 简化 Ridge 嵌套留一炉消融：fusion_interaction 的宏平均 R²为 CO₂ 0.218、CO 0.372，相对宽谱 fusion 基准 0.149/0.313 有提升；但尾段预测仍把 CO₂回升预测成下降，CO 下降幅度也被低估。总量/份额简单线性分解未改善。
@@ -109,6 +110,16 @@
 证据边界：十炉已被反复探索，不是独立确认；无炉口 O₂、浴内碳/硅/锰、FeO、温度、管路流速及分析仪阶跃响应真值。互相关偏移不能当作纯运输时间；CO₂表观份额不能当作工业完整后燃比。
 
 [完整报告](reports/working/Q3_PHYSICAL_MECHANISM_V1.md) · [结果表](results/q3/physical_mechanism_v1/) · [实验说明](experiments/q3_physical_mechanism_v1/README.md)。
+
+### Q3 测量语义与物理化学审计 V2（2026-11-28，探索性）
+
+- 原始表头称 CO₂/CO“浓度”，题面又写 m³/s。条件氧平衡检验：若两列为与氧枪供氧同基准的流量，十炉 COx 氧当量积分/氧枪累计供氧为 2.93–6.53 倍，中位数 5.77；该解释不通过物质守恒审查。
+- 尾段端点比较（起点、终点各 10 s）：CO₂通道上升 10/10，CO 下降 10/10，COx 通道和下降 10/10，表观 CO₂份额上升 10/10；中位变化分别 +2.295、−11.715、−9.045 通道单位、+9.42 个百分点。
+- 尾段起始累计耗氧进度中位数约 89.0%；九炉氧枪速度估计变化在 ±5% 内，第五炉 6C02057 增加 82.4%。第五炉应作为不同操作工况单独审查。
+- 机制解释：末段脱碳减弱、CO 后燃相对增强与数据相容；但没有总烟气流量、H₂/H₂O、O₂/N₂及浴内 C/FeO/温度，不能识别完整 PCR、绝对碳排放或反应速率。
+- 已将 V1 的 Q_sum 改为 COx 通道和、p_CO2 改为表观 CO₂份额；V1/阶段专家 MAE 单位改为原始通道单位。Q2.1/2.2 绝对流量与排放解释也已加条件性提示。
+
+[完整报告](reports/working/Q3_PHYSICAL_CHEMISTRY_AUDIT_V2.md) · [实验说明](experiments/q3_physical_chemistry_v2/README.md) · [结果表](results/q3/physical_chemistry_v2/)。
 
 ### Q3 阶段条件时滞与阶段专家 V1（2026-11-28，探索性）
 
@@ -148,10 +159,11 @@
 | Q3 物理过程 | [说明](experiments/q3_physical_process/) | [结果](results/q3/physical_process/) |
 | Q3 初始光谱气体预测 | [入口](experiments/q3_spectral_gas_prediction/) | [结果](results/q3/spectral_gas_prediction/) |
 | Q3 V5 | [入口](experiments/q3_v5_causal_spectral/) | [结果](results/q3/v5_causal_spectral/) |
+| Q3 测量语义与物理化学审计 V2 | [说明](experiments/q3_physical_chemistry_v2/) | [结果](results/q3/physical_chemistry_v2/) |
 
 ## 7. 下一步（建议优先级）
 
-1. P0：将 Q2.1 与第二问最终关系研究整合进论文；明确 H0 主情景、H1/H2 局限及流量—时滞关系未获稳健支持的边界。
+1. P0：向数据提供方核实 CO/CO₂真实单位、氧气列 YQXH、总烟气流量及干湿基准；在核实前，Q2累计排放解释保持条件性。
 2. P0：统一 Q3 公平比较条件，决定每种气体的最终候选与退回模型，报告逐炉分数、误差和失败案例。
 3. P0：撰写竞赛论文、摘要与控制页，引用冻结表和明确的探索性结果；不将报告目录中的历史版本当作最新交付。
 4. P1：若可获得设备日志/时间戳，核验第五炉；否则保留不可识别结论及 H0/H1/H2 敏感性。不人为重建缺失原始观测。
