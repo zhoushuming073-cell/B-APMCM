@@ -28,7 +28,7 @@ The original configuration wording “first one-third” is a historical documen
 
 ## Result provenance and clarification
 
-The recovered [original full matching table](../../results/q2/q2_3_final_validation_2026-11-28/matching_summary_original_full.csv) distinguishes pair-level and heat-level medians. For CO2 at caliper 0.15 (old/new progress), the former is +10 s and the latter +8 s; the heat-level bootstrap interval is [-26, 20] s. The previous compact CSV mislabeled the pair median as a heat median. The original full table is authoritative for this distinction; historical exports are retained. No refitting or change in the scientific conclusion is involved.
+The recovered [original full matching table](../../results/q2/q2_3_final_validation_2026-11-28/matching_summary_original_full.csv) distinguishes pair-level and heat-level medians. For CO2 at caliper 0.15 (old/new progress), the former is +10 s and the latter +8 s; the heat-level bootstrap interval is [-26, 20] s. The previous compact CSV mislabeled the pair median as a heat median. The original full table is authoritative for this distinction. The current compact CSV now contains both explicitly named columns; the previous export remains available in Git history. The manuscript uses the heat-level median (+8 s for CO2). See the [consistency audit](../../results/q2/q2_3_final_validation_2026-11-28/MATCHING_SUMMARY_CONSISTENCY_AUDIT.md). No refitting or change in the scientific conclusion is involved.
 
 [Final validation report](../../reports/final/Q2_3_FINAL_VALIDATION_AND_FREEZE.md) · [Formal closure and literature](../../reports/final/Q2_3_MECHANISM_LITERATURE_AND_CLOSURE.md) · [Compact results](../../results/q2/q2_3_final_validation_2026-11-28/).
 
