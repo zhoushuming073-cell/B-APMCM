@@ -21,8 +21,10 @@ No matches were available at oxygen-progress calipers 0.05 or 0.10. At the prima
 
 - [Round-three report](../../../reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND3_ADDENDUM.md)
 - [Experiment code and run instructions](../../../experiments/q2_stage_matched_lag/v1/)
-- [Complete reproducibility bundle](Q2_3_Stage_Matched_Lag_Round3.zip)
+- key_results.csv: compact H0/H1 primary and sensitivity results.
 - manifest.json: input fingerprints and settings.
 - input_reconstruction_qa.json: source and reconstructed-curve checks.
 
-The ZIP contains the full window-level lag table, matched-pair table, heat-level effects, complete sensitivity summary, script, report, manifest and QA record. The complete output tables can also be regenerated from the frozen Q2.1 curves using the experiment entry point.
+The full per-window lag estimates, matched pairs and heat-level effects are generated locally by the experiment script and are not committed as large derived tables. This follows the repository convention for reproducible outputs: retain compact evidence and regenerate detailed tables from the frozen Q2.1 curves when needed.
+
+The rebuilt curve hash differs from the repository-recorded frozen CSV hash, while the numerical headline summaries were reproduced. This is numerical-level verification, not a byte-identical reproduction; see input_reconstruction_qa.json and the report.
