@@ -1,0 +1,11 @@
+attachment,heat,n_rows,duration_s_H0,oxygen_header_raw,gas_headers_raw,oxygen_total_m3,median_oxygen_rate_est_m3_s,median_CO2_channel,median_CO_channel,median_COx_sum_channel,integrated_O2eq_if_channels_are_flows,O2eq_over_lance_O2_if_flow_assumption,median_instantaneous_O2eq_over_lance_O2_rate_if_flow_assumption
+1,6B03205,1479,739,累积耗氧量,CO2浓度/CO浓度,3391.33,4.74,12.75,42.22,55.32,21789.803,6.4251496,7.2610994
+2,6B03206,1311,655,YQXH,CO₂ concentration/CO concentration,3319.06,4.76,14.56,33.39,52.06,18132.593,5.463171,7.1506276
+3,6B03270,1413,706,Cumulative oxygen consumption,CO₂ concentration/CO concentration,3328.96,4.72,15.3,45.22,61.11,21732.897,6.5284346,7.9762397
+4,6B03271,1420,709.5,Cumulative oxygen consumption,CO₂ concentration/CO concentration,3424.9,4.74,14.03,35.73,52.22,19850.553,5.795951,7.2292994
+5,6C02057,775,387,Cumulative oxygen consumption,CO₂ concentration/CO concentration,3536.6,8.85,12.44,36.96,50.24,10356.865,2.9284807,3.4978701
+6,6C02058,1343,671,Cumulative oxygen consumption,CO₂ concentration/CO concentration,3339.14,4.74,12.49,40.18,53.43,18613.897,5.5744585,7.0854167
+7,6C02059,1555,777,Cumulative oxygen consumption,CO₂ concentration/CO concentration,3601.39,4.74,14.39,37.8,52.5,19978.482,5.5474365,7.0532359
+8,6C02060,1373,686,Cumulative oxygen consumption,CO₂ concentration/CO concentration,3306.63,4.72,14.07,41.09,55.36,19729.073,5.9665195,7.2431866
+9,6C02107,1459,729,Cumulative oxygen consumption,CO₂ concentration/CO concentration,3405,4.72,16.72,36.3,53.28,21702.423,6.3736924,7.5271399
+10,6C02108,1461,730,Cumulative oxygen consumption,CO₂ concentration/CO concentration,3487.91,4.73,14.77,31.76,48.45,20012.712,5.7377376,6.887605
