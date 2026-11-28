@@ -13,8 +13,8 @@
 | --- | --- | --- | --- |
 | Q1 光谱连续重构 | F | 主算法、参数、情景及绘图口径已封存 | [封存记录](reports/final/q1/第一问封存记录.md) |
 | Q2.1 六类过程曲线 | F | 非负积分 B 样条 + k2/PCHIP；原始烟气仅标记异常，不自动修改 | [封存报告](reports/final/Q2_1_FINAL_FREEZE.md) |
-| Q2.2 耗氧—烟气关系与时滞研究 | F/H | 2026-11-28 正式封存；第二轮稳健性检验未验证高流量短时滞；封存后第三轮匹配诊断仍未发现稳健负向证据，且共同支持不足，不重开冻结研究 | [最终研究报告](reports/final/Q2_2_FINAL_RELATIONSHIP_STUDY.md) · [第二轮稳健性检验](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md) · [第三轮 addendum](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND3_ADDENDUM.md) |
-| Q2.3 有效响应时滞（并入第二问最终研究） | F/H + E（封存后补充） | 原时滞研究随 Q2.2 封存；第三轮同炉同耗氧进度匹配仅 5/10 炉形成主分析匹配，CO/CO₂ 炉次中位时滞差为 +4/+8 s，区间跨零；共同支持不足，不能作因果解释 | [第二轮稳健性检验](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md) · [第三轮 addendum](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND3_ADDENDUM.md) |
+| Q2.2 耗氧—烟气关系与时滞研究 | F/H | 2026-11-28 正式封存；第二轮稳健性检验、第三轮匹配及第四轮功效审计均未稳健验证高流量短时滞；不重开冻结研究 | [最终研究报告](reports/final/Q2_2_FINAL_RELATIONSHIP_STUDY.md) · [第二轮稳健性检验](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md) · [第三轮 addendum](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND3_ADDENDUM.md) · [第四轮审计](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND4_POWER_AUDIT.md) |
+| Q2.3 有效响应时滞（含第三/四轮补充审计） | F/H + E（封存后补充） | 第三轮 CO/CO₂ 炉次中位时滞差 +4/+8 s；第四轮连续调整点估计接近零且对阶段函数形式敏感；条件功效 MDE 约 4–6 s/炉内残差流量 SD，匹配法约 8–12 s；不作因果解释 | [第二轮稳健性检验](reports/final/Q2_2_LAG_HYPOTHESIS_ROBUSTNESS.md) · [第三轮 addendum](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND3_ADDENDUM.md) · [第四轮审计](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND4_POWER_AUDIT.md) |
 | Q3 实时烟气预测 | E | 优先比较 CO 梯度提升、CO₂ 融合残差树，保留共享曲线及纯过程对照；未封存 | [梯度提升报告](reports/working/第三问梯度提升追加实验20个R2.md) · [曲线迁移报告](reports/working/第三问异质性曲线机器学习与方差.md) |
 | 第五炉时基与缺失 | E/H | H0 主情景、H1 敏感性；H2 不规则缺失为优先研究假设，真实时间轴未识别 | [缺失机制报告](results/q2/missingness_mechanism/REPORT.md) |
 | 竞赛论文与提交包 | P | 优先将已封存结果和未决边界整合成论文 | [论文目录](reports/submission/paper/) · [摘要页](reports/submission/summary_sheet/) · [控制页](reports/submission/control_sheet/) |
@@ -76,6 +76,16 @@
 - 因此第三轮仍未获得“高流量对应更短时滞”的稳健证据，也不能反向断言高流量会延长时滞。它是封存后的探索性 addendum，不改变原有冻结决定，不作因果解释。
 
 [第三轮报告](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND3_ADDENDUM.md) · [复算入口](experiments/q2_stage_matched_lag/v1/) · [紧凑结果与 QA](results/q2/stage_matched_lag_2026-11-28/)。
+
+### Q2.3 第四轮：可识别性与检验功效审计（封存后探索性补充）
+
+- 以 H0、90 s、Pearson 为主分析，71 个窗口/气体、每炉 4–8 个窗口；流量与累计耗氧进度存在炉内相关，线性进度调整后的残差流量 SD 中位数约 0.880 m³/s。
+- 连续阶段调整使用全部 10 炉；线性与二次进度控制下，CO/CO₂ 点估计接近零且符号会变化，所有全窗口主分析 95% 炉次聚类区间跨零。排除 30 s 搜索边界窗口后也未出现稳定负向关系。
+- 条件功效模拟每个效应量 1,200 次：连续调整达到 80% 功效所需负向效应约 4–6 s/炉内残差流量 SD；第三轮匹配法约 8–12 s。小效应仍难以排除。该模拟在窗口级时滞估计上注入效应，不是原始信号层面的物理仿真。
+- 原始 Data.zip 指纹一致；本地重建曲线与仓库冻结曲线字节哈希不同，报告明确限定为关键数值级复现，不声称字节级复现。
+- 决策：第三/四轮均不改变 Q2.2 冻结结论；停止在同一批十炉上继续搜索时滞函数。只有新增 PLC 时间戳、独立高频流量真值或高频烟气响应后才重启识别。
+
+[第四轮报告](reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND4_POWER_AUDIT.md) · [复算入口](experiments/q2_stage_matched_lag/v2/) · [匹配、回归、功效与 QA](results/q2/round4_identifiability_2026-11-28/)。
 
 ## 5. Q3：模型候选与淘汰依据（尚未封存）
 
