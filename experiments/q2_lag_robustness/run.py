@@ -34,7 +34,7 @@ def whiten(x,y):
     x=detrend(x); y=detrend(y)
     den=x[:-1]@x[:-1]
     phi=np.clip((x[:-1]@x[1:])/den if den>0 else 0.,-.98,.98)
-    return x[1;]-phi*x[:-1],y[1:]-phi*y[:-1]
+    return x[1:]-phi*x[:-1],y[1:]-phi*y[:-1]
 
 def corr(x,y):
     x=np.asarray(x,float); y=np.asarray(y,float)

@@ -1,0 +1,9 @@
+version,scenario,window_s,gas,n_windows,median_lag_s,supported_windows_q_le_0_1
+old_prewhitened,H0,180,CO,33,34,0
+old_prewhitened,H0,180,CO2,33,38,12
+old_prewhitened,H1,180,CO,35,34,0
+old_prewhitened,H1,180,CO2,35,38,14
+current_relationship_study,H0,180,CO,33,32,16
+current_relationship_study,H0,180,CO2,33,36,0
+current_relationship_study,H1,180,CO,35,32,17
+current_relationship_study,H1,180,CO2,35,36,0

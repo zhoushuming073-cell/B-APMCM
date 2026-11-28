@@ -143,3 +143,14 @@
 - 已封存模型如需改变，新增版本并记录原因，不覆盖历史表格、不把探索性分数写成正式结论。全文报告优先于本总账的摘要数值。
 - 结果大文件按既有 LFS/本地复算约定管理；历史资料留在 archive。默认批量脚本仅包含其显式注册的实验，不代表全部专项。
 - 本次是文档和索引审查，未独立重新执行全部实验。
+
+
+## Q2.3 Final Validation and Freeze — 2026-11-28
+
+- Status: **带明确限制封存**; no fifth model-search round.
+- H0/90 s absolute Pearson peak median: CO 14 s, CO₂ 14 s. Flow tercile medians: CO 13/12/16 s; CO₂ 13/14/14 s. No monotone decreasing flow-delay relation is supported.
+- Known-delay semi-synthetic recovery: noiseless self-check is good, but empirical autocorrelated backgrounds produce weak recovery (90 s MAE roughly 6–13 s; ±2 s recovery generally below 45%). Zero-response 90 s peak medians (CO 14.4 s, CO₂ 14.8 s) overlap the observed 14 s medians.
+- The 180 s circular-shift/BH diagnostic has poor empirical-null calibration: panels with at least one q≤0.1 rejection are 37% for CO and 75% for CO₂ across 100 zero-response replications.
+- Flow effect: no matches at progress caliper 0.10; at 0.15, 7 pairs from 5 heats per gas. Matched high-minus-low lag differences are +4 s (CO) and +8 s (CO₂), with heat-bootstrap intervals crossing zero. Stage-adjusted coefficients change sign between linear and quadratic specifications.
+- Engineering: second-round AR(1) slice syntax fixed; 40-test primary family rerun, 0 Holm-significant. Archived compact records match on every field that was actually archived (24/24 records). Official frozen flow summaries match 20/20 heat/scenario rows.
+- The 14 s value is reported only as an apparent response time shift, not a physical gas-transport delay. Full report and compact tables are in the final validation report/results directory.

@@ -106,3 +106,14 @@ python experiments/q2_prewhitened_delay/run.py
 - 实验完成后通过 Pull Request 合并到 `main`，确认合并后删除临时分支。
 - 冻结结果、探索性结果和已验证结论必须明确区分；不覆盖历史结果来制造连续性。
 - 新增专项时同步更新 [研究状态总账](RESEARCH_STATUS.md) 及本页导航，注明实验输入、代码、结果、证据边界和复跑状态。
+
+
+## Q2.3 Final Validation (2026-11-28)
+
+Q2.3 has completed four research rounds plus a final validation and is now **带明确限制封存**. The final result is an apparent cross-correlation time shift, not a verified physical transport delay. Under H0/90 s, the CO and CO₂ median peak locations are both 14 s; low/middle/high flow-group medians are CO 13/12/16 s and CO₂ 13/14/14 s. No stable decreasing flow-delay relation was identified. The semi-synthetic known-delay recovery experiment shows poor recovery under empirical autocorrelated backgrounds, and the zero-response control exposes calibration problems in the 180 s circular-shift/BH diagnostic.
+
+- Final report: [Q2.3 Final Validation and Freeze](reports/final/Q2_3_FINAL_VALIDATION_AND_FREEZE.md)
+- Compact results: [Q2.3 final validation results](results/q2/q2_3_final_validation_2026-11-28/README.md)
+- Reproducibility code/package and full replicate-level CSVs are delivered as the accompanying Q2_3_Final_Validation_and_Freeze.zip artifact; the one-command entry point is documented there.
+
+No fifth model-search round is planned. Only paper wording, figure/table integration, and reproducibility maintenance remain.
