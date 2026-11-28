@@ -12,7 +12,7 @@ This experiment investigates three hypotheses using the ten official heats:
 - Main timebase: 0.5 s per row for all heats (H0).
 - Ten heats, 13,589 rows, 2,047 native wavelength channels per row.
 - CO2 and CO columns are treated as instantaneous volume flow rates (m3/s), not ppm concentrations.
-- Raw files are not modified. Five-second median filtering is used only for diagnostic curves.
+- Raw files are not modified. Five-second median filtering is used only for diagnostic curves and is applied along the time axis only (11 x 1), never across the CO2 and CO columns.
 
 ## Key methods
 
@@ -29,6 +29,7 @@ See the research report at reports/working/Q3_PHYSICAL_MECHANISM_V1.md.
 
 Frozen compact outputs:
 - tail_dynamics.csv
+- tail_window_sensitivity.csv
 - stage_summary.csv
 - stage_lag_summary.csv
 - spectral_event_features.csv
