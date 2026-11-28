@@ -1,0 +1,15 @@
+gas,model,macro_mae,macro_rmse,macro_r2
+CO2,fusion,2.309464,2.926882,0.149056
+CO2,fusion_interaction,2.140366,2.816265,0.217878
+CO2,fusion_momentum,2.163175,2.829167,0.209514
+CO2,fusion_peak,2.306144,2.919133,0.138630
+CO2,fusion_peak_momentum,2.204757,2.873030,0.153359
+CO2,fusion_physical,2.295159,2.947264,0.135763
+CO2,process_nonlinear,2.258480,2.887962,0.152299
+CO,fusion,7.395840,9.607958,0.312781
+CO,fusion_interaction,7.186542,9.380286,0.371812
+CO,fusion_momentum,7.327061,9.547560,0.330916
+CO,fusion_peak,7.381275,9.610267,0.302905
+CO,fusion_peak_momentum,7.388446,9.603465,0.308546
+CO,fusion_physical,7.446312,9.670447,0.308282
+CO,process_nonlinear,7.256002,9.362358,0.232384
