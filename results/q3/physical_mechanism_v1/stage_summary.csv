@@ -1,0 +1,5 @@
+stage,n,co2_positive,median_logco2_slope,co_positive,median_logco_slope,total_positive,median_logtotal_slope,share_positive,median_logitshare_slope
+1,10,10,0.938357,9,0.035131,10,0.946169,8,4.584248
+2,10,10,1.896334,10,1.730376,10,2.027207,2,-0.993621
+3,10,1,-0.080799,10,0.921008,10,0.311598,0,-0.937927
+4,10,2,-0.032423,5,-0.002182,4,-0.009172,4,-0.031095
