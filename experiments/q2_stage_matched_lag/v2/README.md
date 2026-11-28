@@ -24,3 +24,7 @@ Dependencies are the repository's existing NumPy, pandas and SciPy stack. No add
 The simulation injects effects into estimated window-level lag outcomes. It is conditional power analysis, not a physical-process simulation or independent validation.
 
 See `reports/final/Q2_3_STAGE_MATCHED_LAG_ROUND4_POWER_AUDIT.md` for interpretation and evidence boundaries.
+
+## Output policy
+
+The script generates the full `lag_windows.csv` locally. It is intentionally not committed as a bulk intermediate; compact matching, regression, power, design-diagnostic, QA and manifest files are committed under `results/q2/round4_identifiability_2026-11-28/`.
