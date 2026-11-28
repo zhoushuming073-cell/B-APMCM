@@ -244,4 +244,7 @@ Dering、Swartz 与 Dogan 的 BOF 动态模型明确包含：
 - decomposition_macro.csv
 - tail_prediction_slopes.csv
 
-下一轮必须把本轮 notebook 计算整理成可执行脚本，并在仓库正式数据路径上从头复算。当前提交归档的是探索性结果与方法口径，不宣称已经形成可部署模型。
+核心物理诊断脚本已归档于 src/apmcm/q3/physical_mechanism.py，可从仓库根目录执行：
+PYTHONPATH=src python -m apmcm.q3.physical_mechanism --data-zip Data.zip --output-dir results/q3/physical_mechanism_v1
+
+该脚本复现尾段、阶段、阶段时滞和谱线事件诊断；pilot Ridge 消融的训练/验证 runner 仍待单独归档。当前会话中完整 XLSB CLI 加载超过运行时限，但脚本各诊断函数已使用本轮读取的十炉内存数组逐项执行并核对输出。应在本地完成 CLI 全流程复算后再将其视为完整可复现包。当前结果仍为探索性证据，不是可部署模型。
