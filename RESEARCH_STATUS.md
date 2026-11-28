@@ -1,6 +1,6 @@
 # 研究状态总账 | RESEARCH_STATUS
 
-更新日期：2026-11-28（北京时间）。本次研究证据快照：[4d23a08](https://github.com/zhoushuming073-cell/B-APMCM/commit/4d23a08b52d260e4ea158f5f8ac2cc3206a37fcf)。本文是研究决策导航，不替代各专项报告、原始数据或冻结结果；后续有新实验时同步更新本页及 [README](README.md)。
+更新日期：2026-11-28（北京时间）。本页与 main 分支当前研究状态同步；以 [main 最新提交](https://github.com/zhoushuming073-cell/B-APMCM/commits/main) 为准。本文是研究决策导航，不替代各专项报告、原始数据或冻结结果；后续有新实验时同步更新本页及 [README](README.md)。
 
 ## 1. 当前决策与证据等级
 
@@ -13,8 +13,8 @@
 | --- | --- | --- | --- |
 | Q1 光谱连续重构 | F | 主算法、参数、情景及绘图口径已封存 | [封存记录](reports/final/q1/第一问封存记录.md) |
 | Q2.1 六类过程曲线 | F | 非负积分 B 样条 + k2/PCHIP；原始烟气仅标记异常，不自动修改 | [封存报告](reports/final/Q2_1_FINAL_FREEZE.md) |
-| Q2.2 耗氧与排放/瞬时流量关系 | E | 简洁共享曲线及 Sigmoid 积分为基准；复杂异质性模型未稳定取胜，待收敛 | [累计量报告](reports/working/Q2_2_EMISSION_TIMEBASE_REPORT.md) · [瞬时流量报告](reports/working/Q2_2_INSTANTANEOUS_FLOW_REPORT.md) |
-| Q2.3 有效响应时滞 | E/H | 保留固定时滞基准；流量条件变时滞尚不稳健 | [预白化报告](reports/working/Q2_3_PREWHITENED_DELAY_REPORT.md) |
+| Q2.2 耗氧—烟气关系与时滞研究 | F/H | 基于 Q2.1 冻结曲线完成剂量关系、阶段排放和流量分组时滞；不做预测；高流量短时滞未获稳健支持 | [最终研究报告](reports/final/Q2_2_FINAL_RELATIONSHIP_STUDY.md) |
+| Q2.3 有效响应时滞（并入第二问最终研究） | F/H | 已完成流量分组时滞估计；结果对窗口尺度敏感，流量递减规律未获稳健支持，不能解释为纯运输时延 | [最终研究报告](reports/final/Q2_2_FINAL_RELATIONSHIP_STUDY.md) |
 | Q3 实时烟气预测 | E | 优先比较 CO 梯度提升、CO₂ 融合残差树，保留共享曲线及纯过程对照；未封存 | [梯度提升报告](reports/working/第三问梯度提升追加实验20个R2.md) · [曲线迁移报告](reports/working/第三问异质性曲线机器学习与方差.md) |
 | 第五炉时基与缺失 | E/H | H0 主情景、H1 敏感性；H2 不规则缺失为优先研究假设，真实时间轴未识别 | [缺失机制报告](results/q2/missingness_mechanism/REPORT.md) |
 | 竞赛论文与提交包 | P | 优先将已封存结果和未决边界整合成论文 | [论文目录](reports/submission/paper/) · [摘要页](reports/submission/summary_sheet/) · [控制页](reports/submission/control_sheet/) |
@@ -50,18 +50,23 @@
 
 [正式冻结报告](reports/final/Q2_1_FINAL_FREEZE.md) · [复算入口](experiments/q2_finalization/) · [冻结 QA 与汇总](results/q2/final_freeze_2026-11-28/) · [重构验证](results/q2/validation_2026-11-28/) · [解析流量 V4](experiments/q2_instantaneous_flow/v4/) · [异常检测](experiments/q2_anomaly_review/v1/)。
 
-### Q2.2 尚待最终决策
-- 累计量：直接平均曲线 H0 LOHO R²（CO₂/CO）0.4926/0.7631，H1 为 0.9662/0.9402；Sigmoid 后积分为 0.9645/0.9539（两时基逐炉分数不变，评分域不同，不直接判优）。高累计量 R² 不证明瞬时关系准确或 H1 成立。
-- 瞬时量：H1 共享曲线 CO₂ 0.6596、CO 0.8457，V1 CO 0.8557；静态/动态异质性未稳定优于简单基准。H1 数值不能冒充 H0 主结果。
-- 建议：将冻结的 Q2.1 曲线与旧实验的原始标签协议明确区分；统一 H0/H1、评价区间、误差及排放终点指标后选择论文模型。联合碳流/氧化比例可作探索，不硬设未知物理比例。
-- [累计量研究](reports/working/Q2_2_EMISSION_TIMEBASE_REPORT.md) · [瞬时量 V1–V3](reports/working/Q2_2_INSTANTANEOUS_FLOW_REPORT.md) · [流量/异常更新](reports/working/Q2_2_FLOW_ANOMALY_UPDATE.md) · [累计结果](results/q2/emission_timebase/) · [瞬时结果](results/q2/instantaneous_flow/)。
+### Q2.2 已完成最终关系研究（不做预测）
 
-### Q2.3 尚待最终决策
-90/180 秒窗口、去趋势、AR(1) 预白化及 Pearson/Spearman/距离相关平方结果存在尺度与时基敏感性。H0 90 秒窗口无 BH q≤0.1 的诊断窗口；180 秒仅部分 Pearson CO₂ 有支持，其他指标未复现。H0 下 12 项 LOHO 线性流量模型均劣于固定均值基准。相关峰值包含反应、输运、仪器响应，不是独立物理运输时间真值。
+本轮使用 Q2.1 冻结的非负积分 B 样条氧枪流量、k2/PCHIP 烟气流量及累计排放曲线，统一研究累计耗氧量与 CO₂、CO 瞬时流量及累计排放量的关系。没有训练或比较预测模型。
 
-保留固定时滞基准、变时滞物理先验与局限，避免挑选单一有利窗口。预白化 Python 移植未独立端到端复跑；原结果表为归档证据。
+- 四阶段剂量关系显示 CO 流量由约 3.46 升至 43.18 m³/s 后趋于平台；CO₂ 流量在第二阶段约 18.34 m³/s 达到较高水平，随后下降。
+- 单位耗氧边际排放随阶段变化：H0 下 CO 约 0.835、5.956、8.362、8.734；CO₂ 约 2.594、3.713、2.769、2.437 m³/m³。H1 仅作第五炉时基敏感性分析。
+- 30 s 非重叠块的氧气增量与平均烟气流量呈中等但炉次异质的关联，不支持跨炉统一线性比例。
+- H0 为主情景，H1 不是第五炉真实时间轴的确认。累计排放总量的 H0/H1 差异必须保留为敏感性结果。
 
-[既有优化报告](reports/final/q2_optimized/Q2_report.pdf) · [对齐比较](results/q2/aligned_comparison/) · [时滞证据](results/q2/delay_identification/) · [预白化报告](reports/working/Q2_3_PREWHITENED_DELAY_REPORT.md) · [窗口结果](results/q2/prewhitened_delay/tables/) · [文献笔记](docs/methodology/q2_delay_optimization_literature.md)。
+### Q2.3 有效响应时滞（已并入最终关系研究）
+
+- 90 s 窗口下 CO、CO₂ 的有效时滞中位数均约 14 s；180 s 窗口下分别约 32 s、36 s，存在明显窗口尺度敏感性。
+- 90 s 流量三分组未显示高流量组时滞更短；同炉高流量减低流量时滞中位差为正，且高流量时滞更短的炉次数不足一半。
+- 控制耗氧进度后，流量—时滞斜率没有稳定的负向结果。因此题面提出的“流量越高、时滞越短”在当前十炉数据中**未获稳健实证支持**，不能为了符合预期而强制拟合单调函数。
+- 该时滞是反应、输运、取样和分析仪动态共同形成的有效响应时差，不是纯管道运输时间。十炉是独立实验单位，窗口不是独立炉次。
+
+[最终研究报告](reports/final/Q2_2_FINAL_RELATIONSHIP_STUDY.md) · [复算入口](experiments/q2_relationship_study/) · [紧凑结果表](results/q2/relationship_study_final/)。
 
 ## 5. Q3：模型候选与淘汰依据（尚未封存）
 
@@ -106,11 +111,11 @@
 
 ## 7. 下一步（建议优先级）
 
-1. P0：锁定 Q2.2、Q2.3 的论文结论和基准；对照 Q2.1 冻结口径，明确 H0 主情景、H1/H2 局限。
+1. P0：将 Q2.1 与第二问最终关系研究整合进论文；明确 H0 主情景、H1/H2 局限及流量—时滞关系未获稳健支持的边界。
 2. P0：统一 Q3 公平比较条件，决定每种气体的最终候选与退回模型，报告逐炉分数、误差和失败案例。
 3. P0：撰写竞赛论文、摘要与控制页，引用冻结表和明确的探索性结果；不将报告目录中的历史版本当作最新交付。
 4. P1：若可获得设备日志/时间戳，核验第五炉；否则保留不可识别结论及 H0/H1/H2 敏感性。不人为重建缺失原始观测。
-5. P1：核验关键复跑脚本、图表和最终提交材料；尤其 Q2.3 Python 移植、Q3 已迁移入口与历史结果一致性。
+5. P1：完成第二问图表、论文文字和全篇符号/单位的一致性检查；不再扩展第二问模型。
 
 ## 8. 后续提交约定
 

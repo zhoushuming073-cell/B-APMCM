@@ -1,0 +1,5 @@
+scenario,gas,low_flow_lag_median_s,middle_flow_lag_median_s,high_flow_lag_median_s
+H0,CO,13,12,16
+H0,CO2,13,14,14
+H1,CO,14,14,16
+H1,CO2,14,14,14

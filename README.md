@@ -8,8 +8,8 @@
 
 - **第一问：已封存。** 十炉全量复算，保守异常修复、饱和情景和双线性连续重构已冻结；模板值不是真实峰顶。
 - **第二问 2.1：已封存。** 非负积分 B 样条估计有效供氧流量，k2/PCHIP 重构烟气并解析积分；51 个异常候选仅标记，原始数据不修改。
-- **第二问 2.2：探索性。** 累计排放及瞬时流量关系已有多轮验证，复杂异质性模型未稳定胜过简单基准；论文模型待确定。
-- **第二问 2.3：探索性。** 预白化结果对窗口、指标与时基敏感，未支持稳健的流量条件变时滞；Python 移植尚未独立端到端复跑。
+- **第二问关系研究：已封存。** 使用 Q2.1 冻结曲线完成累计耗氧—烟气流量/累计排放关系及流量分组时滞研究；不做预测。高流量对应更短时滞的方向未获稳健支持。
+- **第二问时滞：已并入最终关系研究。** 90/180 秒窗口的有效时滞估计存在尺度敏感性；结果不支持强制拟合单调递减时滞函数。
 - **第三问：探索性。** 已完成光谱融合、曲线迁移、残差树、神经网络、梯度提升和物理过程实验；CO 梯度提升与 CO₂ 残差树为当前候选，非最终模型。光谱增量须按相同信息集及评分域审查。
 - **第五炉：未决。** H0 仍为主情景，H1 为敏感性；H2 不规则缺行获得描述性支持，真实秒级时间轴及跨传感器缺帧同步性未识别。
 
@@ -31,6 +31,7 @@ python -m pytest
 python experiments/q1_spectral_reconstruction/run.py
 python scripts/verify_q1_outputs.py
 python experiments/q2_finalization/run.py
+python experiments/q2_relationship_study/run.py
 ```
 
 查看既有批量实验入口（仅覆盖脚本注册的专项，不含全部新增实验）：
@@ -58,13 +59,14 @@ python experiments/q2_prewhitened_delay/run.py
 | 数据与审计 | [正式数据](data/raw/official/Data.zip) · [审计表](data/metadata/audit.csv) · [SHA-256](data/metadata/checksums.sha256) | [数据审计说明](archive/original_full_experiment_package/APMCM_Full_Experiments/README.md) |
 | 第一问：光谱重构 | [封存记录](reports/final/q1/第一问封存记录.md) · [复算入口](experiments/q1_spectral_reconstruction/README.md) | [十炉复算总账](results/q1/finalization/q1_full_reconstruction_summary.csv) · [窄峰遮挡指标](results/q1/tables/q1_peak_mask_fit_metrics.csv) |
 | 第二问 2.1：正式封存 | [封存报告](reports/final/Q2_1_FINAL_FREEZE.md) · [复算入口](experiments/q2_finalization/) | [冻结 QA](results/q2/final_freeze_2026-11-28/) · [重构验证](results/q2/validation_2026-11-28/) |
+| 第二问关系与时滞研究：最终封存 | [最终研究报告](reports/final/Q2_2_FINAL_RELATIONSHIP_STUDY.md) · [复算入口](experiments/q2_relationship_study/) | [紧凑结果](results/q2/relationship_study_final/) |
 | 第二问 2.1：解析供氧 V4、异常筛查 | [流量 V4](experiments/q2_instantaneous_flow/v4/) · [异常检测 V1](experiments/q2_anomaly_review/v1/) · [更新报告](reports/working/Q2_2_FLOW_ANOMALY_UPDATE.md) | [V4 结果](results/q2/instantaneous_flow/v4/) · [异常候选](results/q2/anomaly_review/v1/) |
 | 第二问：第五炉缺失机制 | [实验说明](experiments/q2_missingness_mechanism/) · [研究报告](results/q2/missingness_mechanism/REPORT.md) | [模拟结果](results/q2/missingness_mechanism/) |
 | 第二问：对齐比较 | [实验入口](experiments/q2_aligned_comparison/) | [结果](results/q2/aligned_comparison/) |
 | 第二问：优化实验 | [优化实验报告](reports/final/q2_optimized/Q2_report.pdf) | [90 秒窗口证据](results/q2/delay_identification/tables/final_delay_evidence_summary.csv) |
 | 第二问：时基审计 | [时基审计报告](reports/final/timebase_audit/APMCM_Timebase_Audit_Report.pdf) | [时基审计结果](results/q2/timebase_audit/) |
-| 第二问 2.2：累计排放时基 | [研究报告](reports/working/Q2_2_EMISSION_TIMEBASE_REPORT.md) · [实验入口](experiments/q2_emission_timebase/) | [冻结结果](results/q2/emission_timebase/) |
-| 第二问 2.2：瞬时流量 V1–V3 | [异质性报告](reports/working/Q2_2_INSTANTANEOUS_FLOW_REPORT.md) · [实验入口](experiments/q2_instantaneous_flow/) | [冻结结果](results/q2/instantaneous_flow/) |
+| 第二问 2.2：累计排放时基（历史敏感性） | [历史报告](reports/working/Q2_2_EMISSION_TIMEBASE_REPORT.md) · [实验入口](experiments/q2_emission_timebase/) | [历史结果](results/q2/emission_timebase/) |
+| 第二问 2.2：瞬时流量 V1–V3（历史模型探索） | [历史报告](reports/working/Q2_2_INSTANTANEOUS_FLOW_REPORT.md) · [实验入口](experiments/q2_instantaneous_flow/) | [历史结果](results/q2/instantaneous_flow/) |
 | 第二问 2.3：原时滞识别 | [实验入口](experiments/q2_delay_identification/) | [结果](results/q2/delay_identification/) |
 | 第二问 2.3：预白化时滞（探索性） | [研究报告](reports/working/Q2_3_PREWHITENED_DELAY_REPORT.md) · [实验说明](experiments/q2_prewhitened_delay/README.md) | [结果表](results/q2/prewhitened_delay/tables/) |
 | 第三问：光谱—烟气预测 | [模型报告](reports/working/Q3_SPECTRAL_GAS_MODEL_REPORT.md) · [实验入口](experiments/q3_spectral_gas_prediction/) | [冻结结果](results/q3/spectral_gas_prediction/) |
